@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { menuItems } from '../utils/data';
+import { addressDetails, menuItems } from '../utils/data';
 
 @Component({
   selector: 'footer',
@@ -8,4 +8,5 @@ import { menuItems } from '../utils/data';
 })
 export class FooterComponent {
   menuItems = menuItems;
+  addressDetails = addressDetails;
 }

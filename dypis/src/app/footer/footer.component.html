@@ -15,12 +15,9 @@
     <div fxLayout="column" fxLayoutGap="6px">
       <div class="footer-header">Address</div>
       <div class="footer-contet" fxLayout="column" fxLayoutGap="8px">
-        <div><span>San Francisco, CA 94102, US1234, Some Str</span></div>
-        <div><span>+1 000 123 1234; +1 000 567 5678</span></div>
-        <div>
-          <span>
-            Monday-Friday: 7.30 am - 17.00 pm, Saturday: 8.00 am - 15.00 pm
-          </span>
+        <div *ngFor="let addressItem of addressDetails" fxLayoutGap="6px">
+          <fa-icon class="icons" [icon]="addressItem.icon"></fa-icon>
+          <span>{{ addressItem.detail }}</span>
         </div>
       </div>
     </div>
@@ -28,10 +25,11 @@
       <div class="footer-header">About us</div>
       <div class="footer-contet">
         <span>
-          Lorem Ipsum has been the industrys standard dummy text ever since the
-          1500 when an unknown printer took a galley of type and scrambled it to
-          make a type specimen book Lorem Ipsum has been the industrys standard
-          dummy text ever since the 1500
+          We at DYPIS Kangra aspire at developing a sense of confidence and
+          responsibility among students. Our students will be able to develop
+          good communication skills, lay down a strong foundation for the vast
+          knowledge and transfer positive principles for the benefit of their
+          future.
         </span>
       </div>
     </div>

@@ -1,0 +1,28 @@
+@import "../../utils/variables.scss";
+
+.caraousel {
+  padding: 186px 60px;
+  width: 100%;
+  background-color: $BLUE;
+  height: calc(100vh - 372px);
+  max-height: 900px;
+  position: relative;
+}
+
+.grass {
+  background: url("../../../assets/images/grass.png");
+  height: 280px;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+
+.caraousel-cloud {
+  background: url("../../../assets/images/cloud-caraousel.png");
+  height: 280px;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}

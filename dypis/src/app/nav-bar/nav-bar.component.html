@@ -15,7 +15,13 @@
       class="h-fit"
     >
       <div class="menu-container" *ngFor="let menuItem of menuItems">
-        <div fxLayoutAlign="start center" fxLayoutGap="6px" class="menu-item">
+        <div
+          [routerLink]="menuItem.name"
+          routerLinkActive="active-menu-item"
+          fxLayoutAlign="start center"
+          fxLayoutGap="6px"
+          class="menu-item"
+        >
           <fa-icon class="icons" [icon]="menuItem.icon"></fa-icon>
           <span>{{ menuItem.name }}</span>
         </div>
