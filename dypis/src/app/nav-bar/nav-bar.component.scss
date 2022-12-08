@@ -1,0 +1,37 @@
+@use "../utils/variables.scss" as V;
+
+.nav-container {
+  background-image: url("../../assets/images/cloud-header.png");
+  height: 186px;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+
+.header-logo-container {
+  border-top: 4px solid V.$ORANGE;
+  cursor: pointer;
+}
+
+.menu-item {
+  border-top: 4px solid V.$ORANGE;
+  position: relative;
+  cursor: pointer;
+}
+
+.menu-container {
+  &:nth-child(1n) {
+    color: V.$DARK-GREEN;
+  }
+
+  &:nth-child(2n) {
+    color: V.$ORANGE;
+  }
+
+  &:not(:last-child) .menu-item::after {
+    content: "|";
+    color: #ccc;
+    position: absolute;
+    right: 0;
+  }
+}
