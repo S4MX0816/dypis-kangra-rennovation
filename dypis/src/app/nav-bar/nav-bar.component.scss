@@ -8,12 +8,19 @@
   z-index: 999;
 }
 
+.logo-container {
+  padding-left: 112px;
+}
+
 .header-logo-container {
+  padding-top: 20px;
+  width: 176px;
   border-top: 4px solid V.$ORANGE;
   cursor: pointer;
 }
 
 .menu-item {
+  padding: 20px 16px;
   border-top: 4px solid V.$ORANGE;
   position: relative;
   cursor: pointer;
