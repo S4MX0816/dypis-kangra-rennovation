@@ -2,14 +2,11 @@
 
 .nav-container {
   background-image: url("../../assets/images/cloud-header.png");
-  height: 186px;
+  height: 190px;
   position: sticky;
   top: 0;
+  padding: 0 112px;
   z-index: 999;
-}
-
-.logo-container {
-  padding-left: 112px;
 }
 
 .header-logo-container {
