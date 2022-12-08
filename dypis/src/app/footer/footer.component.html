@@ -1,0 +1,39 @@
+<div fxLayoutAlign="center" class="footer-container">
+  <div
+    fxLayout="row wrap"
+    fxLayoutAlign="space-between"
+    class="w-full w-m-1320 footer"
+  >
+    <div fxLayout="column" fxLayoutGap="6px">
+      <div class="footer-header">Menu</div>
+      <div class="footer-contet" fxLayout="column" fxLayoutGap="8px">
+        <span *ngFor="let menuItem of menuItems">
+          {{ menuItem }}
+        </span>
+      </div>
+    </div>
+    <div fxLayout="column" fxLayoutGap="6px">
+      <div class="footer-header">Address</div>
+      <div class="footer-contet" fxLayout="column" fxLayoutGap="8px">
+        <div><span>San Francisco, CA 94102, US1234, Some Str</span></div>
+        <div><span>+1 000 123 1234; +1 000 567 5678</span></div>
+        <div>
+          <span>
+            Monday-Friday: 7.30 am - 17.00 pm, Saturday: 8.00 am - 15.00 pm
+          </span>
+        </div>
+      </div>
+    </div>
+    <div fxLayout="column" fxLayoutGap="6px">
+      <div class="footer-header">About us</div>
+      <div class="footer-contet">
+        <span>
+          Lorem Ipsum has been the industrys standard dummy text ever since the
+          1500 when an unknown printer took a galley of type and scrambled it to
+          make a type specimen book Lorem Ipsum has been the industrys standard
+          dummy text ever since the 1500
+        </span>
+      </div>
+    </div>
+  </div>
+</div>

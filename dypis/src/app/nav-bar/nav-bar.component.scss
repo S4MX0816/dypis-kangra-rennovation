@@ -1,8 +1,8 @@
-@use "../utils/variables.scss" as V;
+@import "../utils/variables.scss";
 
 .nav-container {
   background-image: url("../../assets/images/cloud-header.png");
-  height: 190px;
+  height: 186px;
   position: sticky;
   top: 0;
   padding: 0 112px;
@@ -12,24 +12,24 @@
 .header-logo-container {
   padding-top: 20px;
   width: 176px;
-  border-top: 4px solid V.$ORANGE;
+  border-top: 4px solid $ORANGE;
   cursor: pointer;
 }
 
 .menu-item {
   padding: 20px 16px;
-  border-top: 4px solid V.$ORANGE;
+  border-top: 4px solid $ORANGE;
   position: relative;
   cursor: pointer;
 }
 
 .menu-container {
   &:nth-child(1n) {
-    color: V.$DARK-GREEN;
+    color: $DARK-GREEN;
   }
 
   &:nth-child(2n) {
-    color: V.$ORANGE;
+    color: $ORANGE;
   }
 
   &:not(:last-child) .menu-item::after {

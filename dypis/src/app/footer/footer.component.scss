@@ -1,0 +1,38 @@
+@import "../utils/variables.scss";
+
+.footer-container {
+  background-image: url("../../assets/images/footer.png");
+  padding: 60px 42px;
+  position: relative;
+
+  &::before {
+    content: "^";
+    color: $WHITE;
+    font-size: 32px;
+    padding-top: 10px;
+    text-align: center;
+    background: $BLACK;
+    top: 0;
+    left: 50%;
+    position: absolute;
+    border-radius: 50%;
+    width: 140px;
+    height: 120px;
+    transform: translate(-50%, -28%);
+    z-index: -1;
+  }
+}
+
+.footer-header {
+  color: $WHITE;
+  font-size: 40px;
+}
+
+.footer-contet {
+  color: $GRAY;
+  max-width: 360px;
+}
+
+.footer {
+  gap: 44px;
+}

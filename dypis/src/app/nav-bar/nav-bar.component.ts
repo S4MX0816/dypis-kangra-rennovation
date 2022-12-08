@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { menuItems } from '../utils/data';
 
 @Component({
   selector: 'nav-bar',
@@ -6,15 +7,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./nav-bar.component.scss'],
 })
 export class NavBarComponent {
-  menuItems;
-  constructor() {
-    this.menuItems = [
-      'home',
-      'admission',
-      'academics',
-      'faculty',
-      'about us',
-      'contact us',
-    ];
-  }
+  menuItems = menuItems;
 }
