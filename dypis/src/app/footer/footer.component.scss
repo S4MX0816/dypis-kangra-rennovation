@@ -26,6 +26,7 @@
 .footer-header {
   color: $WHITE;
   font-size: 40px;
+  font-weight: 700;
 }
 
 .footer-contet {
@@ -35,4 +36,12 @@
 
 .footer {
   gap: 44px;
+}
+
+.footer-menu-item {
+  cursor: pointer;
+
+  &:hover {
+    color: $WHITE;
+  }
 }
