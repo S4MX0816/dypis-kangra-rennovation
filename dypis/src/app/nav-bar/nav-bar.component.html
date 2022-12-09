@@ -16,14 +16,30 @@
     >
       <div class="menu-container" *ngFor="let menuItem of menuItems">
         <div
-          [routerLink]="menuItem.name"
-          routerLinkActive="active-menu-item"
+          [routerLink]="!menuItem.subMenu ? menuItem.name : null"
+          [routerLinkActive]="!menuItem.subMenu ? 'active-menu-item' : ''"
           fxLayoutAlign="start center"
           fxLayoutGap="6px"
           class="menu-item"
+          [matMenuTriggerFor]="menuItem.subMenu ? menu : null"
         >
           <fa-icon class="icons" [icon]="menuItem.icon"></fa-icon>
           <span>{{ menuItem.name }}</span>
+
+          <mat-menu #menu="matMenu">
+            <button
+              [routerLink]="subItem.name"
+              routerLinkActive="active-menu-item"
+              class="sub-item"
+              mat-menu-item
+              fxLayoutAlign="start center"
+              fxLayoutGap="6px"
+              *ngFor="let subItem of menuItem.subMenu"
+            >
+              <fa-icon class="icons" [icon]="subItem.icon"></fa-icon>
+              <span>{{ subItem.name }}</span>
+            </button>
+          </mat-menu>
         </div>
       </div>
     </div>

@@ -16,16 +16,21 @@
   cursor: pointer;
 }
 
-.menu-item {
-  padding: 20px 16px;
-  border-top: 4px solid $ORANGE;
+.menu-item,
+.sub-item {
   position: relative;
   text-transform: uppercase;
   font-weight: 600;
   cursor: pointer;
 }
 
-.menu-container {
+.menu-item {
+  padding: 20px 16px;
+  border-top: 4px solid $ORANGE;
+}
+
+.menu-container,
+.sub-item {
   &:nth-child(1n) {
     color: $DARK-GREEN;
   }

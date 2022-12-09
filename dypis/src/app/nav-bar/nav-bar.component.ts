@@ -1,6 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { menuItems } from '../utils/data';
-import { faHome } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'nav-bar',
@@ -9,5 +8,4 @@ import { faHome } from '@fortawesome/free-solid-svg-icons';
 })
 export class NavBarComponent {
   menuItems = menuItems;
-  faCoffee = faHome;
 }

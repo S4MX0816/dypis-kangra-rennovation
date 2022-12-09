@@ -1,15 +1,32 @@
 import {
   faAddressCard,
+  faBook,
+  faCalendarDays,
   faChalkboardUser,
+  faFilePen,
   faGraduationCap,
+  faHeadSideCough,
   faHome,
+  faLightbulb,
   faLocationDot,
+  faMobileScreen,
   faPhone,
   faSchool,
   faSquareEnvelope,
+  faUsersRectangle,
+  IconDefinition,
 } from '@fortawesome/free-solid-svg-icons';
 
-export const menuItems = [
+interface SingleMenuItem {
+  name: string;
+  icon: IconDefinition;
+}
+
+interface MenuItem extends SingleMenuItem {
+  subMenu?: SingleMenuItem[];
+}
+
+export const menuItems: MenuItem[] = [
   {
     name: 'home',
     icon: faHome,
@@ -21,6 +38,24 @@ export const menuItems = [
   {
     name: 'academics',
     icon: faGraduationCap,
+    subMenu: [
+      {
+        name: 'courses of study',
+        icon: faBook,
+      },
+      {
+        name: 'examination and promotion',
+        icon: faFilePen,
+      },
+      {
+        name: 'date sheet',
+        icon: faCalendarDays,
+      },
+      {
+        name: 'virtual schooling',
+        icon: faMobileScreen,
+      },
+    ],
   },
   {
     name: 'faculty',
@@ -29,6 +64,20 @@ export const menuItems = [
   {
     name: 'about us',
     icon: faAddressCard,
+    subMenu: [
+      {
+        name: 'about dypi',
+        icon: faUsersRectangle,
+      },
+      {
+        name: 'vision and mission',
+        icon: faLightbulb,
+      },
+      {
+        name: "chairman's message",
+        icon: faHeadSideCough,
+      },
+    ],
   },
   {
     name: 'contact us',
