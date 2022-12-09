@@ -52,11 +52,12 @@
         <fa-icon
           class="bars-icon"
           [icon]="barsIcon"
-          (click)="showHamburgerMenu = true"
+          (click)="openHamburgerMenu($event)"
         ></fa-icon>
       </div>
 
       <div
+        id="hamburger-menu"
         *ngIf="showHamburgerMenu"
         [@hamburgerSlideInOut]
         class="hamburger-menu"
