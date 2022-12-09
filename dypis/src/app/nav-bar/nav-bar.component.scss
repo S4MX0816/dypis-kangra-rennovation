@@ -92,6 +92,7 @@
   .menu-item {
     color: $WHITE;
     border-top: unset;
+    padding: 20px 28px;
 
     &::after {
       content: unset !important;
