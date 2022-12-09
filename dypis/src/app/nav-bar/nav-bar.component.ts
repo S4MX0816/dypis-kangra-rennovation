@@ -1,7 +1,7 @@
 import { Component, HostListener, ViewChild } from '@angular/core';
 import { faBars, faXmark } from '@fortawesome/free-solid-svg-icons';
 import { menuItems } from '../utils/data';
-import { hamburgerSildingAnimation } from './hamburger-animation';
+import { hamburgerSildingAnimation } from '../utils/animation';
 
 @Component({
   selector: 'nav-bar',

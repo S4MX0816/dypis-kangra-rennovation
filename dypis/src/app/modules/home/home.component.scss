@@ -1,14 +1,5 @@
 @import "../../utils/variables.scss";
 
-.caraousel {
-  padding: 186px 60px;
-  width: 100%;
-  background-color: $BLUE;
-  height: calc(100vh - 372px);
-  max-height: 900px;
-  position: relative;
-}
-
 .grass {
   background: url("../../../assets/images/grass.png");
   height: 280px;
@@ -16,13 +7,65 @@
   position: absolute;
   left: 0;
   bottom: 0;
+  transform: scale(1.5);
+  background-repeat: repeat-x;
+  background-position-y: -35px;
 }
 
-.caraousel-cloud {
-  background: url("../../../assets/images/cloud-caraousel.png");
-  height: 280px;
+.carousel {
+  padding: 186px 60px;
   width: 100%;
-  position: absolute;
-  left: 0;
-  bottom: 0;
+  background-color: $BLUE;
+  height: 100vh;
+  max-height: 900px;
+  position: relative;
+  overflow: hidden;
+
+  &-content {
+    color: $WHITE;
+    padding: 50px 20px;
+    max-width: 600px;
+  }
+
+  &-sub-heading {
+    font-weight: 900;
+    text-transform: uppercase;
+  }
+
+  &-heading {
+    text-transform: uppercase;
+    font-weight: 900;
+    font-size: 40px;
+  }
+
+  &-text {
+    line-height: 24px;
+    border-radius: 0 0 5px 5px;
+  }
+
+  &-btn {
+    font-size: 14px;
+    font-weight: 700;
+    border: none;
+    padding: 18px 30px;
+    border-radius: 30px;
+    color: $WHITE;
+    background: $YELLOW;
+    text-transform: uppercase;
+  }
+
+  &-img {
+    transform: scale(1.4);
+    padding-top: 65px;
+  }
+
+  &-cloud {
+    background: url("../../../assets/images/cloud-caraousel.png");
+    height: 260px;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background-position-x: -50px;
+  }
 }
