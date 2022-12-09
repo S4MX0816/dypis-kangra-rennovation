@@ -7,6 +7,8 @@
         alt="dypis logo"
       />
     </div>
+
+    <!-- laptop menu -->
     <div
       fxHide.lt-md
       fxLayout="row"
@@ -40,6 +42,60 @@
               <span>{{ subItem.name }}</span>
             </button>
           </mat-menu>
+        </div>
+      </div>
+    </div>
+
+    <!-- tab and mobile menu -->
+    <div fxHide.gt-sm fxFlex="70" fxLayoutAlign="end">
+      <div class="bars-icon-container">
+        <fa-icon
+          class="bars-icon"
+          [icon]="barsIcon"
+          (click)="showHamburgerMenu = true"
+        ></fa-icon>
+      </div>
+
+      <div
+        *ngIf="showHamburgerMenu"
+        [@hamburgerSlideInOut]
+        class="hamburger-menu"
+      >
+        <div fxLayoutAlign="end" class="cross-icon-container">
+          <fa-icon
+            class="cross-icon"
+            [icon]="closeIcon"
+            (click)="showHamburgerMenu = false"
+          ></fa-icon>
+        </div>
+
+        <div class="menu-container" *ngFor="let menuItem of menuItems">
+          <div
+            [routerLink]="!menuItem.subMenu ? menuItem.name : null"
+            [routerLinkActive]="!menuItem.subMenu ? 'active-menu-item' : ''"
+            fxLayoutAlign="start center"
+            fxLayoutGap="6px"
+            class="menu-item"
+            [matMenuTriggerFor]="menuItem.subMenu ? menu : null"
+          >
+            <fa-icon class="icons" [icon]="menuItem.icon"></fa-icon>
+            <span>{{ menuItem.name }}</span>
+
+            <mat-menu #menu="matMenu">
+              <button
+                [routerLink]="subItem.name"
+                routerLinkActive="active-menu-item"
+                class="sub-item"
+                mat-menu-item
+                fxLayoutAlign="start center"
+                fxLayoutGap="6px"
+                *ngFor="let subItem of menuItem.subMenu"
+              >
+                <fa-icon class="icons" [icon]="subItem.icon"></fa-icon>
+                <span>{{ subItem.name }}</span>
+              </button>
+            </mat-menu>
+          </div>
         </div>
       </div>
     </div>

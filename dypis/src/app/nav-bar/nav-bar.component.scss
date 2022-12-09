@@ -7,6 +7,7 @@
   width: 100%;
   padding: 0 112px;
   z-index: 999;
+  transition: 800ms;
 }
 
 .header-logo-container {
@@ -49,9 +50,60 @@
 
 .icons {
   font-size: 12px;
+  width: 16px;
 }
 
 .active-menu-item {
   color: $BLUE;
   border-color: $BLUE;
+}
+
+.bars-icon-container {
+  padding-top: 28px;
+}
+
+.bars-icon,
+.cross-icon {
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.cross-icon-container {
+  padding: 24px 40px;
+}
+
+.bars-icon {
+  color: $LIGHT-BLACK;
+}
+
+.cross-icon {
+  color: $WHITE;
+}
+
+.hamburger-menu {
+  height: 100vh;
+  width: 270px;
+  background: $DARK-BLACK;
+  position: absolute;
+  right: 0;
+}
+
+@media screen and (max-width: 959px) {
+  .menu-item {
+    color: $WHITE;
+    border-top: unset;
+
+    &::after {
+      content: unset !important;
+    }
+  }
+}
+
+@media screen and (max-width: 599px) {
+  .nav-container {
+    background-image: unset;
+    background: $WHITE;
+    height: 90px;
+    padding: 0 42px;
+  }
 }
