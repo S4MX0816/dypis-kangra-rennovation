@@ -29,16 +29,26 @@ export const guyCarouselAnimation = [
   trigger('guySlidingUp', [
     transition(':enter', [
       style({
-        transform: 'translateY(100%) scale(1.4)',
-        filter: 'brightness(0) blur(10px)',
+        transform: 'translateY(115%)',
       }),
       animate(
-        '1.5s 2s ease-in',
-        keyframes([
-          style({ transform: 'translateY(0) scale(1.4)', offset: 0.3 }),
-          style({ filter: 'brightness(0) blur(10px)', offset: 0.5 }),
-          style({ filter: 'brightness(1) blur(0)', offset: 1 }),
-        ])
+        '600ms 2s ease-out',
+        keyframes([style({ transform: 'translateY(0)' })])
+      ),
+    ]),
+  ]),
+];
+
+export const textBlockCarouselAnimation = [
+  trigger('textBlockSlidingUp', [
+    transition(':enter', [
+      style({
+        transform: 'translateY(2%)',
+        opacity: 0.4,
+      }),
+      animate(
+        '2s ease-in',
+        keyframes([style({ transform: 'translateY(0)', opacity: 1 })])
       ),
     ]),
   ]),

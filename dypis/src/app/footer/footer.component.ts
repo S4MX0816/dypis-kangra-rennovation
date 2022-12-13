@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+
 import { addressDetails, menuItems } from '../utils/data';
 
 @Component({

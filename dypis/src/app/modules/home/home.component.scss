@@ -24,7 +24,6 @@
   &-content {
     color: $WHITE;
     padding: 50px 20px;
-    max-width: 600px;
   }
 
   &-sub-heading {
@@ -52,11 +51,12 @@
     color: $WHITE;
     background: $YELLOW;
     text-transform: uppercase;
+    cursor: pointer;
+    z-index: 1;
   }
 
   &-img {
-    transform: scale(1.4);
-    padding-top: 65px;
+    height: 114%;
   }
 
   &-cloud {
@@ -67,5 +67,36 @@
     left: 0;
     bottom: 0;
     background-position-x: -50px;
+  }
+}
+
+@media screen and (max-width: 1279px) {
+}
+
+@media screen and (max-width: 959px) {
+  .carousel {
+    height: 70vh;
+  }
+
+  .grass {
+    height: 178px;
+    transform: unset;
+    background-size: cover;
+    background-position-y: bottom;
+  }
+
+  .carousel-cloud {
+    height: 130px;
+    background-size: cover;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .carousel {
+    height: 50vh;
+  }
+
+  .carousel-cloud {
+    display: none;
   }
 }

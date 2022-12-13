@@ -1,6 +1,8 @@
 import { Component, HostListener, ViewChild } from '@angular/core';
 import { faBars, faXmark } from '@fortawesome/free-solid-svg-icons';
-import { menuItems } from '../utils/data';
+
+import { MenuItem, menuItems } from '../utils/data';
+import { openAdmission } from '../utils/helpers';
 import { hamburgerSildingAnimation } from '../utils/animation';
 
 @Component({
@@ -14,6 +16,7 @@ export class NavBarComponent {
   barsIcon = faBars;
   closeIcon = faXmark;
   showHamburgerMenu = false;
+  openAdmission = openAdmission;
 
   @HostListener('window:click', ['$event'])
   closeHamburger(event: Event): void {
@@ -34,5 +37,17 @@ export class NavBarComponent {
   openHamburgerMenu(event: Event): void {
     event.stopPropagation();
     this.showHamburgerMenu = true;
+  }
+
+  getRouterLink(menuItem: MenuItem, isClass = false): string {
+    const defaultReturn = '';
+    const mainReturn = isClass ? 'active-menu-item' : menuItem.name;
+    if (menuItem.name === 'admission') {
+      return '';
+    }
+    if (menuItem.subMenu) {
+      return '';
+    }
+    return mainReturn;
   }
 }

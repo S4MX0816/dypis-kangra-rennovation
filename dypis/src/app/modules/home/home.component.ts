@@ -1,10 +1,17 @@
 import { Component } from '@angular/core';
-import { guyCarouselAnimation } from 'src/app/utils/animation';
+
+import {
+  guyCarouselAnimation,
+  textBlockCarouselAnimation,
+} from '../../utils/animation';
+import { openAdmission } from '../../utils/helpers';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
-  animations: guyCarouselAnimation,
+  animations: [guyCarouselAnimation, textBlockCarouselAnimation],
 })
-export class HomeComponent {}
+export class HomeComponent {
+  openAdmission = openAdmission;
+}
