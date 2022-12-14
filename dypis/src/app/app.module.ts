@@ -10,9 +10,6 @@ import { AppComponent } from './app.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './modules/home/home.component';
-import { Router } from '@angular/router';
-
-export let router: Router;
 
 @NgModule({
   declarations: [AppComponent, NavBarComponent, FooterComponent, HomeComponent],
@@ -28,7 +25,5 @@ export let router: Router;
   bootstrap: [AppComponent],
 })
 export class AppModule {
-  constructor(private routerInj: Router) {
-    router = routerInj;
-  }
+  constructor() {}
 }

@@ -18,12 +18,13 @@
     >
       <div class="menu-container" *ngFor="let menuItem of menuItems">
         <div
-          [class.active]="menuItem.routerLinkActive"
+          [routerLink]="menuItem.routerLink"
+          [routerLinkActive]="menuItem.routerLinkActive"
           fxLayoutAlign="start center"
           fxLayoutGap="6px"
           class="menu-item"
           [matMenuTriggerFor]="menuItem.subMenu ? menu : null"
-          (click)="menuItem.action()"
+          (click)="menuItem?.action()"
         >
           <fa-icon class="icons" [icon]="menuItem.icon"></fa-icon>
           <span>{{ menuItem.name }}</span>

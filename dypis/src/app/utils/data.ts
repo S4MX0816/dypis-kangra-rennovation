@@ -16,14 +16,15 @@ import {
   faUsersRectangle,
   IconDefinition,
 } from '@fortawesome/free-solid-svg-icons';
-import { openAdmission, routeToLink } from './helpers';
+import { openAdmission } from './helpers';
 
 const routerLinkActive = 'active-menu-item';
 
 interface SingleMenuItem {
   name: string;
   icon: IconDefinition;
-  action: () => void;
+  action?: () => void;
+  routerLink: string;
   routerLinkActive: string;
 }
 
@@ -35,43 +36,44 @@ export const menuItems: MenuItem[] = [
   {
     name: 'home',
     icon: faHome,
-    action: routeToLink.bind(this, 'home'),
+    routerLink: 'home',
     routerLinkActive,
   },
   {
     name: 'admission',
     icon: faSchool,
     action: openAdmission,
-    routerLinkActive,
+    routerLink: '',
+    routerLinkActive: '',
   },
   {
     name: 'academics',
     icon: faGraduationCap,
-    action: routeToLink.bind(this, null),
+    routerLink: '',
     routerLinkActive: '',
     subMenu: [
       {
         name: 'courses of study',
         icon: faBook,
-        action: routeToLink.bind(this, 'courses of study'),
+        routerLink: 'courses of study',
         routerLinkActive,
       },
       {
         name: 'examination and promotion',
         icon: faFilePen,
-        action: routeToLink.bind(this, 'examination and promotion'),
+        routerLink: 'examination and promotion',
         routerLinkActive,
       },
       {
         name: 'date sheet',
         icon: faCalendarDays,
-        action: routeToLink.bind(this, 'date sheet'),
+        routerLink: 'date sheet',
         routerLinkActive,
       },
       {
         name: 'virtual schooling',
         icon: faMobileScreen,
-        action: routeToLink.bind(this, 'virtual schooling'),
+        routerLink: 'virtual schooling',
         routerLinkActive,
       },
     ],
@@ -79,31 +81,31 @@ export const menuItems: MenuItem[] = [
   {
     name: 'faculty',
     icon: faChalkboardUser,
-    action: routeToLink.bind(this, 'faculty'),
+    routerLink: 'faculty',
     routerLinkActive,
   },
   {
     name: 'about us',
     icon: faAddressCard,
-    action: routeToLink.bind(this, 'about us'),
+    routerLink: '',
     routerLinkActive: '',
     subMenu: [
       {
         name: 'about dypis',
         icon: faUsersRectangle,
-        action: routeToLink.bind(this, 'about dypis'),
+        routerLink: 'about dypis',
         routerLinkActive,
       },
       {
         name: 'vision and mission',
         icon: faLightbulb,
-        action: routeToLink.bind(this, 'vision and mission'),
+        routerLink: 'vision and mission',
         routerLinkActive,
       },
       {
         name: "chairman's message",
         icon: faHeadSideCough,
-        action: routeToLink.bind(this, "chairman's message"),
+        routerLink: "chairman's message",
         routerLinkActive,
       },
     ],
@@ -111,7 +113,7 @@ export const menuItems: MenuItem[] = [
   {
     name: 'contact us',
     icon: faPhone,
-    action: routeToLink.bind(this, 'contact us'),
+    routerLink: 'contact us',
     routerLinkActive,
   },
 ];

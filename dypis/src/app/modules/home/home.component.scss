@@ -38,7 +38,6 @@
   }
 
   &-text {
-    line-height: 24px;
     border-radius: 0 0 5px 5px;
   }
 
@@ -71,11 +70,54 @@
 }
 
 @media screen and (max-width: 1279px) {
+  .carousel {
+    &-sub-heading {
+      font-size: 14px;
+    }
+
+    &-heading {
+      font-size: 32px;
+    }
+
+    &-text {
+      font-size: 14px;
+    }
+
+    &-btn {
+      padding: 16px 20px;
+    }
+  }
 }
 
 @media screen and (max-width: 959px) {
   .carousel {
     height: 70vh;
+    padding: 122px 30px;
+
+    &-content {
+      padding: 44px 12px;
+    }
+
+    &-img {
+      height: 128%;
+    }
+
+    &-sub-heading {
+      font-size: 14px;
+    }
+
+    &-heading {
+      font-size: 28px;
+    }
+
+    &-text {
+      font-size: 14px;
+    }
+
+    &-cloud {
+      height: 130px;
+      background-size: cover;
+    }
   }
 
   .grass {
@@ -84,19 +126,44 @@
     background-size: cover;
     background-position-y: bottom;
   }
-
-  .carousel-cloud {
-    height: 130px;
-    background-size: cover;
-  }
 }
 
 @media screen and (max-width: 600px) {
   .carousel {
-    height: 50vh;
+    height: 40vh;
+    padding: 104px 30px 70px 30px;
+
+    &-content {
+      padding: unset;
+    }
+
+    &-img {
+      height: 136%;
+    }
+
+    &-sub-heading {
+      font-size: 8px;
+    }
+
+    &-heading {
+      font-size: 12px;
+    }
+
+    &-text {
+      font-size: 8px;
+    }
+
+    &-btn {
+      font-size: 10px;
+      padding: 10px 12px;
+    }
+
+    &-cloud {
+      display: none;
+    }
   }
 
-  .carousel-cloud {
-    display: none;
+  .grass {
+    height: 100px;
   }
 }
