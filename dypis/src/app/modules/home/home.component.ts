@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 import {
   guyCarouselAnimation,
+  roboticsKidCarouselAnimation,
   textBlockCarouselAnimation,
 } from '../../utils/animation';
 import { openAdmission } from '../../utils/helpers';
@@ -10,8 +11,19 @@ import { openAdmission } from '../../utils/helpers';
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
-  animations: [guyCarouselAnimation, textBlockCarouselAnimation],
+  animations: [
+    guyCarouselAnimation,
+    roboticsKidCarouselAnimation,
+    textBlockCarouselAnimation,
+  ],
 })
-export class HomeComponent {
+export class HomeComponent implements OnInit {
+  carouselNumber = 1;
   openAdmission = openAdmission;
+
+  ngOnInit(): void {
+    setInterval(() => {
+      this.carouselNumber++;
+    }, 6000);
+  }
 }

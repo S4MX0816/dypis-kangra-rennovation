@@ -42,6 +42,7 @@
   }
 
   &-btn {
+    margin-top: 16px;
     font-size: 14px;
     font-weight: 700;
     border: none;
@@ -67,6 +68,10 @@
     bottom: 0;
     background-position-x: -50px;
   }
+}
+
+.robotics-kid {
+  transform: scaleX(-1);
 }
 
 @media screen and (max-width: 1279px) {
@@ -114,6 +119,10 @@
       font-size: 14px;
     }
 
+    &-btn {
+      margin-top: 8px;
+    }
+
     &-cloud {
       height: 130px;
       background-size: cover;
@@ -157,6 +166,7 @@
     &-btn {
       font-size: 10px;
       padding: 10px 12px;
+      margin-top: unset;
     }
 
     &-cloud {

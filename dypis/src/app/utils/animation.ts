@@ -25,6 +25,7 @@ export const hamburgerSildingAnimation = [
   ]),
 ];
 
+const imageTransitionDuration = '600ms 300ms ease-out';
 export const guyCarouselAnimation = [
   trigger('guySlidingUp', [
     transition(':enter', [
@@ -32,8 +33,22 @@ export const guyCarouselAnimation = [
         transform: 'translateY(115%)',
       }),
       animate(
-        '600ms 2s ease-out',
+        imageTransitionDuration,
         keyframes([style({ transform: 'translateY(0)' })])
+      ),
+    ]),
+  ]),
+];
+
+export const roboticsKidCarouselAnimation = [
+  trigger('roboticsKidSlidingUp', [
+    transition(':enter', [
+      style({
+        transform: 'translateY(115%) scaleX(-1)',
+      }),
+      animate(
+        imageTransitionDuration,
+        keyframes([style({ transform: 'translateY(0) scaleX(-1)' })])
       ),
     ]),
   ]),
