@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { faAnglesUp } from '@fortawesome/free-solid-svg-icons';
 
 import { addressDetails, menuItems } from '../utils/data';
 
@@ -10,4 +11,9 @@ import { addressDetails, menuItems } from '../utils/data';
 export class FooterComponent {
   menuItems = menuItems;
   addressDetails = addressDetails;
+  faAnglesUp = faAnglesUp;
+
+  goToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
 }

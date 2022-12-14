@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { faAnglesDown } from '@fortawesome/free-solid-svg-icons';
 
 import {
   guyCarouselAnimation,
@@ -20,10 +21,15 @@ import { openAdmission } from '../../utils/helpers';
 export class HomeComponent implements OnInit {
   carouselNumber = 1;
   openAdmission = openAdmission;
+  faAnglesDown = faAnglesDown;
 
   ngOnInit(): void {
     setInterval(() => {
       this.carouselNumber++;
     }, 6000);
+  }
+
+  goToSection(elRef: HTMLDivElement): void {
+    elRef.scrollIntoView({ behavior: 'smooth' });
   }
 }

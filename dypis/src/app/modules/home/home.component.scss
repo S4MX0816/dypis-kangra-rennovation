@@ -74,6 +74,18 @@
   transform: scaleX(-1);
 }
 
+.down-arrow {
+  color: $YELLOW;
+  font-size: 50px;
+  margin-bottom: 40px;
+  cursor: pointer;
+}
+
+.services {
+  background: $WHITE;
+  padding: 24px;
+}
+
 @media screen and (max-width: 1279px) {
   .carousel {
     &-sub-heading {

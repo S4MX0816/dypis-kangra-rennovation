@@ -4,23 +4,22 @@
   background-image: url("../../assets/images/footer.png");
   padding: 60px 42px;
   position: relative;
+  z-index: 1;
+}
 
-  &::before {
-    content: "^";
-    color: $WHITE;
-    font-size: 32px;
-    padding-top: 10px;
-    text-align: center;
-    background: $BLACK;
-    top: 0;
-    left: 50%;
-    position: absolute;
-    border-radius: 50%;
-    width: 140px;
-    height: 120px;
-    transform: translate(-50%, -28%);
-    z-index: -1;
-  }
+.bulge-circle {
+  color: $WHITE;
+  font-size: 28px;
+  padding-top: 8px;
+  text-align: center;
+  background: $BLACK;
+  left: 50%;
+  position: absolute;
+  border-radius: 50%;
+  width: 140px;
+  height: 120px;
+  transform: translate(-50%, -36%);
+  cursor: pointer;
 }
 
 .footer-header {
