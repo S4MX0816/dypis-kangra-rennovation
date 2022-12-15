@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { zoomInUpAnimation } from 'src/app/utils/animation';
 
 import { facilities } from '../../../utils/data';
 
@@ -6,6 +7,7 @@ import { facilities } from '../../../utils/data';
   selector: 'facilities',
   templateUrl: './facilities.component.html',
   styleUrls: ['./facilities.component.scss'],
+  animations: [zoomInUpAnimation],
 })
 export class FacilitiesComponent implements OnInit {
   facilities = facilities;

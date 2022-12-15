@@ -6,6 +6,7 @@
     fxLayoutGap="24px"
   >
     <div
+      [@zoomInUp]
       class="facilities-details"
       fxLayout="column"
       fxLayoutAlign="start center"
@@ -28,6 +29,7 @@
     >
       <ng-container *ngFor="let facility of facilities">
         <div
+          [@zoomInUp]
           fxLayout="column"
           class="facility-container"
           fxLayoutGap="12px"
