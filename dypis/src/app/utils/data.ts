@@ -28,6 +28,12 @@ interface SingleMenuItem {
   routerLinkActive: string;
 }
 
+interface Facility {
+  name: string;
+  text: string;
+  image: string;
+}
+
 export interface MenuItem extends SingleMenuItem {
   subMenu?: SingleMenuItem[];
 }
@@ -131,5 +137,38 @@ export const addressDetails = [
   {
     detail: 'dypisk@gmail.com',
     icon: faSquareEnvelope,
+  },
+];
+
+export const facilities = [
+  {
+    name: 'school bus',
+    text: 'Li Europan lingues es membres del sam familie. Lor separat existentie es un',
+    image: '/assets/images/bus.png',
+  },
+  {
+    name: 'custom food',
+    text: 'Li Europan lingues es membres del sam familie. Lor separat existentie es un',
+    image: '/assets/images/french-fries.png',
+  },
+  {
+    name: 'science labs',
+    text: 'Li Europan lingues es membres del sam familie. Lor separat existentie es un',
+    image: '/assets/images/bulb.png',
+  },
+  {
+    name: 'world classes',
+    text: 'Li Europan lingues es membres del sam familie. Lor separat existentie es un',
+    image: '/assets/images/pencil.png',
+  },
+  {
+    name: 'funny games',
+    text: 'Li Europan lingues es membres del sam familie. Lor separat existentie es un',
+    image: '/assets/images/book.png',
+  },
+  {
+    name: 'great facilities',
+    text: 'Li Europan lingues es membres del sam familie. Lor separat existentie es un',
+    image: '/assets/images/trophy.png',
   },
 ];

@@ -22,15 +22,16 @@ export class CarouselComponent {
   carouselNumber = 1;
   openAdmission = openAdmission;
   faAnglesDown = faAnglesDown;
+  readonly CAROUSEL_DURATION = 6000; // in milliseconds
 
   constructor() {
     setInterval(() => {
       this.carouselNumber++;
-    }, 6000);
+    }, this.CAROUSEL_DURATION);
   }
 
   goToFacilities(): void {
     const facilitiesDiv = document.getElementById('facilities');
-    facilitiesDiv?.scrollIntoView({ behavior: 'smooth' });
+    facilitiesDiv?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
   }
 }

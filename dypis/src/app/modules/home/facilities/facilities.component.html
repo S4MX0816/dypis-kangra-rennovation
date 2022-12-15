@@ -1,1 +1,48 @@
-<div id="facilities" class="facilities"></div>
+<div id="facilities" fxLayoutAlign="center" class="facilities">
+  <div
+    class="w-full w-m-1320 facilities-max-width-container"
+    fxLayout.gt-sm="row"
+    fxLayout.lt-md="column"
+    fxLayoutGap="24px"
+  >
+    <div
+      class="facilities-details"
+      fxLayout="column"
+      fxLayoutAlign="start center"
+      fxLayoutGap="44px"
+    >
+      <div fxLayoutAlign="start center" class="facilities-heading">
+        <img src="/assets/images/pencil.png" alt="pencil" />
+        <span>Our facilities</span>
+      </div>
+      <div class="facilities-text">
+        Our facilities comprise a mix of academics and extracurricular that
+        continually engage the child's attention and personal growth.
+      </div>
+    </div>
+    <div
+      fxLayout="row wrap"
+      fxLayoutAlign.gt-md="start center"
+      fxLayoutAlign.lt-lg="space-between"
+      fxLayoutAlign.lt-md="center"
+    >
+      <ng-container *ngFor="let facility of facilities">
+        <div
+          fxLayout="column"
+          class="facility-container"
+          fxLayoutGap="12px"
+          fxLayoutAlign.gt-sm="start start"
+          fxLayoutAlign.lt-md="start center"
+        >
+          <img
+            class="facility-image"
+            [src]="facility.image"
+            [alt]="facility.name"
+          />
+          <span class="facility-name">{{ facility.name }}</span>
+          <span>{{ facility.text }}</span>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+</div>

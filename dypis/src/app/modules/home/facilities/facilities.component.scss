@@ -2,5 +2,114 @@
 
 .facilities {
   background: $WHITE;
-  padding: 24px;
+  padding: 64px;
+}
+
+.facilities-details {
+  background: url("../../../../assets/images/facilities.png");
+  padding: 44px;
+  min-width: 526px;
+  width: 526px;
+  height: 540px;
+  background-size: cover;
+  background-position: center;
+}
+
+.facilities-heading {
+  position: relative;
+
+  img {
+    width: 75px;
+  }
+
+  span {
+    color: $BLACK;
+    font-weight: 700;
+    font-size: 22px;
+    text-transform: uppercase;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: #191919;
+    bottom: 0;
+    left: 75px;
+  }
+}
+
+.facility {
+  &-container {
+    padding: 20px 12px 0 12px;
+    width: 256px;
+    height: 250px;
+  }
+
+  &-image {
+    width: 110px;
+  }
+
+  &-name {
+    font-weight: 700;
+    font-size: 18px;
+    color: $BLACK;
+  }
+}
+
+@media screen and (max-width: 1460px) {
+  .facilities-max-width-container {
+    max-width: 1140px;
+  }
+
+  .facilities-details {
+    min-width: 450px;
+    width: 450px;
+  }
+
+  .facility-container {
+    width: 220px;
+  }
+}
+
+@media screen and (max-width: 1279px) {
+  .facilities-max-width-container {
+    max-width: 960px;
+  }
+
+  .facilities-details {
+    min-width: 376px;
+    width: 376px;
+  }
+
+  .facility-container {
+    width: 178px;
+  }
+
+  .facilities {
+    padding: 64px 12px;
+  }
+}
+
+@media screen and (max-width: 959px) {
+  .facilities {
+    padding: 64px 24px;
+  }
+
+  .facilities-details {
+    padding: unset;
+    width: 100%;
+    background: unset;
+    height: unset;
+    min-width: unset;
+  }
+
+  .facility-container {
+    width: 240px;
+  }
+}
+
+@media screen and (max-width: 599px) {
 }
