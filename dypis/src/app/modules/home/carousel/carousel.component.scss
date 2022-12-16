@@ -20,6 +20,7 @@
   max-height: 900px;
   position: relative;
   overflow: hidden;
+  z-index: 1;
 
   &-content {
     color: $WHITE;
@@ -177,7 +178,7 @@
     }
 
     &-cloud {
-      display: none;
+      display: none !important;
     }
   }
 

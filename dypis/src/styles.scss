@@ -1,4 +1,5 @@
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import "./app/utils/variables.scss";
 
 /* You can add global styles to this file, and also import other style files */
 * {
@@ -19,6 +20,58 @@
   width: 100%;
 }
 
+.max-width-container {
+  width: 100%;
+  max-width: 1320px;
+}
+
 .cursor-pointer {
   cursor: pointer;
+}
+
+.section-heading,
+.section-heading-card {
+  position: relative;
+
+  img {
+    width: 75px;
+  }
+
+  span {
+    color: $BLACK;
+    font-weight: 700;
+    font-size: 22px;
+    text-transform: uppercase;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: #191919;
+  }
+}
+
+.section-heading::after {
+  bottom: -7px;
+  left: 20px;
+}
+
+.section-heading-card::after {
+  bottom: 0;
+  left: 75px;
+}
+
+@media screen and (max-width: 1460px) {
+  .max-width-container {
+    max-width: 1140px;
+  }
+}
+
+@media screen and (max-width: 1279px) {
+  .max-width-container {
+    max-width: 960px;
+  }
 }

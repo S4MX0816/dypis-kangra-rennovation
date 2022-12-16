@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild, ViewChildren } from '@angular/core';
 
 import { facilities } from '../../../utils/data';
 import { zoomInUpAnimation } from '../../../utils/animation';
@@ -11,9 +11,11 @@ import { updateAnimationStateOnScroll } from '../../../utils/helpers';
   animations: [zoomInUpAnimation],
 })
 export class FacilitiesComponent {
+  @ViewChildren('facilitySection') x: any;
   facilities = facilities;
   updateAnimationStateOnScroll = updateAnimationStateOnScroll;
   state = 'start';
+  log = console.log;
 
   constructor() {}
 }

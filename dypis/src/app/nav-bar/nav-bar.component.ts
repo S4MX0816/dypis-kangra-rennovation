@@ -1,7 +1,8 @@
 import { Component, HostListener, ViewChild } from '@angular/core';
 import { faBars, faXmark } from '@fortawesome/free-solid-svg-icons';
 
-import { MenuItem, menuItems } from '../utils/data';
+import { menuItems } from '../utils/data';
+import { MenuItem } from '../models/interfaces';
 import { openAdmission } from '../utils/helpers';
 import { hamburgerSildingAnimation } from '../utils/animation';
 

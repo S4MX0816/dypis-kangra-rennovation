@@ -15,32 +15,6 @@
   background-position: center;
 }
 
-.facilities-heading {
-  position: relative;
-
-  img {
-    width: 75px;
-  }
-
-  span {
-    color: $BLACK;
-    font-weight: 700;
-    font-size: 22px;
-    text-transform: uppercase;
-  }
-
-  &::after {
-    content: "";
-    position: absolute;
-    display: block;
-    width: 60px;
-    height: 3px;
-    background: #191919;
-    bottom: 0;
-    left: 75px;
-  }
-}
-
 .facility {
   &-container {
     padding: 20px 12px 0 12px;
@@ -66,14 +40,11 @@
     font-weight: 700;
     font-size: 18px;
     color: $BLACK;
+    text-transform: uppercase;
   }
 }
 
 @media screen and (max-width: 1460px) {
-  .facilities-max-width-container {
-    max-width: 1140px;
-  }
-
   .facilities-details {
     min-width: 450px;
     width: 450px;

@@ -12,9 +12,18 @@ import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './modules/home/home.component';
 import { CarouselComponent } from './modules/home/carousel/carousel.component';
 import { FacilitiesComponent } from './modules/home/facilities/facilities.component';
+import { SpecialClassesComponent } from './modules/home/special-classes/special-classes.component';
 
 @NgModule({
-  declarations: [AppComponent, NavBarComponent, FooterComponent, HomeComponent, CarouselComponent, FacilitiesComponent],
+  declarations: [
+    AppComponent,
+    NavBarComponent,
+    FooterComponent,
+    HomeComponent,
+    CarouselComponent,
+    FacilitiesComponent,
+    SpecialClassesComponent,
+  ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,

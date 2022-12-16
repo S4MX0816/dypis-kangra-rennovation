@@ -11,7 +11,7 @@ export function updateAnimationStateOnScroll<T>(
 ) {
   if (
     currentState !== 'final' &&
-    window.innerHeight - el.getBoundingClientRect().top > 130
+    window.innerHeight - el?.getBoundingClientRect().top > 130
   ) {
     this['state' as keyof T] = 'final' as any;
   }
