@@ -22,6 +22,10 @@
   img {
     width: 100%;
   }
+
+  &:hover .card-heading {
+    color: $DARK-GREEN;
+  }
 }
 
 .card-content {

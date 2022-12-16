@@ -10,12 +10,7 @@
       <img src="/assets/images/pencil.png" alt="pencil" />
       <span>Our facilities</span>
     </div>
-    <div
-      #cardsContainer
-      fxLayout="row"
-      fxLayoutGap="24px"
-      class="cards-container"
-    >
+    <div fxLayout="row" fxLayoutGap="24px" class="cards-container">
       <ng-container *ngFor="let specialClass of specialClasses; let i = index">
         <div [@zoomInUp]="state" fxLayout="column" class="special-class-card">
           <img [src]="specialClass.image" [alt]="specialClass.name" />
