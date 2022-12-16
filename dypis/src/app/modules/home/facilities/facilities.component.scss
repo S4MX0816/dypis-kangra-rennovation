@@ -46,10 +46,20 @@
     padding: 20px 12px 0 12px;
     width: 256px;
     height: 250px;
+    transition: 700ms;
+
+    &:hover {
+      margin-top: -20px;
+
+      .facility-image {
+        transform: rotateY(360deg);
+      }
+    }
   }
 
   &-image {
     width: 110px;
+    transition: 700ms;
   }
 
   &-name {
