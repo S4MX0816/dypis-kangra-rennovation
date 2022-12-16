@@ -140,7 +140,7 @@ export const addressDetails = [
   },
 ];
 
-export const facilities = [
+export const facilities: Facility[] = [
   {
     name: 'school bus',
     text: 'Li Europan lingues es membres del sam familie. Lor separat existentie es un',

@@ -1,6 +1,7 @@
 import {
   animate,
   keyframes,
+  state,
   style,
   transition,
   trigger,
@@ -71,12 +72,16 @@ export const textBlockCarouselAnimation = [
 
 export const zoomInUpAnimation = [
   trigger('zoomInUp', [
-    transition('void => *', [
+    state(
+      'start',
       style({
         opacity: 0,
         transform: 'scale3d(.1, .1, .1) translate3d(0, -1000px, 0)',
         animationTimingFunction: 'cubic-bezier(0.550, 0.055, 0.675, 0.190)',
-      }),
+      })
+    ),
+    transition(
+      'start=>final',
       animate(
         '1s',
         keyframes([
@@ -93,7 +98,7 @@ export const zoomInUpAnimation = [
             offset: 1,
           }),
         ])
-      ),
-    ]),
+      )
+    ),
   ]),
 ];

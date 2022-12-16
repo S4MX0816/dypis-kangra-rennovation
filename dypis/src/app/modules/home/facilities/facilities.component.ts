@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
-import { zoomInUpAnimation } from 'src/app/utils/animation';
+import { Component } from '@angular/core';
 
 import { facilities } from '../../../utils/data';
+import { zoomInUpAnimation } from '../../../utils/animation';
+import { updateAnimationStateOnScroll } from '../../../utils/helpers';
 
 @Component({
   selector: 'facilities',
@@ -9,10 +10,10 @@ import { facilities } from '../../../utils/data';
   styleUrls: ['./facilities.component.scss'],
   animations: [zoomInUpAnimation],
 })
-export class FacilitiesComponent implements OnInit {
+export class FacilitiesComponent {
   facilities = facilities;
+  updateAnimationStateOnScroll = updateAnimationStateOnScroll;
+  state = 'start';
 
   constructor() {}
-
-  ngOnInit(): void {}
 }

@@ -1,4 +1,10 @@
-<div id="facilities" fxLayoutAlign="center" class="facilities">
+<div
+  #facilitySection
+  id="facilities"
+  fxLayoutAlign="center"
+  class="facilities"
+  (window:scroll)="updateAnimationStateOnScroll(facilitySection, state)"
+>
   <div
     class="w-full w-m-1320 facilities-max-width-container"
     fxLayout.gt-sm="row"
@@ -6,7 +12,7 @@
     fxLayoutGap="24px"
   >
     <div
-      [@zoomInUp]
+      [@zoomInUp]="state"
       class="facilities-details"
       fxLayout="column"
       fxLayoutAlign="start center"
@@ -29,7 +35,7 @@
     >
       <ng-container *ngFor="let facility of facilities">
         <div
-          [@zoomInUp]
+          [@zoomInUp]="state"
           fxLayout="column"
           class="facility-container"
           fxLayoutGap="12px"
