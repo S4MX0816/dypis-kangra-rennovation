@@ -1,14 +1,31 @@
 <div fxLayoutAlign="center" class="special-classes">
-  <div
-    class="max-width-container"
-    fxLayout.gt-sm="row"
-    fxLayout.lt-md="column"
-    fxLayoutGap="24px"
-  >
+  <div class="max-width-container" fxLayout="column" fxLayoutGap="44px">
     <div fxLayoutAlign="start center" class="section-heading">
       <img src="/assets/images/pencil.png" alt="pencil" />
       <span>Our facilities</span>
     </div>
-    <div></div>
+    <div
+      fxLayout="row"
+      fxLayoutAlign.gt-xs="space-between"
+      fxLayoutAlign.lt-sm="center"
+      fxLayoutGap="24px"
+      class="cards-container"
+      (window:resize)="onResize($event.target)"
+    >
+      <ng-container *ngFor="let specialClass of specialClasses">
+        <div fxLayoutGap="12px" fxLayout="column" class="special-class-card">
+          <img [src]="specialClass.image" [alt]="specialClass.name" />
+          <div
+            fxLayout="column"
+            fxLayoutAlign="start center"
+            fxLayoutGap="12px"
+            class="card-content"
+          >
+            <div class="card-heading">{{ specialClass.name }}</div>
+            <div class="card-text">{{ specialClass.text }}</div>
+          </div>
+        </div>
+      </ng-container>
+    </div>
   </div>
 </div>

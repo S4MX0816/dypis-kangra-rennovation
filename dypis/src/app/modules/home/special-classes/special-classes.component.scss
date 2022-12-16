@@ -1,4 +1,47 @@
+@import "/src/app/utils/variables.scss";
+
 .special-classes {
   background: url("../../../../assets/images/special-classes-bg.png");
   padding: 64px;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.cards-container {
+  overflow: hidden;
+}
+
+.special-class-card {
+  background: $WHITE;
+  border-radius: 12px;
+  overflow: hidden;
+  width: 100%;
+
+  img {
+    width: 100%;
+  }
+}
+
+.card-content {
+  padding: 12px 30px;
+}
+
+.card-heading {
+  font-weight: 700;
+  font-size: 18px;
+  color: $BLACK;
+  text-transform: uppercase;
+}
+
+.card-text {
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 25px;
+  text-align: center;
+}
+
+@media screen and (max-width: 599px) {
+  .special-classes {
+    padding: 64px 24px;
+  }
 }
