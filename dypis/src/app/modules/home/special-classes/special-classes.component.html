@@ -1,19 +1,23 @@
-<div fxLayoutAlign="center" class="special-classes">
+<div
+  #specialClassesSection
+  fxLayoutAlign="center"
+  class="special-classes"
+  (window:load)="updateAnimationStateOnScroll(specialClassesSection, state)"
+  (window:scroll)="updateAnimationStateOnScroll(specialClassesSection, state)"
+>
   <div class="max-width-container" fxLayout="column" fxLayoutGap="44px">
     <div fxLayoutAlign="start center" class="section-heading">
       <img src="/assets/images/pencil.png" alt="pencil" />
       <span>Our facilities</span>
     </div>
     <div
+      #cardsContainer
       fxLayout="row"
-      fxLayoutAlign.gt-xs="space-between"
-      fxLayoutAlign.lt-sm="center"
       fxLayoutGap="24px"
       class="cards-container"
-      (window:resize)="onResize($event.target)"
     >
-      <ng-container *ngFor="let specialClass of specialClasses">
-        <div fxLayoutGap="12px" fxLayout="column" class="special-class-card">
+      <ng-container *ngFor="let specialClass of specialClasses; let i = index">
+        <div [@zoomInUp]="state" fxLayout="column" class="special-class-card">
           <img [src]="specialClass.image" [alt]="specialClass.name" />
           <div
             fxLayout="column"

@@ -15,7 +15,9 @@
   background: $WHITE;
   border-radius: 12px;
   overflow: hidden;
-  width: 100%;
+  width: calc((100% - 72px) / 4);
+  min-width: calc((100% - 72px) / 4);
+  max-width: calc((100% - 72px) / 4);
 
   img {
     width: 100%;
@@ -40,8 +42,26 @@
   text-align: center;
 }
 
+@media screen and (max-width: 1279px) {
+  .special-class-card {
+    width: calc((100% - 48px) / 3);
+    min-width: calc((100% - 48px) / 3);
+    max-width: calc((100% - 48px) / 3);
+  }
+}
+
+@media screen and (max-width: 959px) {
+  .special-class-card {
+    width: calc((100% - 24px) / 2);
+    min-width: calc((100% - 24px) / 2);
+    max-width: calc((100% - 24px) / 2);
+  }
+}
+
 @media screen and (max-width: 599px) {
-  .special-classes {
-    padding: 64px 24px;
+  .special-class-card {
+    width: 100%;
+    min-width: 100%;
+    max-width: 100%;
   }
 }
