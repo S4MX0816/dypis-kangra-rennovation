@@ -1,4 +1,10 @@
-<div #gallerySection fxLayoutAlign="center" class="gallery">
+<div
+  #gallerySection
+  fxLayoutAlign="center"
+  class="gallery"
+  (window:load)="updateAnimationStateOnScroll(gallerySection, state)"
+  (window:scroll)="updateAnimationStateOnScroll(gallerySection, state)"
+>
   <div
     class="max-width-container"
     fxLayout.gt-sm="row"
@@ -6,6 +12,7 @@
     fxLayoutGap.gt-sm="24px"
   >
     <div
+      [@zoomInLeft]="state"
       class="gallery-details"
       fxLayout="column"
       fxLayoutAlign="start center"
@@ -13,7 +20,7 @@
     >
       <div fxLayoutAlign="start center" class="section-heading-card">
         <img src="/assets/images/pencil.png" alt="pencil" />
-        <span>Our facilities</span>
+        <span>Our gallery</span>
       </div>
       <div class="facilities-text">
         Our facilities comprise a mix of academics and extracurricular that
@@ -21,12 +28,17 @@
       </div>
     </div>
 
-    <div class="gallery-images" fxFlex="100" fxLayout="column">
+    <div
+      [@zoomInLeft]="state"
+      class="gallery-images"
+      fxFlex="100"
+      fxLayout="column"
+    >
       <ng-container *ngFor="let galleryRow of galleryImages">
         <div fxLayout.gt-xs="row" fxLayout.lt-sm="column">
           <ng-container *ngFor="let col of galleryRow">
             <div>
-              <img width="100%" height="100%" [src]="col" alt="gallery image" />
+              <img [src]="col" alt="gallery image" />
             </div>
           </ng-container>
         </div>

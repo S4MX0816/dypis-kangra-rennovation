@@ -103,6 +103,39 @@ export const zoomInUpAnimation = [
   ]),
 ];
 
+export const zoomInLeftAnimation = [
+  trigger('zoomInLeft', [
+    state(
+      'start',
+      style({
+        opacity: 0,
+        transform: 'scale3d(0.1, 0.1, 0.1) translate3d(-1000px, 0, 0)',
+        animationTimingFunction: 'cubic-bezier(0.55, 0.055, 0.675, 0.19)',
+      })
+    ),
+    transition(
+      'start=>final',
+      animate(
+        '1s',
+        keyframes([
+          style({
+            opacity: 1,
+            transform: 'scale3d(0.475, 0.475, 0.475) translate3d(10px, 0, 0)',
+            animationTimingFunction: 'cubic-bezier(0.175, 0.885, 0.32, 1)',
+            offset: 0.6,
+          }),
+          style({
+            opacity: 1,
+            transform: 'scale3d(1, 1, 1) translate3d(0, 0, 0)',
+            animationTimingFunction: 'cubic-bezier(0.175, 0.885, 0.32, 1)',
+            offset: 1,
+          }),
+        ])
+      )
+    ),
+  ]),
+];
+
 export const bounceInUpAnimation = [
   trigger('bounceInUp', [
     state(
