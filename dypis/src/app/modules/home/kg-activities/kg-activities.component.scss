@@ -1,0 +1,73 @@
+@import "../../../utils/variables.scss";
+
+.kg-activities {
+  background: url("/assets/images/kg-activities-bg.png");
+  padding: 64px;
+  background-size: cover;
+}
+
+.activity-details {
+  width: 75%;
+}
+
+.activity-btn {
+  font-size: 14px;
+  border-radius: 25px;
+  color: $WHITE;
+  cursor: pointer;
+  text-transform: capitalize;
+  position: relative;
+  z-index: 1;
+
+  &-container {
+    gap: 22px;
+  }
+
+  &-selected::after {
+    content: "";
+    background: inherit;
+    position: absolute;
+    width: 16px;
+    height: 8px;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 90%);
+    clip-path: polygon(100% 0, 0 0, 50% 100%);
+    z-index: -1;
+  }
+
+  &:hover {
+    transform: scale(1.15);
+  }
+
+  &-heading {
+    font-weight: 700;
+    color: $BLACK;
+  }
+
+  &-text {
+    font-size: 14px;
+    color: $BLACK;
+  }
+}
+
+@media screen and (max-width: 959px) {
+  .kg-activities {
+    background: unset;
+  }
+
+  .activity-details {
+    width: unset;
+  }
+
+  .activity-btn-heading,
+  .activity-btn-text {
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 599px) {
+  .kg-activities {
+    padding: 64px 24px;
+  }
+}

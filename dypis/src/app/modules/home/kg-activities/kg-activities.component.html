@@ -1,0 +1,47 @@
+<div fxLayoutAlign="center" class="kg-activities">
+  <div
+    class="max-width-container"
+    fxLayout="column"
+    fxLayoutAlign.lt-md="start center"
+    fxLayoutGap="62px"
+  >
+    <div fxLayoutAlign="start center" class="section-heading">
+      <img src="/assets/images/pencil.png" alt="pencil" />
+      <span>Kindergarten activities</span>
+    </div>
+
+    <div fxLayout="column" fxLayoutGap="40px" class="activity-details">
+      <div
+        fxLayout="row wrap"
+        fxLayoutAlign.gt-sm="start"
+        fxLayoutAlign.lt-md="center"
+        class="activity-btn-container"
+      >
+        <ng-container *ngFor="let kgActivity of kgActivities; let i = index">
+          <button
+            mat-flat-button
+            [ngStyle]="{ background: kgActivity.btnBgColor }"
+            class="activity-btn"
+            [ngClass]="selectedIndex === i ? 'activity-btn-selected' : ''"
+            (click)="selectedIndex = i"
+          >
+            {{ kgActivity.btnTitle }}
+          </button>
+        </ng-container>
+      </div>
+      <div
+        fxLayoutGap="12px"
+        fxLayout="column"
+        fxLayoutAlign.gt-sm="start"
+        fxLayoutAlign.lt-md="start center"
+      >
+        <div class="activity-btn-heading">
+          {{ kgActivities[selectedIndex].heading }}
+        </div>
+        <div class="activity-btn-text">
+          {{ kgActivities[selectedIndex].text }}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
