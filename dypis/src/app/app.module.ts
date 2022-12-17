@@ -6,9 +6,10 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { FooterComponent } from './footer/footer.component';
 import { HomeModule } from './modules/home/home.module';
 import { SharedModule } from './utils/shared.module';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 @NgModule({
-  declarations: [AppComponent, NavBarComponent, FooterComponent],
+  declarations: [AppComponent, NavBarComponent, FooterComponent, PageNotFoundComponent],
   imports: [SharedModule, AppRoutingModule, HomeModule],
   providers: [],
   bootstrap: [AppComponent],
