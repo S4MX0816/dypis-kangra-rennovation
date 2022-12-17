@@ -6,6 +6,7 @@ import { CarouselComponent } from './carousel/carousel.component';
 import { FacilitiesComponent } from './facilities/facilities.component';
 import { SpecialClassesComponent } from './special-classes/special-classes.component';
 import { KgActivitiesComponent } from './kg-activities/kg-activities.component';
+import { GalleryComponent } from './gallery/gallery.component';
 
 @NgModule({
   declarations: [
@@ -14,6 +15,7 @@ import { KgActivitiesComponent } from './kg-activities/kg-activities.component';
     FacilitiesComponent,
     SpecialClassesComponent,
     KgActivitiesComponent,
+    GalleryComponent,
   ],
   imports: [SharedModule],
 })
