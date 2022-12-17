@@ -102,3 +102,36 @@ export const zoomInUpAnimation = [
     ),
   ]),
 ];
+
+export const bounceInUpAnimation = [
+  trigger('bounceInUp', [
+    state(
+      'start',
+      style({
+        opacity: 0,
+        transform: 'translateY(400px)',
+      })
+    ),
+    transition(
+      'start=>final',
+      animate(
+        '1s',
+        keyframes([
+          style({
+            opacity: 1,
+            transform: 'translateY(-30px)',
+            offset: 0.6,
+          }),
+          style({
+            transform: 'translateY(10px);',
+            offset: 0.8,
+          }),
+          style({
+            transform: 'translateY(0)',
+            offset: 1,
+          }),
+        ])
+      )
+    ),
+  ]),
+];

@@ -1,4 +1,10 @@
-<div fxLayoutAlign="center" class="kg-activities">
+<div
+  #kgActivitySection
+  fxLayoutAlign="center"
+  class="kg-activities"
+  (window:load)="updateAnimationStateOnScroll(kgActivitySection, state)"
+  (window:scroll)="updateAnimationStateOnScroll(kgActivitySection, state)"
+>
   <div
     class="max-width-container"
     fxLayout="column"
@@ -10,7 +16,12 @@
       <span>Kindergarten activities</span>
     </div>
 
-    <div fxLayout="column" fxLayoutGap="40px" class="activity-details">
+    <div
+      [@bounceInUp]="state"
+      fxLayout="column"
+      fxLayoutGap="40px"
+      class="activity-details"
+    >
       <div
         fxLayout="row wrap"
         fxLayoutAlign.gt-sm="start"
