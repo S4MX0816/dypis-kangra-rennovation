@@ -46,6 +46,14 @@ export interface SchoolTeacher {
   quote: string;
 }
 
+export interface AdmissionProcess {
+  icon: IconDefinition;
+  title: string;
+  text: string;
+  btnText: string;
+  action: (param?: any) => void;
+}
+
 export enum ColorPalette {
   ORANGE = '#fb6b48',
   BLUE = '#5bc4db',

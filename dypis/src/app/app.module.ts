@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -8,10 +9,21 @@ import { HomeModule } from './modules/home/home.module';
 import { SharedModule } from './utils/shared.module';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
+export let router: Router;
+
 @NgModule({
-  declarations: [AppComponent, NavBarComponent, FooterComponent, PageNotFoundComponent],
+  declarations: [
+    AppComponent,
+    NavBarComponent,
+    FooterComponent,
+    PageNotFoundComponent,
+  ],
   imports: [SharedModule, AppRoutingModule, HomeModule],
   providers: [],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule {
+  constructor(_router: Router) {
+    router = _router;
+  }
+}

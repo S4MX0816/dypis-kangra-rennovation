@@ -1,12 +1,7 @@
 import { Component } from '@angular/core';
-import {
-  faCircleQuestion,
-  faMapLocationDot,
-  faPenToSquare,
-} from '@fortawesome/free-solid-svg-icons';
 
+import { admissionProcess } from 'src/app/utils/data';
 import { openAdmission } from 'src/app/utils/helpers';
-import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'admission-process',
@@ -14,14 +9,8 @@ import { environment } from 'src/environments/environment';
   styleUrls: ['./admission-process.component.scss'],
 })
 export class AdmissionProcessComponent {
-  faCircleQuestion = faCircleQuestion;
-  faPenToSquare = faPenToSquare;
-  faMapLocationDot = faMapLocationDot;
+  admissionProcess = admissionProcess;
   openAdmission = openAdmission;
 
   constructor() {}
-
-  openMaps(): void {
-    window.open(environment.mapsLink, '_target');
-  }
 }
