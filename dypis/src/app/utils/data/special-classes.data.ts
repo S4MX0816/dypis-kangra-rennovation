@@ -4,31 +4,31 @@ export const specialClasses: BasicCard[] = [
   {
     name: 'music class',
     text: 'Li Europan lingues es membres del sam',
-    image: '/assets/images/music-class.png',
+    image: '/assets/images/special-classes/music-class.png',
   },
   {
     name: 'swimming class',
     text: 'Li Europan lingues es membres del sam',
-    image: '/assets/images/swimming.png',
+    image: '/assets/images/special-classes/swimming.png',
   },
   {
     name: 'dance class',
     text: 'Li Europan lingues es membres del sam',
-    image: '/assets/images/dance-class.png',
+    image: '/assets/images/special-classes/dance-class.png',
   },
   {
     name: 'sports',
     text: 'Li Europan lingues es membres del sam',
-    image: '/assets/images/basketball.png',
+    image: '/assets/images/special-classes/basketball.png',
   },
   {
     name: 'art and craft',
     text: 'Li Europan lingues es membres del sam',
-    image: '/assets/images/art-and-craft.png',
+    image: '/assets/images/special-classes/art-and-craft.png',
   },
   {
     name: 'skating',
     text: 'Li Europan lingues es membres del sam',
-    image: '/assets/images/skating.png',
+    image: '/assets/images/special-classes/skating.png',
   },
 ];
