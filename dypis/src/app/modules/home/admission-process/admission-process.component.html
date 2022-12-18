@@ -41,5 +41,25 @@
         </div>
       </ng-container>
     </div>
+
+    <div
+      class="admission-banner"
+      fxLayout="column"
+      fxLayoutAlign.lt-sm="start center"
+      fxLayoutGap="12px"
+    >
+      <div class="admission-banner-heading">Apply for admission</div>
+      <div class="admission-banner-text">
+        Li Europan lingues es membres del sam familie. Lor separat existentie es
+        un myth. Por scientie
+      </div>
+      <button
+        mat-flat-button
+        class="admission-banner-btn"
+        (click)="openAdmission()"
+      >
+        Apply now
+      </button>
+    </div>
   </div>
 </div>

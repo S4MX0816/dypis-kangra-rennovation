@@ -59,8 +59,43 @@
   text-transform: uppercase;
 }
 
+.admission-banner {
+  background: url("../../../../assets/images/admission-process-bg.png");
+  padding: 77px 30px 30px 30px;
+  color: white;
+  background-size: cover;
+  width: 100%;
+  border-radius: 12px;
+}
+
+.admission-banner-heading {
+  font-weight: 700;
+  font-size: 28px;
+  text-transform: uppercase;
+}
+
+.admission-banner-btn {
+  font-weight: 700;
+  font-size: 14px;
+  padding: 8px 30px;
+  border-radius: 30px;
+  background: $ORANGE;
+  color: $WHITE;
+  margin-top: 12px;
+  width: fit-content;
+  text-transform: uppercase;
+
+  &:hover {
+    background: $YELLOW;
+  }
+}
+
 @media screen and (max-width: 599px) {
   .admission-process {
     padding: 64px 24px;
+  }
+
+  .admission-banner-text {
+    text-align: center;
   }
 }
