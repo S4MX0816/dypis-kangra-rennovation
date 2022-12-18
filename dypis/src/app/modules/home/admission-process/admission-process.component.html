@@ -1,4 +1,10 @@
-<div #admissionProcessSection fxLayoutAlign="center" class="admission-process">
+<div
+  #admissionProcessSection
+  fxLayoutAlign="center"
+  class="admission-process"
+  (window:load)="updateAnimationStateOnScroll(admissionProcessSection, state)"
+  (window:scroll)="updateAnimationStateOnScroll(admissionProcessSection, state)"
+>
   <div
     class="max-width-container"
     fxLayout="column"
@@ -18,6 +24,7 @@
     >
       <ng-container *ngFor="let admissionProcess of admissionProcess">
         <div
+          [@bounceInUp]="state"
           class="admission-process-card"
           fxLayout="column"
           fxLayoutAlign="start center"
@@ -43,6 +50,7 @@
     </div>
 
     <div
+      [@bounceInUp]="state"
       class="admission-banner"
       fxLayout="column"
       fxLayoutAlign.lt-sm="start center"
