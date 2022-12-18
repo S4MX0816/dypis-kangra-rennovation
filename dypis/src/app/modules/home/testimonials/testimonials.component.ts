@@ -56,8 +56,10 @@ export class TestimonialsComponent {
       if (duration < 5) {
         duration = 5;
       }
-      console.log(duration);
       const int = setInterval(() => {
+        if (this.state === 'start') {
+          return;
+        }
         if (this.statNumberArray[index] === this.schoolStats[index].totalNo) {
           clearInterval(int);
           return;
