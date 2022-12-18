@@ -39,6 +39,13 @@ export interface testimonial {
   designation: string;
 }
 
+export interface SchoolTeacher {
+  image: string;
+  designation: string;
+  name: string;
+  quote: string;
+}
+
 export enum ColorPalette {
   ORANGE = '#fb6b48',
   BLUE = '#5bc4db',

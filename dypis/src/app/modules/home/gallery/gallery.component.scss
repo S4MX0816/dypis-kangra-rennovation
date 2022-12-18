@@ -3,6 +3,8 @@
 .gallery {
   background: url("../../../../assets/images/gallery-bg.png");
   padding: 64px;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .gallery-details {

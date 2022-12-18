@@ -8,6 +8,7 @@ import { SpecialClassesComponent } from './special-classes/special-classes.compo
 import { KgActivitiesComponent } from './kg-activities/kg-activities.component';
 import { GalleryComponent } from './gallery/gallery.component';
 import { TestimonialsComponent } from './testimonials/testimonials.component';
+import { SchoolTeachersComponent } from './school-teachers/school-teachers.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { TestimonialsComponent } from './testimonials/testimonials.component';
     KgActivitiesComponent,
     GalleryComponent,
     TestimonialsComponent,
+    SchoolTeachersComponent,
   ],
   imports: [SharedModule],
 })
