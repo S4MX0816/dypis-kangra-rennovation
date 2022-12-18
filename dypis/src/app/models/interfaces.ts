@@ -25,15 +25,31 @@ export interface KgActivity {
   text: string;
 }
 
+export interface SchoolStat {
+  name: string;
+  totalNo: number;
+  icon: IconDefinition;
+  circleColor: ColorPalette;
+}
+
+export interface testimonial {
+  text: string;
+  name: string;
+  image: string;
+  designation: string;
+}
+
 export enum ColorPalette {
   ORANGE = '#fb6b48',
   BLUE = '#5bc4db',
+  LIGHT_BLUE = '#cdeef0',
   DARK_GREEN = '#879f27',
   GREEN = '#43c077',
   YELLOW = '#fac80d',
   PURPLE = '#ba82c5',
   WHITE = '#fff',
   GRAY = '#929292',
+  LIGHT_GRAY = '#a0a09f',
   BLACK = '#191919',
   LIGHT_BLACK = '#5b5b5b',
   DARK_BLACK = '#111',

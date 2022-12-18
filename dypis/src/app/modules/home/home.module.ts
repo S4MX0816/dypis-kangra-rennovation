@@ -7,6 +7,7 @@ import { FacilitiesComponent } from './facilities/facilities.component';
 import { SpecialClassesComponent } from './special-classes/special-classes.component';
 import { KgActivitiesComponent } from './kg-activities/kg-activities.component';
 import { GalleryComponent } from './gallery/gallery.component';
+import { TestimonialsComponent } from './testimonials/testimonials.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { GalleryComponent } from './gallery/gallery.component';
     SpecialClassesComponent,
     KgActivitiesComponent,
     GalleryComponent,
+    TestimonialsComponent,
   ],
   imports: [SharedModule],
 })

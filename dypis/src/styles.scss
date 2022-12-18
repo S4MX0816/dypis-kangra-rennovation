@@ -9,6 +9,10 @@
   transition: 700ms;
 }
 
+.cdk-overlay-container * {
+  transition: unset !important;
+}
+
 .h-fit {
   height: fit-content;
 }
