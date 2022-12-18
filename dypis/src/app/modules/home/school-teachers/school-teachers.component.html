@@ -1,4 +1,10 @@
-<div #schoolTeacherSection fxLayoutAlign="center" class="school-teachers">
+<div
+  #schoolTeacherSection
+  fxLayoutAlign="center"
+  class="school-teachers"
+  (window:load)="updateAnimationStateOnScroll(schoolTeacherSection, state)"
+  (window:scroll)="updateAnimationStateOnScroll(schoolTeacherSection, state)"
+>
   <div class="max-width-container" fxLayout="column" fxLayoutGap="44px">
     <div fxLayoutAlign="start center" class="section-heading teachers-heading">
       <img src="/assets/images/pencil.png" alt="pencil" />
@@ -8,6 +14,7 @@
     <div fxLayout.gt-xs="row" fxLayout.lt-sm="column" fxLayoutGap="24px">
       <ng-container *ngFor="let teacher of schoolTeachers">
         <div
+          [@zoomInLeft]="state"
           class="teacher-card"
           fxLayout="column"
           fxLayoutAlign="start center"
