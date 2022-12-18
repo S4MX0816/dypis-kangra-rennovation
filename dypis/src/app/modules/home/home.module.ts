@@ -9,6 +9,7 @@ import { KgActivitiesComponent } from './kg-activities/kg-activities.component';
 import { GalleryComponent } from './gallery/gallery.component';
 import { TestimonialsComponent } from './testimonials/testimonials.component';
 import { SchoolTeachersComponent } from './school-teachers/school-teachers.component';
+import { AdmissionProcessComponent } from './admission-process/admission-process.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { SchoolTeachersComponent } from './school-teachers/school-teachers.compo
     GalleryComponent,
     TestimonialsComponent,
     SchoolTeachersComponent,
+    AdmissionProcessComponent,
   ],
   imports: [SharedModule],
 })

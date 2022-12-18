@@ -57,6 +57,7 @@ export enum ColorPalette {
   WHITE = '#fff',
   GRAY = '#929292',
   LIGHT_GRAY = '#a0a09f',
+  WHITE_GRAY = '#f8f8f8',
   BLACK = '#191919',
   LIGHT_BLACK = '#5b5b5b',
   DARK_BLACK = '#111',

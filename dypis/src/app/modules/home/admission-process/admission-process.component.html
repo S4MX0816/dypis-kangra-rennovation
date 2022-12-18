@@ -1,0 +1,88 @@
+<div #admissionProcessSection fxLayoutAlign="center" class="admission-process">
+  <div
+    class="max-width-container"
+    fxLayout="column"
+    fxLayoutAlign.lt-md="start center"
+    fxLayoutGap="44px"
+  >
+    <div fxLayoutAlign="start center" class="section-heading">
+      <img src="/assets/images/pencil.png" alt="pencil" />
+      <span>Admission process</span>
+    </div>
+
+    <div
+      fxLayout.gt-sm="row"
+      fxLayout.lt-md="column"
+      fxLayoutGap="24px"
+      class="admission-card-container"
+    >
+      <div
+        class="admission-process-card"
+        fxLayout="column"
+        fxLayoutAlign="start center"
+        fxLayoutGap="12px"
+      >
+        <fa-icon
+          class="admission-card-icon"
+          [icon]="faCircleQuestion"
+        ></fa-icon>
+        <div class="admission-card-title">Request info</div>
+        <div class="admission-process-content">
+          Li Europan lingues es membres del sam familie. Lor separat existentie
+          es un myth. Por scientie, musica, sport etc, litot Europa usa li sam
+          vocabular.
+        </div>
+        <button
+          mat-flat-button
+          class="admission-card-btn"
+          [routerLink]="['contact-us']"
+        >
+          Request info
+        </button>
+      </div>
+
+      <div
+        class="admission-process-card"
+        fxLayout="column"
+        fxLayoutAlign="start center"
+        fxLayoutGap="12px"
+      >
+        <fa-icon class="admission-card-icon" [icon]="faPenToSquare"></fa-icon>
+        <div class="admission-card-title">Admission Form</div>
+        <div class="admission-process-content">
+          Li Europan lingues es membres del sam familie. Lor separat existentie
+          es un myth. Por scientie, musica, sport etc, litot Europa usa li sam
+          vocabular.
+        </div>
+        <button
+          mat-flat-button
+          class="admission-card-btn"
+          (click)="openAdmission()"
+        >
+          Apply now
+        </button>
+      </div>
+
+      <div
+        class="admission-process-card"
+        fxLayout="column"
+        fxLayoutAlign="start center"
+        fxLayoutGap="12px"
+      >
+        <fa-icon
+          class="admission-card-icon"
+          [icon]="faMapLocationDot"
+        ></fa-icon>
+        <div class="admission-card-title">Locate us on map</div>
+        <div class="admission-process-content">
+          Li Europan lingues es membres del sam familie. Lor separat existentie
+          es un myth. Por scientie, musica, sport etc, litot Europa usa li sam
+          vocabular.
+        </div>
+        <button mat-flat-button class="admission-card-btn" (click)="openMaps()">
+          Locate us
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

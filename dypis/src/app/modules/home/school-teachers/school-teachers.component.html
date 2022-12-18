@@ -11,7 +11,12 @@
       <span>School teachers</span>
     </div>
 
-    <div fxLayout.gt-xs="row" fxLayout.lt-sm="column" fxLayoutGap="24px">
+    <div
+      fxLayout.gt-xs="row"
+      fxLayout.lt-sm="column"
+      fxLayoutGap="24px"
+      fxLayoutAlign="space-between"
+    >
       <ng-container *ngFor="let teacher of schoolTeachers">
         <div
           [@zoomInLeft]="state"
