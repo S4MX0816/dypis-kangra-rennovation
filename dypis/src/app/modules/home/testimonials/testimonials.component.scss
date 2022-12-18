@@ -45,6 +45,18 @@
 
 .testimonial-container {
   max-width: 720px;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.testimonial-content {
+  min-width: 100%;
+}
+
+.testimonial-heading {
+  height: 54px;
+  margin-bottom: 54px;
 }
 
 .parent-testimonial {

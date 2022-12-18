@@ -37,47 +37,65 @@
         </div>
       </ng-container>
     </div>
-    <div class="w-full" fxLayoutAlign="center">
+    <div class="w-full overflow-hidden" fxLayoutAlign="center">
       <div
         class="testimonial-container"
         fxLayout="column"
         fxLayoutAlign="start center"
-        fxLayoutGap="54px"
       >
-        <div fxLayoutAlign="start center" class="section-heading">
+        <div
+          fxLayoutAlign="start center"
+          class="section-heading testimonial-heading"
+        >
           <img src="/assets/images/pencil.png" alt="pencil" />
           <span>testimonial</span>
         </div>
         <div
-          fxLayout="column"
-          fxLayoutAlign="start center"
-          fxLayoutGap.gt-md="36px"
-          fxLayoutGap.lt-lg="24px"
+          #testimonialDiv
+          fxLayout="row"
+          fxLayoutAlign="start"
+          class="w-full"
         >
-          <div fxLayout="row" fxLayoutGap.gt-xs="30px" fxLayoutGap.lt-sm="16px">
-            <fa-icon
-              fxLayoutAlign="start start"
-              class="quote"
-              [icon]="quoteLeft"
-            ></fa-icon>
-            <div class="parent-testimonial">
-              {{ testimonials[selectedIndex].text }}
+          <ng-container *ngFor="let testimonial of testimonials">
+            <div
+              fxLayout="column"
+              fxLayoutAlign="start center"
+              fxLayoutGap.gt-md="36px"
+              fxLayoutGap.lt-lg="24px"
+              class="testimonial-content"
+            >
+              <div
+                fxLayout="row"
+                fxLayoutGap.gt-xs="30px"
+                fxLayoutGap.lt-sm="16px"
+              >
+                <fa-icon
+                  fxLayoutAlign="start start"
+                  class="quote"
+                  [icon]="quoteLeft"
+                ></fa-icon>
+                <div class="parent-testimonial">
+                  {{ testimonial.text }}
+                </div>
+                <fa-icon
+                  fxLayoutAlign="start end"
+                  class="quote"
+                  [icon]="quoteRight"
+                ></fa-icon>
+              </div>
+              <img
+                [src]="testimonial.image"
+                alt="parent image"
+                class="parent-image"
+              />
+              <div class="parent-name">
+                {{ testimonial.name }}
+              </div>
+              <div class="parent-type">
+                {{ testimonial.designation }}
+              </div>
             </div>
-            <fa-icon
-              fxLayoutAlign="start end"
-              class="quote"
-              [icon]="quoteRight"
-            ></fa-icon>
-          </div>
-          <img
-            [src]="testimonials[selectedIndex].image"
-            alt="parent image"
-            class="parent-image"
-          />
-          <div class="parent-name">{{ testimonials[selectedIndex].name }}</div>
-          <div class="parent-type">
-            {{ testimonials[selectedIndex].designation }}
-          </div>
+          </ng-container>
         </div>
       </div>
     </div>

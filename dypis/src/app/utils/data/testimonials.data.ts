@@ -45,4 +45,22 @@ export const testimonials: testimonial[] = [
     image: '/assets/images/student-parents/parent-1.png',
     designation: 'Father',
   },
+  {
+    text: 'Li Europan lingues es membres del sam familie. Lor separat existentie es un myth. Por scientie, musica, sport etc, litot Europa usa li sam vocabular. Li lingues differe solmen in li grammatica, li pronunciation e li plu commun vocabules. Omnicos directe al desirabilite de un nov lingua franca: On refusa',
+    name: 'Vickey verma',
+    image: '/assets/images/student-parents/parent-1.png',
+    designation: 'Father',
+  },
+  {
+    text: 'Li Europan lingues es membres del sam familie. Lor separat existentie es un myth. Por scientie, musica, sport etc, litot Europa usa li sam vocabular. Li lingues differe solmen in li grammatica, li pronunciation e li plu commun vocabules. Omnicos directe al desirabilite de un nov lingua franca: On refusa',
+    name: 'Peter Parker',
+    image: '/assets/images/student-parents/parent-1.png',
+    designation: 'Father',
+  },
+  {
+    text: 'Li Europan lingues es membres del sam familie. Lor separat existentie es un myth. Por scientie, musica, sport etc, litot Europa usa li sam vocabular. Li lingues differe solmen in li grammatica, li pronunciation e li plu commun vocabules. Omnicos directe al desirabilite de un nov lingua franca: On refusa',
+    name: 'Peter Parker',
+    image: '/assets/images/student-parents/parent-1.png',
+    designation: 'Vickey verma',
+  },
 ];
