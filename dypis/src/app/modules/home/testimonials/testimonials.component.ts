@@ -26,9 +26,11 @@ export class TestimonialsComponent {
   readonly TRANSITION_TIMING = 3000; // in milliseconds
   @ViewChild('testimonialDiv') testimonialDiv!: ElementRef;
   updateAnimationStateOnScroll = updateAnimationStateOnScroll;
+  statNumberArray: number[] = new Array(testimonials.length).fill(0);
 
   constructor() {
     this.applyTransition();
+    this.startNoStats();
   }
 
   applyTransition() {
@@ -46,5 +48,22 @@ export class TestimonialsComponent {
         this.testimonials.push(...testimonials);
       }
     }, this.TRANSITION_TIMING);
+  }
+
+  startNoStats() {
+    this.statNumberArray.forEach((_, index) => {
+      let duration = 100 - this.schoolStats[index].totalNo;
+      if (duration < 5) {
+        duration = 5;
+      }
+      console.log(duration);
+      const int = setInterval(() => {
+        if (this.statNumberArray[index] === this.schoolStats[index].totalNo) {
+          clearInterval(int);
+          return;
+        }
+        this.statNumberArray[index]++;
+      }, duration);
+    });
   }
 }

@@ -21,7 +21,7 @@
       fxLayoutAlign.sm="space-evenly"
       fxLayoutGap="24px"
     >
-      <ng-container *ngFor="let stat of schoolStats">
+      <ng-container *ngFor="let stat of schoolStats; let i = index">
         <div
           fxLayout="row"
           fxLayoutGap="24px"
@@ -29,11 +29,12 @@
           class="single-stat"
         >
           <div
+            #displayNumberDiv
             [ngStyle]="{ background: stat.circleColor }"
             class="total-no-stat"
             fxLayoutAlign="center center"
           >
-            {{ stat.totalNo }}
+            {{ statNumberArray[i] }}
           </div>
           <div class="stat-name">{{ stat.name }}</div>
           <fa-icon
