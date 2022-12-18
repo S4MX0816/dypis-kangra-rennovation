@@ -52,6 +52,10 @@
 
 .testimonial-content {
   min-width: 100%;
+
+  &:hover .parent-name {
+    color: $ORANGE;
+  }
 }
 
 .testimonial-heading {
@@ -84,6 +88,7 @@
   font-weight: 700;
   font-size: 20px;
   margin-bottom: 14px !important;
+  text-transform: capitalize;
 }
 
 .parent-type {
