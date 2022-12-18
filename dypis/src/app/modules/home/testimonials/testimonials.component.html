@@ -1,4 +1,10 @@
-<div #testimonialsSection fxLayoutAlign="center" class="testimonials">
+<div
+  #testimonialsSection
+  fxLayoutAlign="center"
+  class="testimonials"
+  (window:load)="updateAnimationStateOnScroll(testimonialsSection, state)"
+  (window:scroll)="updateAnimationStateOnScroll(testimonialsSection, state)"
+>
   <div
     fxLayout.gt-sm="row"
     fxLayout.lt-md="column"
@@ -8,6 +14,7 @@
     fxLayoutGap="24px"
   >
     <div
+      [@zoomUp]="state"
       class="stats"
       fxLayout="column"
       fxLayout.sm="row wrap"
@@ -37,7 +44,11 @@
         </div>
       </ng-container>
     </div>
-    <div class="w-full overflow-hidden" fxLayoutAlign="center">
+    <div
+      [@zoomUp]="state"
+      class="w-full overflow-hidden"
+      fxLayoutAlign="center"
+    >
       <div
         class="testimonial-container"
         fxLayout="column"
