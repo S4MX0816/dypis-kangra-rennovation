@@ -22,7 +22,7 @@ import { slideInRightAnimation } from '../utils/animation';
 })
 export class HoverContactInfoComponent {
   showHoverIcon = false;
-  showContactInfo = true;
+  showContactInfo = false;
   faAddressBook = faAddressBook;
   faXmark = faXmark;
   faLocationDot = faLocationDot;
