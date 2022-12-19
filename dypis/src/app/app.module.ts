@@ -9,6 +9,7 @@ import { HomeModule } from './modules/home/home.module';
 import { SharedModule } from './utils/shared.module';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { FacultyComponent } from './modules/faculty/faculty.component';
+import { HoverContactInfoComponent } from './hover-contact-info/hover-contact-info.component';
 
 export let router: Router;
 
@@ -19,6 +20,7 @@ export let router: Router;
     FooterComponent,
     PageNotFoundComponent,
     FacultyComponent,
+    HoverContactInfoComponent,
   ],
   imports: [SharedModule, AppRoutingModule, HomeModule],
   providers: [],

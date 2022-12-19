@@ -1,0 +1,62 @@
+<div
+  *ngIf="showHoverIcon"
+  [@slideInRight]
+  class="hover-contact-info"
+  (click)="showContactInfo = true"
+>
+  <fa-icon [icon]="faAddressBook"></fa-icon>
+</div>
+
+<div
+  *ngIf="showContactInfo"
+  [@slideInRight]
+  class="hover-contact-info contact-info"
+  fxLayout="column"
+  fxLayoutGap="24px"
+>
+  <div class="cross-icon" (click)="showContactInfo = false">
+    <fa-icon [icon]="faXmark"></fa-icon>
+  </div>
+
+  <div fxLayout="row" fxLayoutGap="20px">
+    <fa-icon [icon]="faLocationDot"></fa-icon>
+    <div>
+      <div class="contact-info-heading">location :</div>
+      <div class="contact-info-content">London UK</div>
+      <div class="contact-info-content">12-14 Kengsingtone High Street</div>
+    </div>
+  </div>
+
+  <div fxLayout="row" fxLayoutGap="20px">
+    <fa-icon [icon]="faClock"></fa-icon>
+    <div>
+      <div class="contact-info-heading">time :</div>
+      <div class="contact-info-content">09:00 - 17:00</div>
+      <div class="contact-info-content">Saturday and Sunday - Closed</div>
+    </div>
+  </div>
+
+  <div fxLayout="row" fxLayoutGap="20px">
+    <fa-icon [icon]="faPhoneFlip"></fa-icon>
+    <div>
+      <div class="contact-info-heading">phone :</div>
+      <div class="contact-info-content">{{ contactNoPrimary }}</div>
+      <div class="contact-info-content">{{ contactNoSecondary }}</div>
+    </div>
+  </div>
+
+  <div fxLayout="row" fxLayoutGap="20px">
+    <fa-icon [icon]="faEnvelope"></fa-icon>
+    <div>
+      <div class="contact-info-heading">email :</div>
+      <div class="contact-info-content">{{ emailPrimary }}</div>
+      <div class="contact-info-content">{{ emailSecondary }}</div>
+    </div>
+  </div>
+
+  <div fxLayout="row" fxLayoutAlign="center" fxLayoutGap="16px">
+    <fa-icon class="brand-icon" [icon]="faSquareFacebook"></fa-icon>
+    <fa-icon class="brand-icon" [icon]="faSquareYoutube"></fa-icon>
+    <fa-icon class="brand-icon" [icon]="faSquareInstagram"></fa-icon>
+  </div>
+</div>

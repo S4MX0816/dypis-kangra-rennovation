@@ -7,7 +7,7 @@ import { Faculty, FacultyHeaders } from 'src/app/models/interfaces';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
-  selector: 'app-faculty',
+  selector: 'faculty',
   templateUrl: './faculty.component.html',
   styleUrls: ['./faculty.component.scss'],
 })

@@ -4,13 +4,13 @@ import { faBars, faXmark } from '@fortawesome/free-solid-svg-icons';
 import { menuItems } from '../utils/data';
 import { MenuItem } from '../models/interfaces';
 import { openAdmission } from '../utils/helpers';
-import { hamburgerSildingAnimation } from '../utils/animation';
+import { hamburgerSlidingAnimation } from '../utils/animation';
 
 @Component({
   selector: 'nav-bar',
   templateUrl: './nav-bar.component.html',
   styleUrls: ['./nav-bar.component.scss'],
-  animations: hamburgerSildingAnimation,
+  animations: hamburgerSlidingAnimation,
 })
 export class NavBarComponent {
   menuItems = menuItems;

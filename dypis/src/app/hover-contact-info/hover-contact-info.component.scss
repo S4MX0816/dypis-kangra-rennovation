@@ -1,0 +1,54 @@
+@import "../utils/variables.scss";
+
+.hover-contact-info {
+  background: $ORANGE;
+  padding: 10px;
+  position: fixed;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  z-index: 999;
+  color: $WHITE;
+  font-size: 24px;
+  border-radius: 8px 0 0 8px;
+  cursor: pointer;
+}
+
+.contact-info {
+  background: $LIGHT-BLUE;
+  padding: 26px;
+  color: $DARK-GREEN;
+  cursor: unset;
+}
+
+.cross-icon {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: $ORANGE;
+  color: $WHITE;
+  padding: 8px 12px;
+  border-radius: 0 0 0 8px;
+  cursor: pointer;
+}
+
+.contact-info-heading {
+  font-size: 16px;
+  text-transform: capitalize;
+}
+
+.contact-info-content {
+  font-size: 16px;
+  font-weight: 700;
+  color: $BLACK;
+}
+
+.brand-icon {
+  font-size: 40px;
+  color: $BLACK;
+  cursor: pointer;
+
+  &:hover {
+    color: $ORANGE;
+  }
+}
