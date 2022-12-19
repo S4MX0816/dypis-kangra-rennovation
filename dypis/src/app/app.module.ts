@@ -8,6 +8,7 @@ import { FooterComponent } from './footer/footer.component';
 import { HomeModule } from './modules/home/home.module';
 import { SharedModule } from './utils/shared.module';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { FacultyComponent } from './modules/faculty/faculty.component';
 
 export let router: Router;
 
@@ -17,6 +18,7 @@ export let router: Router;
     NavBarComponent,
     FooterComponent,
     PageNotFoundComponent,
+    FacultyComponent,
   ],
   imports: [SharedModule, AppRoutingModule, HomeModule],
   providers: [],

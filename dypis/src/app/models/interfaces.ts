@@ -54,6 +54,15 @@ export interface AdmissionProcess {
   action: (param?: any) => void;
 }
 
+export interface Faculty {
+  name: string;
+  subject: string | null;
+  qualification: string;
+  designation: string;
+}
+
+export type FacultyHeaders = keyof Faculty;
+
 export enum ColorPalette {
   ORANGE = '#fb6b48',
   BLUE = '#5bc4db',

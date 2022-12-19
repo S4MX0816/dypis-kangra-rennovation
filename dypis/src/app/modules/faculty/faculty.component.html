@@ -1,0 +1,50 @@
+<div #facultySection fxLayoutAlign="center" class="admission-process">
+  <div class="max-width-container" fxLayout="column">
+    <div fxLayoutAlign="start center" class="section-heading">
+      <img src="/assets/images/pencil.png" alt="pencil" />
+      <span>faculty</span>
+    </div>
+
+    <div fxLayoutAlign="end">
+      <mat-form-field
+        appearance="outline"
+        class="no-error-field search-faculty"
+      >
+        <mat-label>Search faculty</mat-label>
+        <input
+          matInput
+          placeholder="Faculty name"
+          [formControl]="searchFacultyCtrl"
+        />
+        <fa-icon class="search-icon" matSuffix [icon]="faSearch"></fa-icon>
+      </mat-form-field>
+    </div>
+
+    <div class="overflow-x-auto">
+      <table fxLayout="column" class="mat-elevation-z4 faculty-table">
+        <tr class="faculty-headers" fxLayout="row">
+          <th fxFlex="7">Sr. No.</th>
+          <ng-container *ngFor="let header of headers">
+            <th>{{ header }}</th>
+          </ng-container>
+        </tr>
+        <ng-container
+          *ngFor="let faculty of filteredFaculty | async; let i = index"
+        >
+          <tr fxLayout="row">
+            <td fxFlex="7" fxLayoutAlign="center center">{{ i + 1 }}</td>
+            <ng-container *ngFor="let header of headers">
+              <ng-container *ngIf="faculty[header]; else notFound">
+                <td fxLayoutAlign="center center">{{ faculty[header] }}</td>
+              </ng-container>
+            </ng-container>
+          </tr>
+        </ng-container>
+      </table>
+    </div>
+  </div>
+</div>
+
+<ng-template #notFound>
+  <td fxLayoutAlign="center center" class="data-not-found">---</td>
+</ng-template>
