@@ -1,0 +1,25 @@
+@import "../../utils/variables.scss";
+
+.list-items {
+  padding-left: 16px;
+
+  span::before {
+    content: "";
+    height: 10px;
+    width: 10px;
+    margin-right: 8px;
+    border-radius: 50%;
+    display: inline-block;
+    background: $DARK-GREEN;
+  }
+}
+
+@media screen and (max-width: 599px) {
+  .list-items {
+    padding-left: 12px;
+
+    span::before {
+      margin-right: 4px;
+    }
+  }
+}

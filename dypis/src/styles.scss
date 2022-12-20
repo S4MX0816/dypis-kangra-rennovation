@@ -118,6 +118,23 @@
   padding-left: 10px;
 }
 
+.base-page {
+  padding: 186px 64px 64px 64px;
+}
+
+.base-heading {
+  font-size: 40px;
+  line-height: 1.4;
+  color: $DARK-GREEN;
+  font-weight: 700;
+}
+
+.base-info {
+  color: $GRAY;
+  line-height: 25px;
+  text-align: justify;
+}
+
 @media screen and (max-width: 1460px) {
   .max-width-container {
     max-width: 1140px;
@@ -127,5 +144,15 @@
 @media screen and (max-width: 1279px) {
   .max-width-container {
     max-width: 960px;
+  }
+}
+
+@media screen and (max-width: 599px) {
+  .base-page {
+    padding: 128px 24px 64px 24px;
+  }
+
+  .base-heading {
+    font-size: 32px;
   }
 }

@@ -11,6 +11,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { FacultyComponent } from './modules/faculty/faculty.component';
 import { HoverContactInfoComponent } from './hover-contact-info/hover-contact-info.component';
 import { AboutDypisComponent } from './modules/about-dypis/about-dypis.component';
+import { VisionAndMissionComponent } from './modules/vision-and-mission/vision-and-mission.component';
 
 export let router: Router;
 
@@ -23,6 +24,7 @@ export let router: Router;
     FacultyComponent,
     HoverContactInfoComponent,
     AboutDypisComponent,
+    VisionAndMissionComponent,
   ],
   imports: [SharedModule, AppRoutingModule, HomeModule],
   providers: [],
