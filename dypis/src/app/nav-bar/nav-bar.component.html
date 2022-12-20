@@ -23,6 +23,7 @@
           fxLayoutAlign="start center"
           fxLayoutGap="6px"
           class="menu-item"
+          [ngClass]="checkRouterClass(menuItem.subMenu)"
           [matMenuTriggerFor]="menuItem.subMenu ? menu : null"
           (click)="menuItem.action && menuItem?.action()"
         >
@@ -31,8 +32,8 @@
 
           <mat-menu #menu="matMenu">
             <button
-              [routerLink]="subItem.name"
-              routerLinkActive="active-menu-item"
+              [routerLink]="subItem.routerLink"
+              [routerLinkActive]="subItem.routerLinkActive"
               class="sub-item"
               mat-menu-item
               fxLayoutAlign="start center"
