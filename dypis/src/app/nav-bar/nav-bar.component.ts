@@ -22,6 +22,9 @@ export class NavBarComponent {
   @HostListener('window:click', ['$event'])
   closeHamburger(event: Event): void {
     const target = event.target as HTMLElement;
+    if (target.closest('.cdk-overlay-backdrop')) {
+      return;
+    }
     if (!target.closest('#hamburger-menu') && this.showHamburgerMenu) {
       this.showHamburgerMenu = false;
     }

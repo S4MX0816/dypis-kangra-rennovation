@@ -36,7 +36,7 @@ export const menuItems: MenuItem[] = [
   {
     name: 'academics',
     icon: faGraduationCap,
-    routerLink: '',
+    routerLink: null,
     routerLinkActive: '',
     subMenu: [
       {
@@ -74,7 +74,7 @@ export const menuItems: MenuItem[] = [
   {
     name: 'about us',
     icon: faAddressCard,
-    routerLink: '',
+    routerLink: null,
     routerLinkActive: '',
     subMenu: [
       {

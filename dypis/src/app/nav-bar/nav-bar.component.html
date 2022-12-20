@@ -24,7 +24,7 @@
           fxLayoutGap="6px"
           class="menu-item"
           [matMenuTriggerFor]="menuItem.subMenu ? menu : null"
-          (click)="menuItem?.action()"
+          (click)="menuItem.action && menuItem?.action()"
         >
           <fa-icon class="icons" [icon]="menuItem.icon"></fa-icon>
           <span>{{ menuItem.name }}</span>

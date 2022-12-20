@@ -4,7 +4,7 @@ export interface SingleMenuItem {
   name: string;
   icon: IconDefinition;
   action?: () => void;
-  routerLink: string;
+  routerLink: string | null;
   routerLinkActive: string;
 }
 
