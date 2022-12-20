@@ -1,6 +1,6 @@
 import { BehaviorSubject, debounceTime, distinctUntilChanged } from 'rxjs';
 import { FormControl } from '@angular/forms';
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 import { faculty } from 'src/app/utils/data';
 import { Faculty, FacultyHeaders } from 'src/app/models/interfaces';

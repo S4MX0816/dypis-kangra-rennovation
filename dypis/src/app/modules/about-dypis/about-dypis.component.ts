@@ -1,15 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-about-dypis',
   templateUrl: './about-dypis.component.html',
-  styleUrls: ['./about-dypis.component.scss']
+  styleUrls: ['./about-dypis.component.scss'],
 })
-export class AboutDypisComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+export class AboutDypisComponent {
+  constructor() {}
 }

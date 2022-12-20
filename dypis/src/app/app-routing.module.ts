@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AboutDypisComponent } from './modules/about-dypis/about-dypis.component';
+import { ChairmanMessageComponent } from './modules/chairman-message/chairman-message.component';
 import { FacultyComponent } from './modules/faculty/faculty.component';
 import { HomeComponent } from './modules/home/home.component';
 import { VisionAndMissionComponent } from './modules/vision-and-mission/vision-and-mission.component';
@@ -12,6 +13,7 @@ const routes: Routes = [
   { path: 'faculty', component: FacultyComponent },
   { path: 'about-dypis', component: AboutDypisComponent },
   { path: 'vision-and-mission', component: VisionAndMissionComponent },
+  { path: 'chairman-message', component: ChairmanMessageComponent },
   { path: '**', pathMatch: 'full', component: PageNotFoundComponent },
 ];
 

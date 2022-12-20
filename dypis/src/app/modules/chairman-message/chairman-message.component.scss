@@ -1,0 +1,41 @@
+@import "../../utils/variables.scss";
+
+.message-container {
+  max-width: 820px;
+}
+
+.chairman-image {
+  float: right;
+  width: 50%;
+  margin-left: 24px;
+}
+
+.chairman-message-info span {
+  display: inherit;
+  margin-bottom: 12px;
+}
+
+.warm-regards {
+  margin-top: -8px;
+}
+
+.regards {
+  font-size: 18px;
+  font-weight: 600;
+  color: $BLUE;
+  font-style: italic;
+}
+
+.chairman-name {
+  font-size: 20px;
+  font-weight: 700;
+  color: $ORANGE;
+}
+
+@media screen and (max-width: 599px) {
+  .chairman-image {
+    width: 100%;
+    float: unset;
+    margin-left: unset;
+  }
+}
