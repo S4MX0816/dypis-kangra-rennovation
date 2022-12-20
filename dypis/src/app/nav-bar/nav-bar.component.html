@@ -74,8 +74,8 @@
 
         <div class="menu-container" *ngFor="let menuItem of menuItems">
           <div
-            [routerLink]="!menuItem.subMenu ? menuItem.name : null"
-            [routerLinkActive]="!menuItem.subMenu ? 'active-menu-item' : ''"
+            [routerLink]="menuItem.routerLink"
+            [routerLinkActive]="menuItem.routerLinkActive"
             fxLayoutAlign="start center"
             fxLayoutGap="6px"
             class="menu-item"
@@ -86,8 +86,8 @@
 
             <mat-menu #menu="matMenu">
               <button
-                [routerLink]="subItem.name"
-                routerLinkActive="active-menu-item"
+                [routerLink]="subItem.routerLink"
+                [routerLinkActive]="subItem.routerLinkActive"
                 class="sub-item"
                 mat-menu-item
                 fxLayoutAlign="start center"

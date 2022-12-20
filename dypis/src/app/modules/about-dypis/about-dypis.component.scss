@@ -1,0 +1,28 @@
+@import "../../utils/variables.scss";
+
+.about-dypis {
+  padding: 186px 64px 64px 64px;
+}
+
+.about-heading {
+  font-size: 40px;
+  line-height: 1.4;
+  color: $DARK-GREEN;
+  font-weight: 700;
+}
+
+.about-info {
+  color: $GRAY;
+  line-height: 25px;
+  text-align: justify;
+}
+
+@media screen and (max-width: 599px) {
+  .about-dypis {
+    padding: 128px 24px 64px 24px;
+  }
+
+  .about-heading {
+    font-size: 32px;
+  }
+}

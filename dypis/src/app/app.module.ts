@@ -10,6 +10,7 @@ import { SharedModule } from './utils/shared.module';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { FacultyComponent } from './modules/faculty/faculty.component';
 import { HoverContactInfoComponent } from './hover-contact-info/hover-contact-info.component';
+import { AboutDypisComponent } from './modules/about-dypis/about-dypis.component';
 
 export let router: Router;
 
@@ -21,6 +22,7 @@ export let router: Router;
     PageNotFoundComponent,
     FacultyComponent,
     HoverContactInfoComponent,
+    AboutDypisComponent,
   ],
   imports: [SharedModule, AppRoutingModule, HomeModule],
   providers: [],

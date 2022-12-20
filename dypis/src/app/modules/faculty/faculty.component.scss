@@ -1,7 +1,7 @@
 @import "../../utils/variables.scss";
 
 .admission-process {
-  padding: 186px 64px;
+  padding: 186px 64px 64px 64px;
 }
 
 .faculty-table {
@@ -47,6 +47,6 @@
 
 @media screen and (max-width: 599px) {
   .admission-process {
-    padding: 186px 24px;
+    padding: 128px 24px 64px 24px;
   }
 }
