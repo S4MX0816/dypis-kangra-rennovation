@@ -111,6 +111,14 @@
   }
 }
 
+.mat-form-field-appearance-outline.mat-focused .mat-form-field-outline-thick {
+  color: $ORANGE !important;
+}
+
+.mat-form-field.mat-focused.search-faculty .mat-form-field-label {
+  color: $ORANGE !important;
+}
+
 .mat-form-field-appearance-outline.mat-form-field-can-float.mat-form-field-should-float.search-faculty
   .mat-form-field-label {
   transform: translateY(-1.69375em) scale(0.75) !important;
