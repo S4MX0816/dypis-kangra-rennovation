@@ -24,6 +24,8 @@ export class FacultyComponent {
     'subject',
   ];
 
+  readonly mobileHeaders: FacultyHeaders[] = this.headers.slice(1);
+
   constructor() {
     this.attachListener();
   }

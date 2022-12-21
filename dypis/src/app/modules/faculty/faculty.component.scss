@@ -7,7 +7,6 @@
 .faculty-table {
   border-radius: 12px;
   width: calc(100% - 24px);
-  min-width: 500px;
   margin: 12px 12px 24px 12px;
 
   tr,
@@ -36,17 +35,43 @@
 }
 
 .search-faculty {
-  margin-top: 24px;
   font-size: 14px;
-  margin-right: 12px;
+  margin: 24px 12px 0 12px;
 }
 
 .search-icon {
   color: $ORANGE;
 }
 
+.faculty-name {
+  font-weight: 700;
+  text-transform: capitalize;
+  font-size: 16px;
+}
+
+.mobile-faculty-header {
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.faculty-expansion-panel {
+  border-radius: 12px !important;
+  margin: 0;
+}
+
+@media screen and (max-width: 959px) {
+  .admission-process {
+    padding: 186px 32px 64px 32px;
+  }
+}
+
 @media screen and (max-width: 599px) {
   .admission-process {
     padding: 128px 24px 64px 24px;
+  }
+
+  .search-faculty {
+    width: 100%;
+    margin: 32px 0 0 0;
   }
 }
