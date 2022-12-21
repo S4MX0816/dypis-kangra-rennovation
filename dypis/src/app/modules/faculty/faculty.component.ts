@@ -1,21 +1,26 @@
-import { BehaviorSubject, debounceTime, distinctUntilChanged } from 'rxjs';
 import { FormControl } from '@angular/forms';
 import { Component } from '@angular/core';
+import { faSearch } from '@fortawesome/free-solid-svg-icons';
+import { BehaviorSubject, debounceTime, distinctUntilChanged } from 'rxjs';
 
 import { faculty } from 'src/app/utils/data';
+import { bounceInUpAnimation } from 'src/app/utils/animation';
 import { Faculty, FacultyHeaders } from 'src/app/models/interfaces';
-import { faSearch } from '@fortawesome/free-solid-svg-icons';
+import { updateAnimationStateOnScroll } from 'src/app/utils/helpers';
 
 @Component({
   selector: 'faculty',
   templateUrl: './faculty.component.html',
   styleUrls: ['./faculty.component.scss'],
+  animations: [bounceInUpAnimation],
 })
 export class FacultyComponent {
+  state = 'start';
   faculty = faculty;
   faSearch = faSearch;
   filteredFaculty = new BehaviorSubject<Faculty[]>([]);
   searchFacultyCtrl = new FormControl();
+  updateAnimationStateOnScroll = updateAnimationStateOnScroll;
 
   readonly headers: FacultyHeaders[] = [
     'name',

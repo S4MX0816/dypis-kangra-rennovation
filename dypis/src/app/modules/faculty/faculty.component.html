@@ -1,11 +1,17 @@
-<div #facultySection fxLayoutAlign="center" class="admission-process">
+<div
+  #facultySection
+  fxLayoutAlign="center"
+  class="admission-process"
+  (window:load)="updateAnimationStateOnScroll(facultySection, state)"
+  (window:scroll)="updateAnimationStateOnScroll(facultySection, state)"
+>
   <div class="max-width-container" fxLayout="column">
     <div fxLayoutAlign="start center" class="section-heading">
       <img src="/assets/images/pencil.png" alt="pencil" />
       <span>faculty</span>
     </div>
 
-    <div fxLayoutAlign="end">
+    <div fxLayoutAlign="end" [@bounceInUp]="state">
       <mat-form-field
         appearance="outline"
         class="no-error-field search-faculty"
@@ -22,6 +28,7 @@
 
     <!-- laptop and tab -->
     <table
+      [@bounceInUp]="state"
       fxHide.lt-sm
       fxLayout="column"
       class="mat-elevation-z4 faculty-table"
@@ -50,6 +57,7 @@
       [multi]="true"
       fxLayout="column"
       fxLayoutGap="24px"
+      [@bounceInUp]="state"
     >
       <ng-container *ngFor="let faculty of filteredFaculty | async">
         <mat-expansion-panel [expanded]="true" class="faculty-expansion-panel">

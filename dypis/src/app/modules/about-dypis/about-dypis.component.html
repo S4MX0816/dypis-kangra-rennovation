@@ -1,7 +1,17 @@
-<div fxLayoutAlign="center" class="base-page">
+<div
+  #AboutDypisSection
+  fxLayoutAlign="center"
+  class="base-page"
+  (window:load)="updateAnimationStateOnScroll(AboutDypisSection, state)"
+  (window:scroll)="updateAnimationStateOnScroll(AboutDypisSection, state)"
+>
   <div class="max-width-container" fxLayout="column" fxLayoutGap="24px">
-    <img src="/assets/images/dypis-banner.png" alt="dypis banner" />
-    <div fxLayout="column" fxLayoutGap="8px">
+    <img
+      [@zoomInUp]="state"
+      src="/assets/images/dypis-banner.png"
+      alt="dypis banner"
+    />
+    <div [@bounceInUp]="state" fxLayout="column" fxLayoutGap="8px">
       <div class="base-heading">About DYPIS</div>
       <div class="base-info" fxLayout="column" fxLayoutGap="8px">
         <span>

@@ -1,120 +1,132 @@
-<div fxLayoutAlign="center" class="base-page">
+<div
+  #VisionAndMissionSection
+  fxLayoutAlign="center"
+  class="base-page"
+  (window:load)="updateAnimationStateOnScroll(VisionAndMissionSection, state)"
+  (window:scroll)="updateAnimationStateOnScroll(VisionAndMissionSection, state)"
+>
   <div class="max-width-container" fxLayout="column" fxLayoutGap="24px">
-    <img src="/assets/images/dypis-banner.png" alt="dypis banner" />
-    <div fxLayout="column" fxLayoutGap="8px">
-      <div class="base-heading">Mission</div>
-      <div class="base-info" fxLayout="column" fxLayoutGap="8px">
-        <span>
-          D Y Patil International School aims to create a supportive and
-          inclusive environment where students are encouraged to explore their
-          potential and achieve their personal best in all aspects of school
-          life. Students will be challenged and engaged through authentic
-          learning opportunities that inspire them to develop creativity,
-          confidence and resilience to become independent and ethical life-long
-          learners.
-        </span>
-        <span>
-          We offer a broad curriculum and a range of opportunities for all our
-          students to achieve excellence in academic, creative, social,
-          cultural, sporting and community endeavors. We value collaborative
-          learning, positive relationships and building capacity amongst our
-          students to effectively allow them to engage in the world of the
-          future, where problem-solving, evaluating, working in teams,
-          communicating, creating and innovating are not only valued concepts,
-          but expected skills, attributes and capabilities.
-        </span>
-        <span>
-          We support the individual wellbeing of students and provide a school
-          environment that allows every student to thrive as they work towards
-          achieving their personal best performance. We set high expectations
-          for students and work hard to safeguard positive emotions across our
-          school community. We are partners in learning with our students and
-          seek to deepen their knowledge, provide an enriching and innovative
-          learning experiences, while also gently urging our students out of
-          their comfort zone to attempt new challenges.
-        </span>
-        <span>
-          We value relationships and connections with the community. We
-          encourage our students to develop respectful relationships with their
-          peers, teachers and the broader community. We instill in our students
-          a keen social conscience and the capacity to make ethical decisions.
-          We work hard to develop and sustain productive partnerships and
-          connections with our parents, local schools and businesses and leading
-          tertiary institutions. We are proud to be a high performing school and
-          aim to be the selective school of first choice for all families within
-          our community.
-        </span>
-        <span>
-          Our students graduate from D Y Patil International school with the
-          skills, mindsets and qualities that will best equip them for success
-          in the world of the future. Our students are intelligent, resilient,
-          creative, imaginative, disciplined, dedicated to life-long learning,
-          respectful and ethical. They are the future leaders and role models of
-          society.
-        </span>
-      </div>
-    </div>
-    <div fxLayout="column" fxLayoutGap="8px">
-      <div class="base-heading">Vision</div>
-      <div class="base-info" fxLayout="column" fxLayoutGap="8px">
-        <span>
-          We aspire to be a school from which students gain a sense of personal
-          accomplishment, self-confidence, and a lifelong love for learning. By
-          fostering critical thinking through the inquiry process, our students
-          develop a broad range of competencies for their future endeavors. We
-          value a strong partnership where parents contribute to the education
-          and success of their children.
-        </span>
-        <div class="list-items" fxLayout="column" fxLayoutGap="8px">
+    <img
+      [@zoomInUp]="state"
+      src="/assets/images/dypis-banner.png"
+      alt="dypis banner"
+    />
+    <div [@bounceInUp]="state" fxLayout="column" fxLayoutGap="24px">
+      <div fxLayout="column" fxLayoutGap="8px">
+        <div class="base-heading">Mission</div>
+        <div class="base-info" fxLayout="column" fxLayoutGap="8px">
           <span>
-            We foster a well-qualified, highly-skilled and approachable faculty,
-            and expect and support their professional development.
+            D Y Patil International School aims to create a supportive and
+            inclusive environment where students are encouraged to explore their
+            potential and achieve their personal best in all aspects of school
+            life. Students will be challenged and engaged through authentic
+            learning opportunities that inspire them to develop creativity,
+            confidence and resilience to become independent and ethical
+            life-long learners.
           </span>
           <span>
-            We inspire our students to strive for excellence in all aspects of
-            their development: academic, intellectual, creative, social,
-            physical and emotional.
+            We offer a broad curriculum and a range of opportunities for all our
+            students to achieve excellence in academic, creative, social,
+            cultural, sporting and community endeavors. We value collaborative
+            learning, positive relationships and building capacity amongst our
+            students to effectively allow them to engage in the world of the
+            future, where problem-solving, evaluating, working in teams,
+            communicating, creating and innovating are not only valued concepts,
+            but expected skills, attributes and capabilities.
           </span>
           <span>
-            We expect our students to become productive individuals and
-            principled world citizens.
+            We support the individual wellbeing of students and provide a school
+            environment that allows every student to thrive as they work towards
+            achieving their personal best performance. We set high expectations
+            for students and work hard to safeguard positive emotions across our
+            school community. We are partners in learning with our students and
+            seek to deepen their knowledge, provide an enriching and innovative
+            learning experiences, while also gently urging our students out of
+            their comfort zone to attempt new challenges.
           </span>
           <span>
-            We respect every individual and every culture in our community. We
-            believe that our diversity of cultures, languages and experience is
-            a source of strength, inspiration and knowledge.
+            We value relationships and connections with the community. We
+            encourage our students to develop respectful relationships with
+            their peers, teachers and the broader community. We instill in our
+            students a keen social conscience and the capacity to make ethical
+            decisions. We work hard to develop and sustain productive
+            partnerships and connections with our parents, local schools and
+            businesses and leading tertiary institutions. We are proud to be a
+            high performing school and aim to be the selective school of first
+            choice for all families within our community.
           </span>
           <span>
-            We promote the exchange of ideas and an atmosphere of openness
-            amongst students, faculty, parents and administration.
+            Our students graduate from D Y Patil International school with the
+            skills, mindsets and qualities that will best equip them for success
+            in the world of the future. Our students are intelligent, resilient,
+            creative, imaginative, disciplined, dedicated to life-long learning,
+            respectful and ethical. They are the future leaders and role models
+            of society.
           </span>
         </div>
       </div>
-    </div>
-    <div fxLayout="column" fxLayoutGap="8px">
-      <div class="base-heading">Experience</div>
-      <div class="base-info" fxLayout="column" fxLayoutGap="8px">
-        <div class="list-items" fxLayout="column" fxLayoutGap="8px">
+      <div fxLayout="column" fxLayoutGap="8px">
+        <div class="base-heading">Vision</div>
+        <div class="base-info" fxLayout="column" fxLayoutGap="8px">
           <span>
-            A Strong International Academic Program designed to challenge
-            independent and motivated learners.
+            We aspire to be a school from which students gain a sense of
+            personal accomplishment, self-confidence, and a lifelong love for
+            learning. By fostering critical thinking through the inquiry
+            process, our students develop a broad range of competencies for
+            their future endeavors. We value a strong partnership where parents
+            contribute to the education and success of their children.
           </span>
-          <span>
-            An Engaging Educational Approach – Students are given ownership of
-            the learning process and are encouraged to actively participate in
-            their own education by setting personal goals and performing
-            self-evaluation.
-          </span>
-          <span>
-            Holistic Development – Students are nurtured to create well-rounded,
-            individuals with an international outlook and a sense of Indian
-            culture and values.
-          </span>
-          <span> Small class sizes and teacher – student ratios. </span>
-          <span>
-            Faculty is a professional team of highly qualified and experienced
-            teachers.
-          </span>
+          <div class="list-items" fxLayout="column" fxLayoutGap="8px">
+            <span>
+              We foster a well-qualified, highly-skilled and approachable
+              faculty, and expect and support their professional development.
+            </span>
+            <span>
+              We inspire our students to strive for excellence in all aspects of
+              their development: academic, intellectual, creative, social,
+              physical and emotional.
+            </span>
+            <span>
+              We expect our students to become productive individuals and
+              principled world citizens.
+            </span>
+            <span>
+              We respect every individual and every culture in our community. We
+              believe that our diversity of cultures, languages and experience
+              is a source of strength, inspiration and knowledge.
+            </span>
+            <span>
+              We promote the exchange of ideas and an atmosphere of openness
+              amongst students, faculty, parents and administration.
+            </span>
+          </div>
+        </div>
+      </div>
+      <div fxLayout="column" fxLayoutGap="8px">
+        <div class="base-heading">Experience</div>
+        <div class="base-info" fxLayout="column" fxLayoutGap="8px">
+          <div class="list-items" fxLayout="column" fxLayoutGap="8px">
+            <span>
+              A Strong International Academic Program designed to challenge
+              independent and motivated learners.
+            </span>
+            <span>
+              An Engaging Educational Approach – Students are given ownership of
+              the learning process and are encouraged to actively participate in
+              their own education by setting personal goals and performing
+              self-evaluation.
+            </span>
+            <span>
+              Holistic Development – Students are nurtured to create
+              well-rounded, individuals with an international outlook and a
+              sense of Indian culture and values.
+            </span>
+            <span> Small class sizes and teacher – student ratios. </span>
+            <span>
+              Faculty is a professional team of highly qualified and experienced
+              teachers.
+            </span>
+          </div>
         </div>
       </div>
     </div>
