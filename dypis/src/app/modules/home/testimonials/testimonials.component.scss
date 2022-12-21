@@ -1,0 +1,133 @@
+@import "../../../utils/variables.scss";
+
+.testimonials {
+  background: url("../../../../assets/images/testimonials-bg.png");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  padding: 64px;
+}
+
+.stats {
+  padding: 28px 64px;
+  background: $LIGHT-BLUE;
+  border-radius: 12px;
+}
+
+.single-stat {
+  padding-bottom: 24px;
+  border-bottom: 1px solid #d3d3d3;
+
+  &:hover .stat-icon {
+    transform: rotateY(360deg);
+  }
+}
+
+.total-no-stat {
+  max-width: 90px;
+  max-height: 90px;
+  min-width: 90px;
+  min-height: 90px;
+  width: 90px;
+  height: 90px;
+  font-size: 25px;
+  border-radius: 50%;
+  font-weight: 700;
+  color: $WHITE;
+}
+
+.stat-name {
+  color: $LIGHT-BLACK;
+  font-weight: 700;
+  text-transform: capitalize;
+}
+
+.stat-icon {
+  width: 100%;
+  font-size: 30px;
+}
+
+.testimonial-container {
+  max-width: 720px;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.testimonial-content {
+  min-width: 100%;
+
+  &:hover .parent-name {
+    color: $ORANGE;
+  }
+}
+
+.testimonial-heading {
+  height: 54px;
+  margin-bottom: 54px;
+}
+
+.parent-testimonial {
+  text-align: justify;
+  text-align-last: center;
+  color: $LIGHT-GRAY;
+  line-height: 28px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.quote {
+  color: $BLUE;
+  font-size: 32px;
+}
+
+.parent-image {
+  width: 128px;
+  height: 128px;
+  border-radius: 50%;
+}
+
+.parent-name {
+  color: $BLUE;
+  font-weight: 700;
+  font-size: 20px;
+  margin-bottom: 14px !important;
+  text-transform: capitalize;
+}
+
+.parent-type {
+  font-size: 14px;
+  font-weight: 500;
+  color: $LIGHT-GRAY;
+}
+
+@media screen and (max-width: 1279px) {
+  .parent-name {
+    color: $BLUE;
+    font-weight: 700;
+    font-size: 20px;
+    margin-bottom: 6px !important;
+  }
+}
+
+@media screen and (min-width: 600px) and (max-width: 959px) {
+  .stats {
+    gap: 24px;
+  }
+}
+
+@media screen and (max-width: 599px) {
+  .stats {
+    padding: 28px;
+    width: 80vw;
+  }
+
+  .testimonials {
+    padding: 64px 24px;
+  }
+
+  .quote {
+    color: $BLUE;
+    font-size: 24px;
+  }
+}

@@ -6,6 +6,10 @@ import { CarouselComponent } from './carousel/carousel.component';
 import { FacilitiesComponent } from './facilities/facilities.component';
 import { SpecialClassesComponent } from './special-classes/special-classes.component';
 import { KgActivitiesComponent } from './kg-activities/kg-activities.component';
+import { GalleryComponent } from './gallery/gallery.component';
+import { TestimonialsComponent } from './testimonials/testimonials.component';
+import { SchoolTeachersComponent } from './school-teachers/school-teachers.component';
+import { AdmissionProcessComponent } from './admission-process/admission-process.component';
 
 @NgModule({
   declarations: [
@@ -14,6 +18,10 @@ import { KgActivitiesComponent } from './kg-activities/kg-activities.component';
     FacilitiesComponent,
     SpecialClassesComponent,
     KgActivitiesComponent,
+    GalleryComponent,
+    TestimonialsComponent,
+    SchoolTeachersComponent,
+    AdmissionProcessComponent,
   ],
   imports: [SharedModule],
 })

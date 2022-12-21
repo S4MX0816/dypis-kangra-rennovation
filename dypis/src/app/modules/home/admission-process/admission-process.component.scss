@@ -1,0 +1,101 @@
+@import "../../../utils/variables.scss";
+
+.admission-process {
+  padding: 64px;
+}
+
+.admission-card-container {
+  padding: 20px;
+  background: $WHITE-GRAY;
+  border-radius: 12px;
+}
+
+.admission-process-card {
+  border-radius: 12px;
+  background: $WHITE;
+  width: 100%;
+  padding: 20px;
+
+  &:hover {
+    .admission-card-icon {
+      transform: rotateY(360deg);
+    }
+
+    .admission-card-title {
+      color: $YELLOW;
+    }
+
+    .admission-card-btn {
+      background: $YELLOW;
+    }
+  }
+}
+
+.admission-card-icon {
+  font-size: 48px;
+}
+
+.admission-card-title {
+  font-weight: 700;
+  font-size: 18px;
+  color: $BLACK;
+  text-transform: uppercase;
+}
+
+.admission-process-content {
+  line-height: 26px;
+  color: #616161;
+  text-align: center;
+  font-size: 14px;
+}
+
+.admission-card-btn {
+  background: $DARK-GREEN;
+  color: $WHITE;
+  font-weight: 700;
+  font-size: 14px;
+  padding: 8px 30px;
+  border-radius: 30px;
+  text-transform: uppercase;
+}
+
+.admission-banner {
+  background: url("../../../../assets/images/admission-process-bg.png");
+  padding: 77px 30px 30px 30px;
+  color: white;
+  background-size: cover;
+  width: 100%;
+  border-radius: 12px;
+}
+
+.admission-banner-heading {
+  font-weight: 700;
+  font-size: 28px;
+  text-transform: uppercase;
+}
+
+.admission-banner-btn {
+  font-weight: 700;
+  font-size: 14px;
+  padding: 8px 30px;
+  border-radius: 30px;
+  background: $ORANGE;
+  color: $WHITE;
+  margin-top: 12px;
+  width: fit-content;
+  text-transform: uppercase;
+
+  &:hover {
+    background: $YELLOW;
+  }
+}
+
+@media screen and (max-width: 599px) {
+  .admission-process {
+    padding: 64px 24px;
+  }
+
+  .admission-banner-text {
+    text-align: center;
+  }
+}

@@ -1,0 +1,69 @@
+@import "../../../utils/variables.scss";
+
+.gallery {
+  background: url("../../../../assets/images/gallery-bg.png");
+  padding: 64px;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.gallery-details {
+  background: url("../../../../assets/images/gallery.png");
+  padding: 44px;
+  min-width: 526px;
+  width: 526px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 12px;
+}
+
+.gallery-images {
+  border-radius: 12px;
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+@media screen and (max-width: 1460px) {
+  .gallery-details {
+    min-width: 450px;
+    width: 450px;
+  }
+}
+
+@media screen and (max-width: 1279px) {
+  .gallery-details {
+    min-width: 350px;
+    width: 350px;
+  }
+}
+
+@media screen and (max-width: 959px) {
+  .gallery-details {
+    background: $LIGHT-BLUE;
+    min-width: unset;
+    width: 100%;
+    border-radius: 12px 12px 0 0;
+  }
+
+  .gallery-images {
+    border-radius: 0 0 12px 12px;
+  }
+}
+
+@media screen and (max-width: 599px) {
+  .gallery {
+    padding: unset;
+  }
+
+  .gallery-details {
+    border-radius: unset;
+  }
+
+  .gallery-images {
+    border-radius: unset;
+  }
+}

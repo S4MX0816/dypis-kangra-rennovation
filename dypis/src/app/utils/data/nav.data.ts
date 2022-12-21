@@ -36,7 +36,7 @@ export const menuItems: MenuItem[] = [
   {
     name: 'academics',
     icon: faGraduationCap,
-    routerLink: '',
+    routerLink: null,
     routerLinkActive: '',
     subMenu: [
       {
@@ -74,25 +74,25 @@ export const menuItems: MenuItem[] = [
   {
     name: 'about us',
     icon: faAddressCard,
-    routerLink: '',
+    routerLink: null,
     routerLinkActive: '',
     subMenu: [
       {
         name: 'about dypis',
         icon: faUsersRectangle,
-        routerLink: 'about dypis',
+        routerLink: 'about-dypis',
         routerLinkActive,
       },
       {
         name: 'vision and mission',
         icon: faLightbulb,
-        routerLink: 'vision and mission',
+        routerLink: 'vision-and-mission',
         routerLinkActive,
       },
       {
         name: "chairman's message",
         icon: faHeadSideCough,
-        routerLink: "chairman's message",
+        routerLink: 'chairman-message',
         routerLinkActive,
       },
     ],

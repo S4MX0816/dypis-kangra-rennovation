@@ -1,7 +1,16 @@
 import { environment } from '../../environments/environment';
+import { router } from '../app.module';
 
 export const openAdmission = () => {
   window.open(environment.admissionLink, '_blank');
+};
+
+export const openMaps = () => {
+  window.open(environment.mapsLink, '_target');
+};
+
+export const goToRoute = (routeLink: string[]) => {
+  router.navigate(routeLink);
 };
 
 export function updateAnimationStateOnScroll<T>(

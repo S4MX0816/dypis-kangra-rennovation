@@ -1,0 +1,67 @@
+@import "../../../utils/variables.scss";
+
+.school-teachers {
+  background: url("/assets/images/school-techers-bg.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 64px;
+}
+
+.teachers-heading {
+  span {
+    color: $WHITE !important;
+  }
+
+  &::after {
+    background: $WHITE !important;
+  }
+}
+
+.teacher-card {
+  background: $WHITE;
+  border-radius: 12px;
+  overflow: hidden;
+  text-align: center;
+
+  &:hover .teacher-name {
+    color: $YELLOW;
+  }
+}
+
+.teacher-details {
+  padding: 20px;
+}
+
+.teacher-designation {
+  color: $LIGHT-BLACK;
+  font-size: 12px;
+  text-transform: uppercase;
+
+  &::after {
+    content: "";
+    display: block;
+    width: 40px;
+    height: 2px;
+    background: $BLACK;
+    margin: 14px auto 6px auto;
+  }
+}
+
+.teacher-name {
+  font-weight: 700;
+  font-size: 18px;
+  text-transform: uppercase;
+  color: $BLACK;
+}
+
+.teacher-quote {
+  font-size: 12px;
+  font-style: italic;
+  color: $GRAY;
+}
+
+@media screen and (max-width: 599px) {
+  .school-teachers {
+    padding: 64px 24px;
+  }
+}

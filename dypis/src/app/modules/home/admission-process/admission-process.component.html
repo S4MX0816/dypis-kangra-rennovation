@@ -1,0 +1,73 @@
+<div
+  #admissionProcessSection
+  fxLayoutAlign="center"
+  class="admission-process"
+  (window:load)="updateAnimationStateOnScroll(admissionProcessSection, state)"
+  (window:scroll)="updateAnimationStateOnScroll(admissionProcessSection, state)"
+>
+  <div
+    class="max-width-container"
+    fxLayout="column"
+    fxLayoutAlign.lt-md="start center"
+    fxLayoutGap="44px"
+  >
+    <div fxLayoutAlign="start center" class="section-heading">
+      <img src="/assets/images/pencil.png" alt="pencil" />
+      <span>Admission process</span>
+    </div>
+
+    <div
+      fxLayout.gt-sm="row"
+      fxLayout.lt-md="column"
+      fxLayoutGap="24px"
+      class="admission-card-container"
+    >
+      <ng-container *ngFor="let admissionProcess of admissionProcess">
+        <div
+          [@bounceInUp]="state"
+          class="admission-process-card"
+          fxLayout="column"
+          fxLayoutAlign="start center"
+          fxLayoutGap="12px"
+        >
+          <fa-icon
+            class="admission-card-icon"
+            [icon]="admissionProcess.icon"
+          ></fa-icon>
+          <div class="admission-card-title">{{ admissionProcess.title }}</div>
+          <div class="admission-process-content">
+            {{ admissionProcess.text }}
+          </div>
+          <button
+            mat-flat-button
+            class="admission-card-btn"
+            (click)="admissionProcess.action()"
+          >
+            {{ admissionProcess.btnText }}
+          </button>
+        </div>
+      </ng-container>
+    </div>
+
+    <div
+      [@bounceInUp]="state"
+      class="admission-banner"
+      fxLayout="column"
+      fxLayoutAlign.lt-sm="start center"
+      fxLayoutGap="12px"
+    >
+      <div class="admission-banner-heading">Apply for admission</div>
+      <div class="admission-banner-text">
+        Li Europan lingues es membres del sam familie. Lor separat existentie es
+        un myth. Por scientie
+      </div>
+      <button
+        mat-flat-button
+        class="admission-banner-btn"
+        (click)="openAdmission()"
+      >
+        Apply now
+      </button>
+    </div>
+  </div>
+</div>

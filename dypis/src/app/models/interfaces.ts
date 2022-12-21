@@ -4,7 +4,7 @@ export interface SingleMenuItem {
   name: string;
   icon: IconDefinition;
   action?: () => void;
-  routerLink: string;
+  routerLink: string | null;
   routerLinkActive: string;
 }
 
@@ -25,15 +25,56 @@ export interface KgActivity {
   text: string;
 }
 
+export interface SchoolStat {
+  name: string;
+  totalNo: number;
+  icon: IconDefinition;
+  circleColor: ColorPalette;
+}
+
+export interface testimonial {
+  text: string;
+  name: string;
+  image: string;
+  designation: string;
+}
+
+export interface SchoolTeacher {
+  image: string;
+  designation: string;
+  name: string;
+  quote: string;
+}
+
+export interface AdmissionProcess {
+  icon: IconDefinition;
+  title: string;
+  text: string;
+  btnText: string;
+  action: (param?: any) => void;
+}
+
+export interface Faculty {
+  name: string;
+  subject: string | null;
+  qualification: string;
+  designation: string;
+}
+
+export type FacultyHeaders = keyof Faculty;
+
 export enum ColorPalette {
   ORANGE = '#fb6b48',
   BLUE = '#5bc4db',
+  LIGHT_BLUE = '#cdeef0',
   DARK_GREEN = '#879f27',
   GREEN = '#43c077',
   YELLOW = '#fac80d',
   PURPLE = '#ba82c5',
   WHITE = '#fff',
   GRAY = '#929292',
+  LIGHT_GRAY = '#a0a09f',
+  WHITE_GRAY = '#f8f8f8',
   BLACK = '#191919',
   LIGHT_BLACK = '#5b5b5b',
   DARK_BLACK = '#111',

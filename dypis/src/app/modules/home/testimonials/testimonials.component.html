@@ -1,0 +1,115 @@
+<div
+  #testimonialsSection
+  fxLayoutAlign="center"
+  class="testimonials"
+  (window:load)="updateAnimationStateOnScroll(testimonialsSection, state)"
+  (window:scroll)="updateAnimationStateOnScroll(testimonialsSection, state)"
+>
+  <div
+    fxLayout.gt-sm="row"
+    fxLayout.lt-md="column"
+    fxLayoutAlign.gt-sm="start"
+    fxLayoutAlign.lt-md="start center"
+    class="max-width-container"
+    fxLayoutGap="24px"
+  >
+    <div
+      [@zoomUp]="state"
+      class="stats"
+      fxLayout="column"
+      fxLayout.sm="row wrap"
+      fxLayoutAlign.sm="space-evenly"
+      fxLayoutGap="24px"
+    >
+      <ng-container *ngFor="let stat of schoolStats; let i = index">
+        <div
+          fxLayout="row"
+          fxLayoutGap="24px"
+          fxLayoutAlign="start center"
+          class="single-stat"
+        >
+          <div
+            #displayNumberDiv
+            [ngStyle]="{ background: stat.circleColor }"
+            class="total-no-stat"
+            fxLayoutAlign="center center"
+          >
+            {{ statNumberArray[i] }}
+          </div>
+          <div class="stat-name">{{ stat.name }}</div>
+          <fa-icon
+            fxLayoutAlign="center"
+            [icon]="stat.icon"
+            class="stat-icon"
+          ></fa-icon>
+        </div>
+      </ng-container>
+    </div>
+    <div
+      [@zoomUp]="state"
+      class="w-full overflow-hidden"
+      fxLayoutAlign="center"
+    >
+      <div
+        class="testimonial-container"
+        fxLayout="column"
+        fxLayoutAlign="start center"
+      >
+        <div
+          fxLayoutAlign="start center"
+          class="section-heading testimonial-heading"
+        >
+          <img src="/assets/images/pencil.png" alt="pencil" />
+          <span>testimonial</span>
+        </div>
+        <div
+          #testimonialDiv
+          fxLayout="row"
+          fxLayoutAlign="start"
+          class="w-full"
+        >
+          <ng-container *ngFor="let testimonial of testimonials">
+            <div
+              fxLayout="column"
+              fxLayoutAlign="start center"
+              fxLayoutGap.gt-md="36px"
+              fxLayoutGap.lt-lg="24px"
+              class="testimonial-content"
+            >
+              <div
+                fxLayout="row"
+                fxLayoutGap.gt-xs="30px"
+                fxLayoutGap.lt-sm="16px"
+              >
+                <fa-icon
+                  fxLayoutAlign="start start"
+                  class="quote"
+                  [icon]="quoteLeft"
+                ></fa-icon>
+                <div class="parent-testimonial">
+                  {{ testimonial.text }}
+                </div>
+                <fa-icon
+                  fxLayoutAlign="start end"
+                  class="quote"
+                  [icon]="quoteRight"
+                ></fa-icon>
+              </div>
+              <img
+                [src]="testimonial.image"
+                alt="parent image"
+                class="parent-image"
+              />
+              <div class="parent-name">
+                {{ testimonial.name }}
+              </div>
+              <div class="parent-type">
+                {{ testimonial.designation }}
+              </div>
+            </div>
+          </ng-container>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

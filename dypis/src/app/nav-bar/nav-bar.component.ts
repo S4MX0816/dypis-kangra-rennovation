@@ -1,16 +1,17 @@
-import { Component, HostListener, ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
+import { Component, HostListener } from '@angular/core';
 import { faBars, faXmark } from '@fortawesome/free-solid-svg-icons';
 
 import { menuItems } from '../utils/data';
-import { MenuItem } from '../models/interfaces';
+import { MenuItem, SingleMenuItem } from '../models/interfaces';
 import { openAdmission } from '../utils/helpers';
-import { hamburgerSildingAnimation } from '../utils/animation';
+import { hamburgerSlidingAnimation } from '../utils/animation';
 
 @Component({
   selector: 'nav-bar',
   templateUrl: './nav-bar.component.html',
   styleUrls: ['./nav-bar.component.scss'],
-  animations: hamburgerSildingAnimation,
+  animations: hamburgerSlidingAnimation,
 })
 export class NavBarComponent {
   menuItems = menuItems;
@@ -19,9 +20,14 @@ export class NavBarComponent {
   showHamburgerMenu = false;
   openAdmission = openAdmission;
 
+  constructor(public router: Router) {}
+
   @HostListener('window:click', ['$event'])
   closeHamburger(event: Event): void {
     const target = event.target as HTMLElement;
+    if (target.closest('.cdk-overlay-backdrop')) {
+      return;
+    }
     if (!target.closest('#hamburger-menu') && this.showHamburgerMenu) {
       this.showHamburgerMenu = false;
     }
@@ -50,5 +56,18 @@ export class NavBarComponent {
       return '';
     }
     return mainReturn;
+  }
+
+  checkRouterClass(subMenu?: SingleMenuItem[]) {
+    if (!subMenu) {
+      return '';
+    }
+    const isActiveMenuPartOfSubMenu = subMenu.some(
+      (menuItem) => menuItem.routerLink === this.router.url.split('/')[1]
+    );
+    if (isActiveMenuPartOfSubMenu) {
+      return 'active-menu-item ';
+    }
+    return '';
   }
 }

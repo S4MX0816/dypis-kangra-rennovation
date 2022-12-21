@@ -1,31 +1,17 @@
-<div class="container snipcss0-1-1-2">
-  <h1 class="snipcss0-2-2-3">404</h1>
-</div>
-<div class="content_page snipcss-tA6b5">
-  <div class="container">
-    <div
-      class="error-img tether-target-attached-top tether-element-attached-top tether-element-attached-center tether-target-attached-center"
-    >
-      <img
-        class="image"
-        src="https://buywptemplates.com/demo/kindergarten-education-pro/wp-content/themes/kindergarten-education-pro/assets/images/error.png"
-      />
+<div fxLayoutAlign="center" class="page-not-found">
+  <div
+    class="max-width-container"
+    fxLayout="column"
+    fxLayoutAlign="start center"
+    fxLayoutGap="12px"
+  >
+    <div class="not-found-heading">404</div>
+    <img src="/assets/images/page-not-found.png" alt="page not found image" />
+    <div class="not-found-heading">page not found</div>
+    <div>
+      Looks like you have taken a wrong turn … Don't worry … it happens to the
+      best of us.
     </div>
-    <div class="page-content text-lg-center text-center">
-      <h3>404 Not Found</h3>
-      <p class="text-404 pt-4 pb-4">
-        Looks like you have taken a wrong turn … Don't worry … it happens to the
-        best of us.
-      </p>
-      <div class="read-moresec">
-        <div>
-          <a href="index.html" class="button hvr-sweep-to-right">
-            Back to Home Page
-          </a>
-        </div>
-      </div>
-      <div class="clearfix"></div>
-    </div>
-    <div class="clearfix"></div>
+    <div class="back-to-home" [routerLink]="['/']">Back to home page</div>
   </div>
 </div>

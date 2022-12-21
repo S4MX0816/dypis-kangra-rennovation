@@ -1,0 +1,52 @@
+@import "../../utils/variables.scss";
+
+.admission-process {
+  padding: 186px 64px 64px 64px;
+}
+
+.faculty-table {
+  border-radius: 12px;
+  width: calc(100% - 24px);
+  min-width: 500px;
+  margin: 12px 12px 24px 12px;
+
+  tr,
+  td,
+  th {
+    width: 100%;
+    text-align: center;
+  }
+
+  tr {
+    padding: 12px;
+  }
+
+  th,
+  td {
+    text-transform: capitalize;
+  }
+}
+
+.faculty-headers {
+  border-bottom: 1px solid $LIGHT-GRAY;
+}
+
+.data-not-found {
+  color: $LIGHT-GRAY;
+}
+
+.search-faculty {
+  margin-top: 24px;
+  font-size: 14px;
+  margin-right: 12px;
+}
+
+.search-icon {
+  color: $ORANGE;
+}
+
+@media screen and (max-width: 599px) {
+  .admission-process {
+    padding: 128px 24px 64px 24px;
+  }
+}

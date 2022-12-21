@@ -23,16 +23,17 @@
           fxLayoutAlign="start center"
           fxLayoutGap="6px"
           class="menu-item"
+          [ngClass]="checkRouterClass(menuItem.subMenu)"
           [matMenuTriggerFor]="menuItem.subMenu ? menu : null"
-          (click)="menuItem?.action()"
+          (click)="menuItem.action && menuItem?.action()"
         >
           <fa-icon class="icons" [icon]="menuItem.icon"></fa-icon>
           <span>{{ menuItem.name }}</span>
 
           <mat-menu #menu="matMenu">
             <button
-              [routerLink]="subItem.name"
-              routerLinkActive="active-menu-item"
+              [routerLink]="subItem.routerLink"
+              [routerLinkActive]="subItem.routerLinkActive"
               class="sub-item"
               mat-menu-item
               fxLayoutAlign="start center"
@@ -73,8 +74,8 @@
 
         <div class="menu-container" *ngFor="let menuItem of menuItems">
           <div
-            [routerLink]="!menuItem.subMenu ? menuItem.name : null"
-            [routerLinkActive]="!menuItem.subMenu ? 'active-menu-item' : ''"
+            [routerLink]="menuItem.routerLink"
+            [routerLinkActive]="menuItem.routerLinkActive"
             fxLayoutAlign="start center"
             fxLayoutGap="6px"
             class="menu-item"
@@ -85,8 +86,8 @@
 
             <mat-menu #menu="matMenu">
               <button
-                [routerLink]="subItem.name"
-                routerLinkActive="active-menu-item"
+                [routerLink]="subItem.routerLink"
+                [routerLinkActive]="subItem.routerLinkActive"
                 class="sub-item"
                 mat-menu-item
                 fxLayoutAlign="start center"

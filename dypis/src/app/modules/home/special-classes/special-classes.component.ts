@@ -27,6 +27,9 @@ export class SpecialClassesComponent {
 
   applyTransition() {
     setInterval(() => {
+      if (this.state === 'start') {
+        return;
+      }
       this.translatePos -= this.TRANSLATE_BY;
       this.offsetPos += this.OFFSET_ADD;
       document.querySelectorAll('.special-class-card').forEach((el) => {

@@ -1,0 +1,37 @@
+<div
+  #schoolTeacherSection
+  fxLayoutAlign="center"
+  class="school-teachers"
+  (window:load)="updateAnimationStateOnScroll(schoolTeacherSection, state)"
+  (window:scroll)="updateAnimationStateOnScroll(schoolTeacherSection, state)"
+>
+  <div class="max-width-container" fxLayout="column" fxLayoutGap="44px">
+    <div fxLayoutAlign="start center" class="section-heading teachers-heading">
+      <img src="/assets/images/pencil.png" alt="pencil" />
+      <span>School teachers</span>
+    </div>
+
+    <div
+      fxLayout.gt-xs="row"
+      fxLayout.lt-sm="column"
+      fxLayoutGap="24px"
+      fxLayoutAlign="space-between"
+    >
+      <ng-container *ngFor="let teacher of schoolTeachers">
+        <div
+          [@zoomInLeft]="state"
+          class="teacher-card"
+          fxLayout="column"
+          fxLayoutAlign="start center"
+        >
+          <img class="w-full" [src]="teacher.image" [alt]="teacher.name" />
+          <div class="teacher-details" fxLayout="column" fxLayoutGap="12px">
+            <div class="teacher-designation">{{ teacher.designation }}</div>
+            <div class="teacher-name">{{ teacher.name }}</div>
+            <div class="teacher-quote">{{ teacher.quote }}</div>
+          </div>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+</div>
