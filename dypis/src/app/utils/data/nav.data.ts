@@ -42,13 +42,13 @@ export const menuItems: MenuItem[] = [
       {
         name: 'courses of study',
         icon: faBook,
-        routerLink: 'courses of study',
+        routerLink: 'courses-of-study',
         routerLinkActive,
       },
       {
         name: 'examination and promotion',
         icon: faFilePen,
-        routerLink: 'examination and promotion',
+        routerLink: 'examination-and-promotion',
         routerLinkActive,
       },
       {
