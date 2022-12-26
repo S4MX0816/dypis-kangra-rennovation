@@ -11,7 +11,6 @@ import { updateAnimationStateOnScroll } from '../../../utils/helpers';
   animations: [zoomInUpAnimation],
 })
 export class FacilitiesComponent {
-  @ViewChildren('facilitySection') x: any;
   facilities = facilities;
   updateAnimationStateOnScroll = updateAnimationStateOnScroll;
   state = 'start';

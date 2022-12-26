@@ -52,7 +52,7 @@ export class TestimonialsComponent {
 
   startNoStats() {
     this.statNumberArray.forEach((_, index) => {
-      let duration = 100 - this.schoolStats[index].totalNo;
+      let duration = 100 - this.schoolStats[index]?.totalNo;
       if (duration < 5) {
         duration = 5;
       }
@@ -60,7 +60,7 @@ export class TestimonialsComponent {
         if (this.state === 'start') {
           return;
         }
-        if (this.statNumberArray[index] === this.schoolStats[index].totalNo) {
+        if (this.statNumberArray[index] === this.schoolStats[index]?.totalNo) {
           clearInterval(int);
           return;
         }

@@ -1,5 +1,7 @@
 <nav-bar></nav-bar>
-<router-outlet></router-outlet>
+<div #divEl>
+  <router-outlet (activate)="onActivate(divEl)"></router-outlet>
+</div>
 <footer></footer>
 
 <hover-contact-info></hover-contact-info>
