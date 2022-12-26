@@ -54,13 +54,13 @@ export const menuItems: MenuItem[] = [
       {
         name: 'date sheet',
         icon: faCalendarDays,
-        routerLink: 'date sheet',
+        routerLink: 'date-sheet',
         routerLinkActive,
       },
       {
         name: 'virtual schooling',
         icon: faMobileScreen,
-        routerLink: 'virtual schooling',
+        routerLink: 'virtual-schooling',
         routerLinkActive,
       },
     ],

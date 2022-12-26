@@ -19,6 +19,21 @@ const routes: Routes = [
     component: InformationUpdatingComponent,
     data: { compName: 'courses of study' },
   },
+  {
+    path: 'examination-and-promotion',
+    component: InformationUpdatingComponent,
+    data: { compName: 'examination and promotion' },
+  },
+  {
+    path: 'date-sheet',
+    component: InformationUpdatingComponent,
+    data: { compName: 'date sheet' },
+  },
+  {
+    path: 'virtual-schooling',
+    component: InformationUpdatingComponent,
+    data: { compName: 'virtual schooling' },
+  },
   { path: 'chairman-message', component: ChairmanMessageComponent },
   { path: '**', pathMatch: 'full', component: PageNotFoundComponent },
 ];
