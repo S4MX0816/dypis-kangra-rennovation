@@ -100,7 +100,7 @@ export const menuItems: MenuItem[] = [
   {
     name: 'contact us',
     icon: faPhone,
-    routerLink: 'contact us',
+    routerLink: 'contact-us',
     routerLinkActive,
   },
 ];

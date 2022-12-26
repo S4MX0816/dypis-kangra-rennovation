@@ -1,0 +1,59 @@
+@import "../../utils/variables.scss";
+
+.overlay-map {
+  position: relative;
+  width: 100vw;
+  height: 325px;
+}
+
+.contact-us-box {
+  padding: 20px;
+  border-radius: 12px;
+  border: 2px dashed;
+  border-top-color: $YELLOW;
+  border-right-color: $DARK-GREEN;
+  border-bottom-color: $PURPLE;
+  border-left-color: $ORANGE;
+}
+
+.contact-info-heading {
+  color: $BLACK;
+  font-weight: 700;
+  font-size: 26px;
+  text-transform: uppercase;
+}
+
+.contact-info-icon {
+  font-size: 46px;
+  color: $BLUE;
+}
+
+.contact-info-sub-heading {
+  font-size: 18px;
+  font-weight: 700;
+  color: $LIGHT-BLACK;
+}
+
+.contact-info-content {
+  line-height: 26px;
+  font-size: 14px;
+  color: $LIGHT-BLACK;
+}
+
+.contact-info-btn {
+  background: $BLUE;
+  color: $WHITE;
+  border-radius: 30px;
+  font-weight: 700;
+  font-size: 14px;
+  text-transform: uppercase;
+  padding: 8px 30px;
+}
+
+.pt-8 {
+  padding-top: 8px;
+}
+
+.mb-24 {
+  margin-bottom: 24px;
+}

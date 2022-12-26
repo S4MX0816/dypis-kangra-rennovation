@@ -14,6 +14,7 @@ import { AboutDypisComponent } from './modules/about-dypis/about-dypis.component
 import { VisionAndMissionComponent } from './modules/vision-and-mission/vision-and-mission.component';
 import { ChairmanMessageComponent } from './modules/chairman-message/chairman-message.component';
 import { InformationUpdatingComponent } from './modules/information-updating/information-updating.component';
+import { ContactUsComponent } from './modules/contact-us/contact-us.component';
 
 export let router: Router;
 
@@ -29,6 +30,7 @@ export let router: Router;
     VisionAndMissionComponent,
     ChairmanMessageComponent,
     InformationUpdatingComponent,
+    ContactUsComponent,
   ],
   imports: [SharedModule, AppRoutingModule, HomeModule],
   providers: [],

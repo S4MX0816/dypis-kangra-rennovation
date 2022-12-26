@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AboutDypisComponent } from './modules/about-dypis/about-dypis.component';
 import { ChairmanMessageComponent } from './modules/chairman-message/chairman-message.component';
+import { ContactUsComponent } from './modules/contact-us/contact-us.component';
 import { FacultyComponent } from './modules/faculty/faculty.component';
 import { HomeComponent } from './modules/home/home.component';
 import { InformationUpdatingComponent } from './modules/information-updating/information-updating.component';
@@ -35,6 +36,7 @@ const routes: Routes = [
     data: { compName: 'virtual schooling' },
   },
   { path: 'chairman-message', component: ChairmanMessageComponent },
+  { path: 'contact-us', component: ContactUsComponent },
   { path: '**', pathMatch: 'full', component: PageNotFoundComponent },
 ];
 

@@ -1,0 +1,122 @@
+<div
+  #contactUsSection
+  fxLayoutAlign="center"
+  class="base-page overflow-hidden"
+  (window:scroll)="updateAnimationStateOnScroll(contactUsSection, state)"
+>
+  <div class="max-width-container" fxLayout="column">
+    <div
+      #maxWidthDivContent
+      fxLayout="column"
+      fxLayoutGap="24px"
+      (window:resize)="updateXVal()"
+    >
+      <div class="base-heading">Contact us</div>
+      <iframe
+        class="overlay-map"
+        [ngStyle]="{
+          transform: 'translateX(-' + offsetVal + 'px)'
+        }"
+        frameborder="0"
+        scrolling="yes"
+        marginheight="0"
+        marginwidth="0"
+        [src]="mapsEmbedUrl"
+      ></iframe>
+      <div fxLayout.gt-xs="row" fxLayout.lt-sm="column" fxLayoutGap="24px">
+        <div
+          fxFlex.gt-md="30"
+          fxFlex.lt-lg="40"
+          fxFlex.lt-md="50"
+          fxFlex.lt-sm="100"
+          fxLayout="column"
+          class="contact-us-box"
+          fxLayoutGap="24px"
+        >
+          <div class="contact-info-heading" fxLayoutAlign="center">
+            Contact info
+          </div>
+          <div fxLayout="row" fxLayoutGap="24px">
+            <fa-icon
+              class="contact-info-icon"
+              [icon]="faLocationArrow"
+            ></fa-icon>
+            <div fxLayout="column" class="pt-8">
+              <div class="contact-info-sub-heading">Location</div>
+              <div class="contact-info-content">London UK</div>
+              <div class="contact-info-content">
+                12-14 Kengsingtone High Street
+              </div>
+            </div>
+          </div>
+          <div fxLayout="row" fxLayoutGap="24px">
+            <fa-icon
+              class="contact-info-icon"
+              [icon]="faEnvelopeOpen"
+            ></fa-icon>
+            <div fxLayout="column" class="pt-8">
+              <div class="contact-info-sub-heading">Email</div>
+              <div class="contact-info-content">{{ emailPrimary }}</div>
+              <div class="contact-info-content">{{ emailSecondary }}</div>
+            </div>
+          </div>
+          <div fxLayout="row" fxLayoutGap="24px">
+            <fa-icon class="contact-info-icon" [icon]="faPhoneVolume"></fa-icon>
+            <div fxLayout="column" class="pt-8">
+              <div class="contact-info-sub-heading">Phone</div>
+              <div class="contact-info-content">{{ contactNoPrimary }}</div>
+              <div class="contact-info-content">
+                {{ contactNoSecondary }}
+              </div>
+            </div>
+          </div>
+          <div iv fxLayout="row" fxLayoutGap="24px">
+            <fa-icon class="contact-info-icon" [icon]="faCalendarAlt"></fa-icon>
+            <div fxLayout="column" class="pt-8">
+              <div class="contact-info-sub-heading">Time</div>
+              <div class="contact-info-content">09:00 - 17:00</div>
+              <div class="contact-info-content">
+                Saturday and Sunday - Closed
+              </div>
+            </div>
+          </div>
+        </div>
+        <form
+          fxFlex.gt-md="70"
+          fxFlex.lt-lg="60"
+          fxFlex.lt-md="50"
+          fxFlex.lt-sm="100"
+          fxLayout="column"
+          fxLayoutAlign="start center"
+          class="contact-us-box"
+        >
+          <div class="contact-info-heading mb-24" fxLayoutAlign="center">
+            Contact us
+          </div>
+
+          <mat-form-field appearance="outline" class="custom-form-field w-full">
+            <mat-label>Full name</mat-label>
+            <input matInput placeholder="Full name" />
+          </mat-form-field>
+
+          <mat-form-field appearance="outline" class="custom-form-field w-full">
+            <mat-label>Email</mat-label>
+            <input matInput placeholder="Email" />
+          </mat-form-field>
+
+          <mat-form-field appearance="outline" class="custom-form-field w-full">
+            <mat-label>Phone number</mat-label>
+            <input matInput placeholder="Phone number" />
+          </mat-form-field>
+
+          <mat-form-field appearance="outline" class="custom-form-field w-full">
+            <mat-label>Message</mat-label>
+            <textarea matInput placeholder="Message"></textarea>
+          </mat-form-field>
+
+          <button mat-flat-button class="contact-info-btn">Send message</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
