@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
 
 import {
   zoomInUpAnimation,
@@ -12,9 +12,20 @@ import { updateAnimationStateOnScroll } from 'src/app/utils/helpers';
   styleUrls: ['./vision-and-mission.component.scss'],
   animations: [zoomInUpAnimation, bounceInUpAnimation],
 })
-export class VisionAndMissionComponent {
+export class VisionAndMissionComponent implements AfterViewInit {
   state = 'start';
   updateAnimationStateOnScroll = updateAnimationStateOnScroll;
+  @ViewChild('visionAndMissionSection')
+  visionAndMissionSection!: ElementRef<HTMLDivElement>;
 
   constructor() {}
+
+  ngAfterViewInit(): void {
+    setTimeout(() => {
+      this.updateAnimationStateOnScroll(
+        this.visionAndMissionSection?.nativeElement,
+        this.state
+      );
+    }, 0);
+  }
 }

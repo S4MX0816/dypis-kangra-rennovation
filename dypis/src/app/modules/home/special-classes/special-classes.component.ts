@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
 
 import { specialClasses } from 'src/app/utils/data';
 import { zoomInUpAnimation } from 'src/app/utils/animation';
@@ -10,7 +10,7 @@ import { updateAnimationStateOnScroll } from 'src/app/utils/helpers';
   styleUrls: ['./special-classes.component.scss'],
   animations: [zoomInUpAnimation],
 })
-export class SpecialClassesComponent {
+export class SpecialClassesComponent implements AfterViewInit {
   specialClasses = specialClasses.slice();
   updateAnimationStateOnScroll = updateAnimationStateOnScroll;
   state = 'start';
@@ -20,9 +20,20 @@ export class SpecialClassesComponent {
   readonly OFFSET_ADD = 24;
   readonly REMAINING_CARDS = 5;
   readonly TRANSITION_TIMING = 3000; // in milliseconds
+  @ViewChild('specialClassesSection')
+  specialClassesSection!: ElementRef<HTMLDivElement>;
 
   constructor() {
     this.applyTransition();
+  }
+
+  ngAfterViewInit(): void {
+    setTimeout(() => {
+      this.updateAnimationStateOnScroll(
+        this.specialClassesSection?.nativeElement,
+        this.state
+      );
+    }, 0);
   }
 
   applyTransition() {

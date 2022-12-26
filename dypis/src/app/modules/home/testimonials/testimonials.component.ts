@@ -1,4 +1,4 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
 import { faQuoteLeft, faQuoteRight } from '@fortawesome/free-solid-svg-icons';
 import { zoomUpAnimation } from 'src/app/utils/animation';
 
@@ -11,7 +11,7 @@ import { updateAnimationStateOnScroll } from 'src/app/utils/helpers';
   styleUrls: ['./testimonials.component.scss'],
   animations: [zoomUpAnimation],
 })
-export class TestimonialsComponent {
+export class TestimonialsComponent implements AfterViewInit {
   schoolStats = schoolStats;
   testimonials = testimonials;
   quoteLeft = faQuoteLeft;
@@ -27,10 +27,21 @@ export class TestimonialsComponent {
   @ViewChild('testimonialDiv') testimonialDiv!: ElementRef;
   updateAnimationStateOnScroll = updateAnimationStateOnScroll;
   statNumberArray: number[] = new Array(testimonials.length).fill(0);
+  @ViewChild('testimonialsSection')
+  testimonialsSection!: ElementRef<HTMLDivElement>;
 
   constructor() {
     this.applyTransition();
     this.startNoStats();
+  }
+
+  ngAfterViewInit(): void {
+    setTimeout(() => {
+      this.updateAnimationStateOnScroll(
+        this.testimonialsSection?.nativeElement,
+        this.state
+      );
+    }, 0);
   }
 
   applyTransition() {

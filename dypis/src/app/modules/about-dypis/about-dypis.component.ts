@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
 
 import {
   zoomInUpAnimation,
@@ -12,9 +12,20 @@ import { updateAnimationStateOnScroll } from 'src/app/utils/helpers';
   styleUrls: ['./about-dypis.component.scss'],
   animations: [zoomInUpAnimation, bounceInUpAnimation],
 })
-export class AboutDypisComponent {
+export class AboutDypisComponent implements AfterViewInit {
   state = 'start';
   updateAnimationStateOnScroll = updateAnimationStateOnScroll;
+  @ViewChild('aboutDypisSection')
+  aboutDypisSection!: ElementRef<HTMLDivElement>;
 
   constructor() {}
+
+  ngAfterViewInit(): void {
+    setTimeout(() => {
+      this.updateAnimationStateOnScroll(
+        this.aboutDypisSection?.nativeElement,
+        this.state
+      );
+    }, 0);
+  }
 }

@@ -1,5 +1,5 @@
 import { FormControl } from '@angular/forms';
-import { Component } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import { BehaviorSubject, debounceTime, distinctUntilChanged } from 'rxjs';
 
@@ -14,13 +14,14 @@ import { updateAnimationStateOnScroll } from 'src/app/utils/helpers';
   styleUrls: ['./faculty.component.scss'],
   animations: [bounceInUpAnimation],
 })
-export class FacultyComponent {
+export class FacultyComponent implements AfterViewInit {
   state = 'start';
   faculty = faculty;
   faSearch = faSearch;
   filteredFaculty = new BehaviorSubject<Faculty[]>([]);
   searchFacultyCtrl = new FormControl();
   updateAnimationStateOnScroll = updateAnimationStateOnScroll;
+  @ViewChild('facultySection') facultySection!: ElementRef<HTMLDivElement>;
 
   readonly headers: FacultyHeaders[] = [
     'name',
@@ -33,6 +34,15 @@ export class FacultyComponent {
 
   constructor() {
     this.attachListener();
+  }
+
+  ngAfterViewInit(): void {
+    setTimeout(() => {
+      this.updateAnimationStateOnScroll(
+        this.facultySection?.nativeElement,
+        this.state
+      );
+    }, 0);
   }
 
   attachListener(): void {
