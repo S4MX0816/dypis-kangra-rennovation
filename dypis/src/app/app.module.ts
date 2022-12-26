@@ -13,6 +13,7 @@ import { HoverContactInfoComponent } from './hover-contact-info/hover-contact-in
 import { AboutDypisComponent } from './modules/about-dypis/about-dypis.component';
 import { VisionAndMissionComponent } from './modules/vision-and-mission/vision-and-mission.component';
 import { ChairmanMessageComponent } from './modules/chairman-message/chairman-message.component';
+import { InformationUpdatingComponent } from './modules/information-updating/information-updating.component';
 
 export let router: Router;
 
@@ -27,6 +28,7 @@ export let router: Router;
     AboutDypisComponent,
     VisionAndMissionComponent,
     ChairmanMessageComponent,
+    InformationUpdatingComponent,
   ],
   imports: [SharedModule, AppRoutingModule, HomeModule],
   providers: [],
