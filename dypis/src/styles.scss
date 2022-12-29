@@ -9,6 +9,10 @@
   transition: 700ms;
 }
 
+body {
+  overflow: overlay;
+}
+
 .cdk-overlay-container * {
   transition: unset !important;
 }
