@@ -1,7 +1,4 @@
 ---
 deployment:
   tasks:
-    - cd dypis
-    - npm ci
-    - ng build --prod
     - /bin/dist/cp -r * /home2/dypiskangra/public_html/
