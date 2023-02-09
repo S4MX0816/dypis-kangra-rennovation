@@ -32,10 +32,11 @@ export class HoverContactInfoComponent {
   faSquareFacebook = faSquareFacebook;
   faSquareYoutube = faSquareYoutube;
   faSquareInstagram = faSquareInstagram;
-  contactNoPrimary = '+91 1234567890';
-  contactNoSecondary = '+91 1234567890';
-  emailPrimary = 'schoolprimary1@gmail.com';
-  emailSecondary = 'schoolprimary1@gmail.com';
+  contactNoPrimary = 'General - +91 7807080536';
+  contactNoSecondary = 'Academics - +91 7807586358';
+  contactNoTransport = 'Transport - +91 8344500005';
+  emailPrimary = 'dypisk@gmail.com';
+  emailSecondary = '';
 
   constructor() {
     setTimeout(() => {
