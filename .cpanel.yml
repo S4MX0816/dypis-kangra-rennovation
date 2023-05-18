@@ -3,3 +3,5 @@ deployment:
   tasks:
     - export DEPLOYPATH = /home2/dypiskangra/public_html/
     - /bin/dypis/cp angular.json $DEPLOYPATH
+    - cd $DEPLOYPATH
+    - mkdir hi
