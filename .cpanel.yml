@@ -1,4 +1,6 @@
 ---
 deployment:
   tasks:
+    - cd /bin/dypis
+    - ng build
     - /bin/dist/cp -r * /home2/dypiskangra/public_html/
