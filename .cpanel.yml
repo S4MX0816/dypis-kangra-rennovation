@@ -1,6 +1,5 @@
 ---
 deployment:
   tasks:
-    - cd /repositories/dypis-kangra-rennovation/dypis
-    - ng build
-    - rm /home2/dypiskangra/public_html/*
+    - export DEPLOYPATH = /home/dypiskangra/public_html/
+    - /bin/dypis/cp angular.json $DEPLOYPATH
