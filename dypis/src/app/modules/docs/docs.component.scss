@@ -1,0 +1,54 @@
+@import "/src/app/utils/variables.scss";
+
+.docs-card {
+  border-radius: 12px;
+  transition: transform 400ms;
+  overflow: hidden;
+
+  mat-card-header {
+    justify-content: center;
+  }
+
+  &__icon {
+    width: 60px;
+    height: 60px;
+    display: block;
+    margin: auto;
+    padding: 44px;
+  }
+
+  &:nth-of-type(odd) mat-card-header,
+  &:nth-of-type(odd) &__icon {
+    color: $ORANGE;
+  }
+
+  &:nth-of-type(even) mat-card-header,
+  &:nth-of-type(even) &__icon {
+    color: $DARK-GREEN;
+  }
+
+  &::after {
+    content: "";
+    background: black;
+    height: 100%;
+    width: 100%;
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 700ms;
+
+    &:hover {
+      opacity: 0.3;
+    }
+  }
+
+  &:hover {
+    transform: scale(1.1);
+
+    &::after {
+      opacity: 0.2;
+    }
+  }
+}

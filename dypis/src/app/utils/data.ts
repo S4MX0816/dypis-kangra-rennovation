@@ -8,3 +8,4 @@ export { schoolStats, testimonials } from './data/testimonials.data';
 export { schoolTeachers } from './data/school-teachers.data';
 export { admissionProcess } from './data/admission-process.data';
 export { faculty } from './data/faculty.data';
+export { docs } from './data/docs.data';

@@ -8,6 +8,7 @@ import { HomeComponent } from './modules/home/home.component';
 import { InformationUpdatingComponent } from './modules/information-updating/information-updating.component';
 import { VisionAndMissionComponent } from './modules/vision-and-mission/vision-and-mission.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { DocsComponent } from './modules/docs/docs.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -36,6 +37,7 @@ const routes: Routes = [
     data: { compName: 'virtual schooling' },
   },
   { path: 'chairman-message', component: ChairmanMessageComponent },
+  { path: 'docs', component: DocsComponent },
   { path: 'contact-us', component: ContactUsComponent },
   { path: '**', pathMatch: 'full', component: PageNotFoundComponent },
 ];

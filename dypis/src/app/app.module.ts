@@ -15,6 +15,8 @@ import { VisionAndMissionComponent } from './modules/vision-and-mission/vision-a
 import { ChairmanMessageComponent } from './modules/chairman-message/chairman-message.component';
 import { InformationUpdatingComponent } from './modules/information-updating/information-updating.component';
 import { ContactUsComponent } from './modules/contact-us/contact-us.component';
+import { DocsComponent } from './modules/docs/docs.component';
+import { HttpClientModule } from '@angular/common/http';
 
 export let router: Router;
 
@@ -31,8 +33,9 @@ export let router: Router;
     ChairmanMessageComponent,
     InformationUpdatingComponent,
     ContactUsComponent,
+    DocsComponent,
   ],
-  imports: [SharedModule, AppRoutingModule, HomeModule],
+  imports: [SharedModule, AppRoutingModule, HomeModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],
 })

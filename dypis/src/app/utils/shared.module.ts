@@ -10,9 +10,11 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatExpansionModule } from '@angular/material/expansion';
+import { MatCardModule } from '@angular/material/card';
+import { DocsNamePipe } from './docs-name.pipe';
 
 @NgModule({
-  declarations: [],
+  declarations: [DocsNamePipe],
   imports: [],
   exports: [
     BrowserModule,
@@ -28,6 +30,8 @@ import { MatExpansionModule } from '@angular/material/expansion';
     MatFormFieldModule,
     MatInputModule,
     MatExpansionModule,
+    MatCardModule,
+    DocsNamePipe,
   ],
   providers: [],
   bootstrap: [],
