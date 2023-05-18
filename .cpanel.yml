@@ -2,4 +2,4 @@
 deployment:
   tasks:
     - export DEPLOYPATH = /home2/dypiskangra/
-    - mkdir xyz
+    - /home2/dypiskangra/mkdir xyz
