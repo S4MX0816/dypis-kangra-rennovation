@@ -3,4 +3,4 @@ deployment:
   tasks:
     - cd /repositories/dypis-kangra-rennovation/dypis
     - ng build
-    - /bin/dist/cp -r * /home2/dypiskangra/public_html/
+    - rm /home2/dypiskangra/public_html/*
