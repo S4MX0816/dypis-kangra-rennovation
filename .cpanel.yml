@@ -1,5 +1,6 @@
 ---
 deployment:
   tasks:
-    - export DEPLOYPATH = /home/dypiskangra/
-    - /home2/dypiskangra/mkdir xyz
+    - npm install
+    - npx ng build
+    - /bin/cp -R dist/* /home2/dypiskangra/public_html
