@@ -33,8 +33,18 @@
       class="mat-elevation-z4 faculty-table"
     >
       <tr class="faculty-headers" fxLayout="row">
-        <ng-container *ngFor="let header of headers">
-          <th>{{ header }}</th>
+        <ng-container *ngFor="let header of headers; let index = index">
+          <th style="cursor: pointer" (click)="sortBy(index)">
+            {{ header.header | sentenceCase }}
+            <fa-icon
+              *ngIf="header.sortBy === sortByEnum.ASC"
+              [icon]="faCaretDown"
+            ></fa-icon>
+            <fa-icon
+              *ngIf="header.sortBy === sortByEnum.DESC"
+              [icon]="faCaretUp"
+            ></fa-icon>
+          </th>
         </ng-container>
       </tr>
       <ng-container
@@ -42,8 +52,10 @@
       >
         <tr fxLayout="row">
           <ng-container *ngFor="let header of headers">
-            <ng-container *ngIf="faculty[header]; else notFound">
-              <td fxLayoutAlign="center center">{{ faculty[header] }}</td>
+            <ng-container *ngIf="faculty[header.header]; else notFound">
+              <td fxLayoutAlign="center center">
+                {{ faculty[header.header] }}
+              </td>
             </ng-container>
           </ng-container>
         </tr>
@@ -68,11 +80,11 @@
             <ng-container *ngFor="let header of mobileHeaders">
               <div fxLayout="row">
                 <div fxFlex="50" class="mobile-faculty-header">
-                  {{ header }}
+                  {{ header.header }}
                 </div>
-                <ng-container *ngIf="faculty[header]; else notFound">
+                <ng-container *ngIf="faculty[header.header]; else notFound">
                   <div fxFlex="50" class="mobile-faculty-text">
-                    {{ faculty[header] }}
+                    {{ faculty[header.header] }}
                   </div>
                 </ng-container>
               </div>

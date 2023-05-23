@@ -12,9 +12,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatCardModule } from '@angular/material/card';
 import { DocsNamePipe } from './docs-name.pipe';
+import { SentenceCasePipe } from './sentence-case.pipe';
 
 @NgModule({
-  declarations: [DocsNamePipe],
+  declarations: [DocsNamePipe, SentenceCasePipe],
   imports: [],
   exports: [
     BrowserModule,
@@ -32,6 +33,7 @@ import { DocsNamePipe } from './docs-name.pipe';
     MatExpansionModule,
     MatCardModule,
     DocsNamePipe,
+    SentenceCasePipe,
   ],
   providers: [],
   bootstrap: [],

@@ -55,13 +55,22 @@ export interface AdmissionProcess {
 }
 
 export interface Faculty {
+  employeeCode: number;
   name: string;
-  subject: string | null;
-  qualification: string;
+  qualification?: string;
   designation: string;
 }
 
-export type FacultyHeaders = keyof Faculty;
+export interface FacultyHeaders {
+  header: keyof Faculty;
+  sortBy: SortByEnum;
+}
+
+export enum SortByEnum {
+  NONE = 'none',
+  ASC = 'asc',
+  DESC = 'desc',
+}
 
 export enum ColorPalette {
   ORANGE = '#fb6b48',
