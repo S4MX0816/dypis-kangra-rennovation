@@ -26,7 +26,7 @@ export const faculty: Faculty[] = [
   {
     employeeCode: 21,
     name: ' Anita Dhiman',
-    designation: 'Coordinator',
+    designation: 'Teacher',
   },
   {
     employeeCode: 19,
