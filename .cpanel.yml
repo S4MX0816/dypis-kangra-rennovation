@@ -1,3 +1,6 @@
 deployment:
   tasks:
-    - npm install
+    - export DEPLOYPATH=/home2/dypiskangra/public_html/
+      - npm install
+      - /bin/cp index.html $DEPLOYPATH
+      - /bin/cp style.css $DEPLOYPATH
