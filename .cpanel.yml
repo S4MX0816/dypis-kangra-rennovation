@@ -1,5 +1,3 @@
 deployment:
   tasks:
-    - npm install > npm_install.log 2>&1
-    - npx ng build > ng_build.log 2>&1
-    - /bin/cp -R dist/* /home2/dypiskangra/public_html > > cp_log.log 2>&1
+    - npm install
