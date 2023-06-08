@@ -2,7 +2,6 @@ import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
 import { faQuoteLeft, faQuoteRight } from '@fortawesome/free-solid-svg-icons';
 import { zoomUpAnimation } from 'src/app/utils/animation';
 
-import { schoolStats } from 'src/app/utils/data';
 import { updateAnimationStateOnScroll } from 'src/app/utils/helpers';
 import { TestimonialsService } from './testimonials.service';
 
@@ -13,7 +12,7 @@ import { TestimonialsService } from './testimonials.service';
   animations: [zoomUpAnimation],
 })
 export class TestimonialsComponent implements AfterViewInit {
-  schoolStats = schoolStats;
+  schoolStats = this.testimonialsService.schoolStats;
   testimonials = this.testimonialsService.testimonials;
   quoteLeft = faQuoteLeft;
   quoteRight = faQuoteRight;

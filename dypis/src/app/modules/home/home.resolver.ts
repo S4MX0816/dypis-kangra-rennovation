@@ -23,6 +23,7 @@ export class HomeResolver implements Resolve<any> {
       this.specialClassesService.getSpecialClasses(),
       this.kgActivitiesService.getKgActivities(),
       this.galleryService.getGallery(),
+      this.testimonialsService.getSchoolStat(),
       this.testimonialsService.getTestimonial(),
     ]);
   }
