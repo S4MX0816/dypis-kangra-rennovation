@@ -2,8 +2,9 @@ import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
 import { faQuoteLeft, faQuoteRight } from '@fortawesome/free-solid-svg-icons';
 import { zoomUpAnimation } from 'src/app/utils/animation';
 
-import { schoolStats, testimonials } from 'src/app/utils/data';
+import { schoolStats } from 'src/app/utils/data';
 import { updateAnimationStateOnScroll } from 'src/app/utils/helpers';
+import { TestimonialsService } from './testimonials.service';
 
 @Component({
   selector: 'testimonials',
@@ -13,7 +14,7 @@ import { updateAnimationStateOnScroll } from 'src/app/utils/helpers';
 })
 export class TestimonialsComponent implements AfterViewInit {
   schoolStats = schoolStats;
-  testimonials = testimonials;
+  testimonials = this.testimonialsService.testimonials;
   quoteLeft = faQuoteLeft;
   quoteRight = faQuoteRight;
   state = 'start';
@@ -26,11 +27,13 @@ export class TestimonialsComponent implements AfterViewInit {
   readonly TRANSITION_TIMING = 3000; // in milliseconds
   @ViewChild('testimonialDiv') testimonialDiv!: ElementRef;
   updateAnimationStateOnScroll = updateAnimationStateOnScroll;
-  statNumberArray: number[] = new Array(testimonials.length).fill(0);
+  statNumberArray: number[] = new Array(
+    this.testimonialsService.testimonials.length
+  ).fill(0);
   @ViewChild('testimonialsSection')
   testimonialsSection!: ElementRef<HTMLDivElement>;
 
-  constructor() {
+  constructor(private readonly testimonialsService: TestimonialsService) {
     this.applyTransition();
     this.startNoStats();
   }
@@ -56,7 +59,7 @@ export class TestimonialsComponent implements AfterViewInit {
 
       const arrayLength = this.testimonials.length;
       if (arrayLength - this.iterationNumber <= this.REMAINING_CARDS) {
-        this.testimonials.push(...testimonials);
+        this.testimonials.push(...this.testimonialsService.testimonials);
       }
     }, this.TRANSITION_TIMING);
   }
