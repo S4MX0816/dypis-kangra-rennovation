@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { AboutDypisComponent } from './modules/about-dypis/about-dypis.component';
 import { ChairmanMessageComponent } from './modules/chairman-message/chairman-message.component';
 import { ContactUsComponent } from './modules/contact-us/contact-us.component';
@@ -39,11 +39,18 @@ const routes: Routes = [
   { path: 'chairman-message', component: ChairmanMessageComponent },
   { path: 'docs', component: DocsComponent },
   { path: 'contact-us', component: ContactUsComponent },
+  {
+    path: 'admin',
+    loadChildren: () =>
+      import('./admin/admin.module').then((m) => m.AdminModule),
+  },
   { path: '**', pathMatch: 'full', component: PageNotFoundComponent },
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [
+    RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules }),
+  ],
   exports: [RouterModule],
 })
 export class AppRoutingModule {}
