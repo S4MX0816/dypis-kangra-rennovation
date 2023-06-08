@@ -6,6 +6,7 @@ import { forkJoin } from 'rxjs';
 import { SpecialClassesService } from './special-classes/special-classes.service';
 import { GalleryService } from './gallery/gallery.service';
 import { TestimonialsService } from './testimonials/testimonials.service';
+import { SchoolTeachersService } from './school-teachers/school-teachers.service';
 
 @Injectable({ providedIn: 'root' })
 export class HomeResolver implements Resolve<any> {
@@ -14,7 +15,8 @@ export class HomeResolver implements Resolve<any> {
     private readonly specialClassesService: SpecialClassesService,
     private readonly kgActivitiesService: KgActivitiesService,
     private readonly galleryService: GalleryService,
-    private readonly testimonialsService: TestimonialsService
+    private readonly testimonialsService: TestimonialsService,
+    private readonly schoolTeachersService: SchoolTeachersService
   ) {}
 
   resolve() {
@@ -25,6 +27,7 @@ export class HomeResolver implements Resolve<any> {
       this.galleryService.getGallery(),
       this.testimonialsService.getSchoolStat(),
       this.testimonialsService.getTestimonial(),
+      this.schoolTeachersService.getSchoolTeachers(),
     ]);
   }
 }
