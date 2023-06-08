@@ -6,13 +6,13 @@ import { environment } from 'src/environments/environment';
 
 @Injectable({ providedIn: 'root' })
 export class FacilitiesService {
-  facilitiesUrl = `${environment.firebaseUrl}/facilities.json`;
+  private _facilitiesUrl = `${environment.firebaseUrl}/facilities.json`;
   facilities: BasicCard[] = [];
 
   constructor(private http: HttpClient) {}
 
   getFacilities() {
-    return this.http.get<BasicCard[]>(this.facilitiesUrl).pipe(
+    return this.http.get<BasicCard[]>(this._facilitiesUrl).pipe(
       tap((facilities) => {
         this.facilities = facilities;
       })

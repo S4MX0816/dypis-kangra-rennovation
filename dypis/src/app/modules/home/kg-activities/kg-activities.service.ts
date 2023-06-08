@@ -6,13 +6,13 @@ import { environment } from 'src/environments/environment';
 
 @Injectable({ providedIn: 'root' })
 export class KgActivitiesService {
-  kgActivitiesUrl = `${environment.firebaseUrl}/kgActivities.json`;
+  private _kgActivitiesUrl = `${environment.firebaseUrl}/kgActivities.json`;
   kgActivities: KgActivity[] = [];
 
   constructor(private http: HttpClient) {}
 
   getKgActivities() {
-    return this.http.get<KgActivity[]>(this.kgActivitiesUrl).pipe(
+    return this.http.get<KgActivity[]>(this._kgActivitiesUrl).pipe(
       tap((kgActivities) => {
         this.kgActivities = kgActivities;
       })
