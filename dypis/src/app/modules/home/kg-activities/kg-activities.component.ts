@@ -1,8 +1,8 @@
 import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
 
-import { kgActivities } from 'src/app/utils/data';
 import { bounceInUpAnimation } from 'src/app/utils/animation';
 import { updateAnimationStateOnScroll } from 'src/app/utils/helpers';
+import { KgActivitiesService } from './kg-activities.service';
 
 @Component({
   selector: 'kg-activities',
@@ -13,12 +13,12 @@ import { updateAnimationStateOnScroll } from 'src/app/utils/helpers';
 export class KgActivitiesComponent implements AfterViewInit {
   state = 'start';
   selectedIndex = 0;
-  kgActivities = kgActivities;
+  kgActivities = this.kgActivitiesService.kgActivities;
   updateAnimationStateOnScroll = updateAnimationStateOnScroll;
   @ViewChild('kgActivitySection')
   kgActivitySection!: ElementRef<HTMLDivElement>;
 
-  constructor() {}
+  constructor(private readonly kgActivitiesService: KgActivitiesService) {}
 
   ngAfterViewInit(): void {
     setTimeout(() => {

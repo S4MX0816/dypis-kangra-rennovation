@@ -1,14 +1,8 @@
-import {
-  AfterViewInit,
-  Component,
-  ElementRef,
-  ViewChild,
-  ViewChildren,
-} from '@angular/core';
+import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
 
-import { facilities } from '../../../utils/data';
 import { zoomInUpAnimation } from '../../../utils/animation';
 import { updateAnimationStateOnScroll } from '../../../utils/helpers';
+import { FacilitiesService } from './facilities.service';
 
 @Component({
   selector: 'facilities',
@@ -17,12 +11,12 @@ import { updateAnimationStateOnScroll } from '../../../utils/helpers';
   animations: [zoomInUpAnimation],
 })
 export class FacilitiesComponent implements AfterViewInit {
-  facilities = facilities;
+  facilities = this.facilitiesService.facilities;
   updateAnimationStateOnScroll = updateAnimationStateOnScroll;
   state = 'start';
   @ViewChild('facilitySection') facilitySection!: ElementRef<HTMLDivElement>;
 
-  constructor() {}
+  constructor(private readonly facilitiesService: FacilitiesService) {}
 
   ngAfterViewInit(): void {
     setTimeout(() => {

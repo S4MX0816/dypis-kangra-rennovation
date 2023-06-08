@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AuthService } from './sign-in/auth.service';
 
 @Component({
   selector: 'admin',
@@ -16,5 +17,7 @@ import { Component } from '@angular/core';
   ],
 })
 export class AdminComponent {
-  constructor() {}
+  constructor(private authService: AuthService) {
+    this.authService.autoLogin();
+  }
 }

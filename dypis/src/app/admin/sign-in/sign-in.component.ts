@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { SignInForm } from './sign.in.model';
+import { SignIn, SignInForm } from './sign.in.model';
+import { AuthService } from './auth.service';
 
 @Component({
   selector: 'sign-in',
@@ -10,10 +11,17 @@ import { SignInForm } from './sign.in.model';
 export class SignInComponent {
   signInForm = this.initForm();
 
+  constructor(private readonly authService: AuthService) {}
+
   initForm(): FormGroup<SignInForm> {
     return new FormGroup({
       email: new FormControl('', [Validators.required, Validators.email]),
       password: new FormControl('', [Validators.required]),
     });
+  }
+
+  login() {
+    const payload = this.signInForm.value;
+    this.authService.login(payload as SignIn);
   }
 }

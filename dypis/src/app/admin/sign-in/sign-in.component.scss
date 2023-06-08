@@ -9,7 +9,11 @@
   align-items: center;
   gap: 8px;
 
+  max-width: 600px;
+  margin: 0 auto;
+
   background-image: url("../../../assets/images/special-classes-bg.png");
+  background-size: cover;
 }
 
 h1 {

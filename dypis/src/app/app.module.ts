@@ -1,11 +1,13 @@
 import { Router } from '@angular/router';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
+import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { FooterComponent } from './footer/footer.component';
-import { HomeModule } from './modules/home/home.module';
 import { SharedModule } from './utils/shared.module';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { FacultyComponent } from './modules/faculty/faculty.component';
@@ -16,7 +18,6 @@ import { ChairmanMessageComponent } from './modules/chairman-message/chairman-me
 import { InformationUpdatingComponent } from './modules/information-updating/information-updating.component';
 import { ContactUsComponent } from './modules/contact-us/contact-us.component';
 import { DocsComponent } from './modules/docs/docs.component';
-import { HttpClientModule } from '@angular/common/http';
 
 export let router: Router;
 
@@ -35,7 +36,13 @@ export let router: Router;
     ContactUsComponent,
     DocsComponent,
   ],
-  imports: [SharedModule, AppRoutingModule, HomeModule, HttpClientModule],
+  imports: [
+    SharedModule,
+    AppRoutingModule,
+    HttpClientModule,
+    BrowserModule,
+    BrowserAnimationsModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })
