@@ -5,4 +5,5 @@ export const docs = [
   'certificate-of-land',
   'permission-of-institution',
   'recognition-certificate',
+  'no-objection-certificate',
 ];
