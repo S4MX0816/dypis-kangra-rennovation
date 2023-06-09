@@ -1,6 +1,6 @@
 import { Router } from '@angular/router';
 import { NgModule } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -18,6 +18,8 @@ import { ChairmanMessageComponent } from './modules/chairman-message/chairman-me
 import { InformationUpdatingComponent } from './modules/information-updating/information-updating.component';
 import { ContactUsComponent } from './modules/contact-us/contact-us.component';
 import { DocsComponent } from './modules/docs/docs.component';
+import { LoaderComponent } from './loader/loader.component';
+import { LoaderInterceptor } from './loader/loader.interceptor';
 
 export let router: Router;
 
@@ -35,6 +37,7 @@ export let router: Router;
     InformationUpdatingComponent,
     ContactUsComponent,
     DocsComponent,
+    LoaderComponent,
   ],
   imports: [
     SharedModule,
@@ -43,7 +46,9 @@ export let router: Router;
     BrowserModule,
     BrowserAnimationsModule,
   ],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: LoaderInterceptor, multi: true },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {

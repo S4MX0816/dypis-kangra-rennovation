@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
 import { faAnglesUp } from '@fortawesome/free-solid-svg-icons';
 
-import { addressDetails, menuItems } from '../utils/data';
+import { menuItems } from '../utils/data';
+import { FooterService } from './footer.service';
+import { Footer } from '../models/interfaces';
 
 @Component({
   selector: 'footer',
@@ -10,8 +12,14 @@ import { addressDetails, menuItems } from '../utils/data';
 })
 export class FooterComponent {
   menuItems = menuItems;
-  addressDetails = addressDetails;
+  addressDetails: Footer[] = [];
   faAnglesUp = faAnglesUp;
+
+  constructor(readonly footerService: FooterService) {
+    footerService
+      .getFooterData()
+      .subscribe((footer) => (this.addressDetails = footer));
+  }
 
   goToTop() {
     window.scrollTo({ top: 0, behavior: 'smooth' });

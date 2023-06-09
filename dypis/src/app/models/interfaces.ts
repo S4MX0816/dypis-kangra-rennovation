@@ -88,3 +88,8 @@ export enum ColorPalette {
   LIGHT_BLACK = '#5b5b5b',
   DARK_BLACK = '#111',
 }
+
+export interface Footer {
+  detail: string;
+  icon: IconDefinition;
+}

@@ -8,11 +8,16 @@ import { InformationUpdatingComponent } from './modules/information-updating/inf
 import { VisionAndMissionComponent } from './modules/vision-and-mission/vision-and-mission.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { DocsComponent } from './modules/docs/docs.component';
+import { AppComponent } from './app.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  {
+    path: '',
+    component: AppComponent,
+  },
   {
     path: 'home',
+
     loadChildren: () =>
       import('./modules/home/home.module').then((m) => m.HomeModule),
   },
