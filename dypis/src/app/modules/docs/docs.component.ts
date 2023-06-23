@@ -3,6 +3,8 @@ import { HttpClient, HttpResponse } from '@angular/common/http';
 
 import { docs } from 'src/app/utils/data';
 import { updateAnimationStateOnScroll } from 'src/app/utils/helpers';
+import { faSearch } from '@fortawesome/free-solid-svg-icons';
+import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-docs',
@@ -13,6 +15,8 @@ export class DocsComponent {
   state = 'start';
   updateAnimationStateOnScroll = updateAnimationStateOnScroll;
   docs = docs;
+  faSearch = faSearch;
+  docsFilterCtrl = new FormControl<string>('');
 
   constructor(private readonly http: HttpClient) {}
 

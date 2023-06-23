@@ -12,9 +12,10 @@ import { MatCardModule } from '@angular/material/card';
 import { DocsNamePipe } from './docs-name.pipe';
 import { SentenceCasePipe } from './sentence-case.pipe';
 import { CommonModule } from '@angular/common';
+import { FilterDocsPipe } from './filter-docs.pipe';
 
 @NgModule({
-  declarations: [DocsNamePipe, SentenceCasePipe],
+  declarations: [DocsNamePipe, FilterDocsPipe, SentenceCasePipe],
   imports: [CommonModule],
   exports: [
     FlexLayoutModule,
@@ -30,6 +31,7 @@ import { CommonModule } from '@angular/common';
     MatExpansionModule,
     MatCardModule,
     DocsNamePipe,
+    FilterDocsPipe,
     SentenceCasePipe,
     CommonModule,
   ],

@@ -6,13 +6,29 @@
 >
   <div class="max-width-container" fxLayout="column" fxLayoutGap="32px">
     <div class="base-heading">CBSE Documents</div>
+    <mat-form-field
+      [ngStyle]="{ maxWidth: 'unset' }"
+      appearance="outline"
+      class="no-error-field custom-form-field"
+    >
+      <mat-label>Search Documents</mat-label>
+      <input
+        matInput
+        placeholder="Document Name"
+        [formControl]="docsFilterCtrl"
+      />
+      <fa-icon class="search-icon" matSuffix [icon]="faSearch"></fa-icon>
+    </mat-form-field>
     <div
       class="base-info"
       gdColumns="repeat(auto-fill, minmax(350px, 1fr))"
       gdGap="44px"
     >
       <mat-card
-        *ngFor="let doc of docs; let i = index"
+        *ngFor="
+          let doc of docs | filterDocs : docsFilterCtrl.value;
+          let i = index
+        "
         class="mat-elevation-z4 cursor-pointer docs-card"
         (click)="onSelectDoc(i)"
       >

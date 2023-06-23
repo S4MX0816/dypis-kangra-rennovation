@@ -6,4 +6,10 @@ export const docs = [
   'permission-of-institution',
   'recognition-certificate',
   'NOC-fire-services',
+  'self-declaration-application',
+  'affiliation-renewal',
+  'saras',
+  'KG-to-II-annual-events-2023',
+  'grade-3-to-5-annual-events',
+  'grade-6-to-10-annual-events',
 ];
