@@ -15,7 +15,11 @@ export class LoaderService {
       this.totalRequests -= 1;
     }
     if (this.totalRequests < 1) {
-      this.isLoading$.next(false);
+      setTimeout(() => {
+        if (this.totalRequests < 1) {
+          this.isLoading$.next(false), 500;
+        }
+      });
     }
   }
 }
