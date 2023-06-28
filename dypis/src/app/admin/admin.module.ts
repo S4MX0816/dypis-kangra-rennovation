@@ -8,9 +8,14 @@ const routes: Route[] = [
     component: AdminComponent,
     children: [
       {
-        path: 'sign-in',
+        path: '',
         loadChildren: () =>
           import('./sign-in/sign-in.module').then((m) => m.SignInModule),
+      },
+      {
+        path: 'main',
+        loadChildren: () =>
+          import('./main/main.module').then((m) => m.MainModule),
       },
     ],
   },

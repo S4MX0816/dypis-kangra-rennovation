@@ -1,0 +1,24 @@
+@import "/src/app/utils/variables.scss";
+
+aside {
+  background-color: $LIGHT-BLUE;
+  border-radius: 12px;
+  padding: 48px;
+}
+
+h2 {
+  margin-bottom: 48px;
+}
+
+.menu {
+  color: $ORANGE;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+
+  span {
+    font-size: 18px;
+    font-weight: 600;
+  }
+}

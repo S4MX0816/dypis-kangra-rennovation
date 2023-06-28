@@ -60,6 +60,7 @@ export class AuthService {
       const expirationDuration =
         new Date(userData.expirationDate).getTime() - new Date().getTime();
       this.autoLogout(expirationDuration);
+      this.router.navigate(['/admin/main']);
     }
   }
 
@@ -72,7 +73,7 @@ export class AuthService {
       AutSpecs.LOCAL_STORAGE_KEY,
       JSON.stringify({ token, expirationDate })
     );
-    this.router.navigate(['']);
+    this.router.navigate(['/admin/main']);
   }
 
   get token() {
