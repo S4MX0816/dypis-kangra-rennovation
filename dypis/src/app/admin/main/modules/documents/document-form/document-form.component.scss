@@ -1,0 +1,15 @@
+@import "/src/app/utils/variables.scss";
+
+.document-form {
+  padding: 20px;
+  border-radius: 12px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+button {
+  background-color: $ORANGE;
+  color: $WHITE;
+}

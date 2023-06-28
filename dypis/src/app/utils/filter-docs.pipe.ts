@@ -1,12 +1,14 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
+import { Doc } from '../models/interfaces';
+
 const spaceEmitter = / {2,}/g;
 
 @Pipe({
   name: 'filterDocs',
 })
 export class FilterDocsPipe implements PipeTransform {
-  transform(docs: string[], name: string | null | undefined): string[] {
+  transform(docs: Doc[], name: string | null | undefined): Doc[] {
     name = name?.replace(spaceEmitter, ' ').trim();
     if (!name) {
       return docs;
@@ -14,6 +16,6 @@ export class FilterDocsPipe implements PipeTransform {
 
     name = name.toLowerCase();
     name = name.split(' ').join('-');
-    return docs.filter((doc) => doc.toLowerCase().indexOf(name!) > -1);
+    return docs.filter((doc) => doc.name.toLowerCase().indexOf(name!) > -1);
   }
 }

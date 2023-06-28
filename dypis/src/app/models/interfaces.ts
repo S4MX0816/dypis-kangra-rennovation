@@ -93,3 +93,8 @@ export interface Footer {
   detail: string;
   icon: IconDefinition;
 }
+
+export interface Doc {
+  name: string;
+  document: string;
+}

@@ -11,6 +11,10 @@ import { NavigationEnd, Router } from '@angular/router';
         gap: 64px;
       }
 
+      .container {
+        flex-basis: 100%;
+      }
+
       h1 {
         margin-bottom: 32px;
       }

@@ -1,0 +1,27 @@
+<form class="document-form" [formGroup]="addDocumentForm">
+  <mat-form-field appearance="outline">
+    <mat-label>Document Name</mat-label>
+    <input
+      matInput
+      type="text"
+      formControlName="name"
+      placeholder="Document Name"
+    />
+    <mat-error>Document name is required</mat-error>
+  </mat-form-field>
+
+  <button mat-flat-button type="button" (click)="File.click()">
+    Upload Document
+  </button>
+
+  <button mat-flat-button type="button" [disabled]="addDocumentForm.invalid">
+    Save Document
+  </button>
+  <input
+    #File
+    type="file"
+    accept=".pdf"
+    style="display: none"
+    (change)="attachDocument(File)"
+  />
+</form>

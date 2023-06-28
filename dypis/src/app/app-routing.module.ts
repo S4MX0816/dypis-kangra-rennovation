@@ -8,12 +8,12 @@ import { InformationUpdatingComponent } from './modules/information-updating/inf
 import { VisionAndMissionComponent } from './modules/vision-and-mission/vision-and-mission.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { DocsComponent } from './modules/docs/docs.component';
+import { DocsResolver } from './modules/docs/docs.resolver';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   {
     path: 'home',
-
     loadChildren: () =>
       import('./modules/home/home.module').then((m) => m.HomeModule),
   },
@@ -41,7 +41,7 @@ const routes: Routes = [
     data: { compName: 'virtual schooling' },
   },
   { path: 'chairman-message', component: ChairmanMessageComponent },
-  { path: 'docs', component: DocsComponent },
+  { path: 'docs', component: DocsComponent, resolve: [DocsResolver] },
   { path: 'contact-us', component: ContactUsComponent },
   {
     path: 'admin',
