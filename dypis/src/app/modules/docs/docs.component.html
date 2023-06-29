@@ -21,6 +21,7 @@
     </mat-form-field>
 
     <div
+      *ngIf="docs$ | async as docs"
       class="base-info"
       gdColumns="repeat(auto-fill, minmax(350px, 1fr))"
       gdGap="44px"

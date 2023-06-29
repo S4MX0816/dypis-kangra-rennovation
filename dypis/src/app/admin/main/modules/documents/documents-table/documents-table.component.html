@@ -1,0 +1,20 @@
+<!-- laptop and tab -->
+<table fxLayout="column" class="mat-elevation-z4 table">
+  <tr class="table__headers">
+    <th class="fx-20">name</th>
+    <th class="fx-70">title</th>
+    <th class="fx-10">actions</th>
+  </tr>
+  <ng-container *ngFor="let doc of docs$ | async; let i = index">
+    <tr>
+      <td class="fx-20 table__name">{{ doc.name }}</td>
+      <td class="fx-70">
+        <a [href]="doc.document" target="_blank">{{ doc.document }}</a>
+      </td>
+      <td class="fx-10 table__actions">
+        <fa-icon [icon]="faTrash"></fa-icon>
+        <fa-icon [icon]="faPenToSquare"></fa-icon>
+      </td>
+    </tr>
+  </ng-container>
+</table>

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { AngularFireStorage } from '@angular/fire/compat/storage';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { DocsService } from 'src/app/modules/docs/docs.service';
 
 @Component({
   selector: 'app-document-form',

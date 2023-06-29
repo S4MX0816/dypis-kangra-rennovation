@@ -8,11 +8,20 @@ import { DocumentFormComponent } from './document-form/document-form.component';
 import { MatInputModule } from '@angular/material/input';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
+import { DocsResolver } from 'src/app/modules/docs/docs.resolver';
+import { DocumentsTableComponent } from './documents-table/documents-table.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
-const routes: Route[] = [{ path: '', component: DocumentsComponent }];
+const routes: Route[] = [
+  { path: '', component: DocumentsComponent, resolve: [DocsResolver] },
+];
 
 @NgModule({
-  declarations: [DocumentsComponent, DocumentFormComponent],
+  declarations: [
+    DocumentsComponent,
+    DocumentFormComponent,
+    DocumentsTableComponent,
+  ],
   imports: [
     RouterModule.forChild(routes),
     MatFormFieldModule,
@@ -20,6 +29,7 @@ const routes: Route[] = [{ path: '', component: DocumentsComponent }];
     MatInputModule,
     MatButtonModule,
     ReactiveFormsModule,
+    FontAwesomeModule,
   ],
 })
 export class DocumentsModule {}

@@ -4,6 +4,9 @@ aside {
   background-color: $LIGHT-BLUE;
   border-radius: 12px;
   padding: 48px;
+  height: calc(100vh - 252px);
+  position: sticky;
+  top: 196px;
 }
 
 h2 {

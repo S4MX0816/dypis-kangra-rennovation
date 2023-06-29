@@ -1,4 +1,4 @@
-import { tap } from 'rxjs';
+import { BehaviorSubject, tap } from 'rxjs';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
@@ -8,14 +8,14 @@ import { environment } from 'src/environments/environment';
 @Injectable({ providedIn: 'root' })
 export class DocsService {
   private _documentsUrl = `${environment.firebaseUrl}/docs.json`;
-  docs: Doc[] = [];
+  docs$ = new BehaviorSubject<Doc[]>([]);
 
   constructor(private http: HttpClient) {}
 
   getDocs() {
     return this.http.get<Doc[]>(this._documentsUrl).pipe(
       tap((docs) => {
-        this.docs = docs;
+        this.docs$.next(docs);
       })
     );
   }

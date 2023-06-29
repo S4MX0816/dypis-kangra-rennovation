@@ -14,7 +14,7 @@ import { updateAnimationStateOnScroll } from 'src/app/utils/helpers';
 export class DocsComponent {
   state = 'start';
   updateAnimationStateOnScroll = updateAnimationStateOnScroll;
-  docs = this.docsService.docs;
+  docs$ = this.docsService.docs$;
   faSearch = faSearch;
   docsFilterCtrl = new FormControl<string>('');
 
