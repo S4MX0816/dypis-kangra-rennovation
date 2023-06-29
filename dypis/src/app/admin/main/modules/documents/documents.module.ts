@@ -12,7 +12,8 @@ import { DocumentsComponent } from './documents.component';
 import { DocsResolver } from 'src/app/modules/docs/docs.resolver';
 import { DocumentFormComponent } from './document-form/document-form.component';
 import { DocumentsTableComponent } from './documents-table/documents-table.component';
-import { DeleteConfirmationDialogComponent } from './delete-confirmation-dialog/delete-confirmation-dialog.component';
+import { DeleteConfirmationDialogComponent } from './dialogs/delete-confirmation-dialog/delete-confirmation-dialog.component';
+import { UpdateNameDialogComponent } from './dialogs/update-name-dialog/update-name-dialog.component';
 
 const routes: Route[] = [
   { path: '', component: DocumentsComponent, resolve: [DocsResolver] },
@@ -24,6 +25,7 @@ const routes: Route[] = [
     DocumentFormComponent,
     DocumentsTableComponent,
     DeleteConfirmationDialogComponent,
+    UpdateNameDialogComponent,
   ],
   imports: [
     RouterModule.forChild(routes),

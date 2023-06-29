@@ -5,7 +5,8 @@ import { faPenToSquare, faTrash } from '@fortawesome/free-solid-svg-icons';
 
 import { Doc } from 'src/app/models/interfaces';
 import { DocsService } from 'src/app/modules/docs/docs.service';
-import { DeleteConfirmationDialogComponent } from '../delete-confirmation-dialog/delete-confirmation-dialog.component';
+import { UpdateNameDialogComponent } from '../dialogs/update-name-dialog/update-name-dialog.component';
+import { DeleteConfirmationDialogComponent } from '../dialogs/delete-confirmation-dialog/delete-confirmation-dialog.component';
 
 @Component({
   selector: 'app-documents-table',
@@ -33,6 +34,21 @@ export class DocumentsTableComponent {
       }
 
       this.docsService.deleteDoc(docIndex);
+    });
+  }
+
+  updateName(docIndex: number, docName: string) {
+    const dialog = this.dialog.open(UpdateNameDialogComponent, {
+      width: '450px',
+      data: { name: docName },
+    });
+
+    dialog.afterClosed().subscribe((updateName) => {
+      if (!updateName) {
+        return;
+      }
+
+      this.docsService.updateDocName(docIndex, updateName);
     });
   }
 }

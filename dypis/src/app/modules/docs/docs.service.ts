@@ -24,6 +24,14 @@ export class DocsService {
     this._updateDocs();
   }
 
+  updateDocName(docIndex: number, docName: string) {
+    const updatedDocs = this.docs$.value;
+    updatedDocs[docIndex].name = docName;
+    this.docs$.next(updatedDocs);
+
+    this._updateDocs();
+  }
+
   deleteDoc(docIndex: number) {
     const updatedDocs = this.docs$.value;
     updatedDocs.splice(docIndex);

@@ -13,7 +13,10 @@
       </td>
       <td class="fx-10 table__actions">
         <fa-icon [icon]="faTrash" (click)="deleteDocument(i)"></fa-icon>
-        <fa-icon [icon]="faPenToSquare"></fa-icon>
+        <fa-icon
+          [icon]="faPenToSquare"
+          (click)="updateName(i, doc.name)"
+        ></fa-icon>
       </td>
     </tr>
   </ng-container>

@@ -1,0 +1,33 @@
+@import "/src/app/utils/variables.scss";
+
+h1 {
+  margin-bottom: 48px;
+  text-align: center;
+}
+
+mat-form-field {
+  width: 100%;
+}
+
+.actions {
+  margin-top: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 28px;
+
+  button {
+    font-weight: 600;
+    font-size: 18px;
+    color: $WHITE;
+    width: 140px;
+
+    &:first-child {
+      background-color: $ORANGE;
+    }
+
+    &:last-child {
+      background-color: $GREEN;
+    }
+  }
+}
