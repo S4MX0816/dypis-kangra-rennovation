@@ -1,16 +1,18 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ReactiveFormsModule } from '@angular/forms';
 import { RouterModule, Route } from '@angular/router';
+import { MatInputModule } from '@angular/material/input';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 import { DocumentsComponent } from './documents.component';
-import { DocumentFormComponent } from './document-form/document-form.component';
-import { MatInputModule } from '@angular/material/input';
-import { ReactiveFormsModule } from '@angular/forms';
-import { MatButtonModule } from '@angular/material/button';
 import { DocsResolver } from 'src/app/modules/docs/docs.resolver';
+import { DocumentFormComponent } from './document-form/document-form.component';
 import { DocumentsTableComponent } from './documents-table/documents-table.component';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { DeleteConfirmationDialogComponent } from './delete-confirmation-dialog/delete-confirmation-dialog.component';
 
 const routes: Route[] = [
   { path: '', component: DocumentsComponent, resolve: [DocsResolver] },
@@ -21,6 +23,7 @@ const routes: Route[] = [
     DocumentsComponent,
     DocumentFormComponent,
     DocumentsTableComponent,
+    DeleteConfirmationDialogComponent,
   ],
   imports: [
     RouterModule.forChild(routes),
@@ -30,6 +33,7 @@ const routes: Route[] = [
     MatButtonModule,
     ReactiveFormsModule,
     FontAwesomeModule,
+    MatDialogModule,
   ],
 })
 export class DocumentsModule {}

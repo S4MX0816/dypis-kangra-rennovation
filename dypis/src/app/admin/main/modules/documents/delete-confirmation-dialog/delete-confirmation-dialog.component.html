@@ -1,0 +1,9 @@
+<h1>Delete Document</h1>
+
+<p class="consequences">This action will delete this document.</p>
+<p class="question">Are you sure, <span>you want to continue?</span></p>
+
+<div class="actions">
+  <button mat-stroked-button (click)="dialogRef.close()">Cancel</button>
+  <button mat-flat-button (click)="dialogRef.close(true)">Yes</button>
+</div>

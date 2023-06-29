@@ -1,9 +1,11 @@
 import { BehaviorSubject } from 'rxjs';
 import { Component, Input } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { faPenToSquare, faTrash } from '@fortawesome/free-solid-svg-icons';
 
 import { Doc } from 'src/app/models/interfaces';
 import { DocsService } from 'src/app/modules/docs/docs.service';
+import { DeleteConfirmationDialogComponent } from '../delete-confirmation-dialog/delete-confirmation-dialog.component';
 
 @Component({
   selector: 'app-documents-table',
@@ -15,9 +17,22 @@ export class DocumentsTableComponent {
   faTrash = faTrash;
   faPenToSquare = faPenToSquare;
 
-  constructor(private readonly docsService: DocsService) {}
+  constructor(
+    private readonly dialog: MatDialog,
+    private readonly docsService: DocsService
+  ) {}
 
   deleteDocument(docIndex: number) {
-    this.docsService.deleteDoc(docIndex);
+    const dialog = this.dialog.open(DeleteConfirmationDialogComponent, {
+      width: '450px',
+    });
+
+    dialog.afterClosed().subscribe((res) => {
+      if (!res) {
+        return;
+      }
+
+      this.docsService.deleteDoc(docIndex);
+    });
   }
 }
