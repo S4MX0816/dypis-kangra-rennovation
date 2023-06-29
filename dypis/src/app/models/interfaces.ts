@@ -94,7 +94,6 @@ export interface Footer {
   icon: IconDefinition;
 }
 
-export interface Doc {
-  name: string;
-  document: string;
+export class Doc {
+  constructor(public name: string, public document: string) {}
 }

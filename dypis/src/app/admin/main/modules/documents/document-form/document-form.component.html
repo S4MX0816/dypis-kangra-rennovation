@@ -1,20 +1,30 @@
-<form class="document-form" [formGroup]="addDocumentForm">
+<form class="document-form">
   <mat-form-field appearance="outline">
     <mat-label>Document Name</mat-label>
     <input
       matInput
       type="text"
-      formControlName="name"
+      [formControl]="userDocName"
       placeholder="Document Name"
     />
     <mat-error>Document name is required</mat-error>
   </mat-form-field>
 
-  <button mat-flat-button type="button" (click)="File.click()">
+  <button *ngIf="!file" mat-flat-button type="button" (click)="File.click()">
     Upload Document
   </button>
 
-  <button mat-flat-button type="button" [disabled]="addDocumentForm.invalid">
+  <span *ngIf="file" class="document-name">
+    <span>{{ documentName }}</span>
+    <fa-icon [icon]="faClose" (click)="resetDocumentAttachment()"></fa-icon>
+  </span>
+
+  <button
+    mat-flat-button
+    type="button"
+    [disabled]="userDocName.invalid || !file"
+    (click)="saveDocument()"
+  >
     Save Document
   </button>
   <input

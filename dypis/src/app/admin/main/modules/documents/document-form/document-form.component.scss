@@ -10,6 +10,19 @@
 }
 
 button {
-  background-color: $ORANGE;
+  background-color: $GREEN;
   color: $WHITE;
+}
+
+.document-name {
+  font-weight: 500;
+
+  span {
+    margin-right: 8px;
+  }
+
+  fa-icon {
+    color: $ORANGE;
+    cursor: pointer;
+  }
 }

@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
+import { faClose } from '@fortawesome/free-solid-svg-icons';
 import { AngularFireStorage } from '@angular/fire/compat/storage';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+
+import { Doc } from './../../../../../models/interfaces';
 import { DocsService } from 'src/app/modules/docs/docs.service';
 
 @Component({
@@ -11,33 +14,50 @@ import { DocsService } from 'src/app/modules/docs/docs.service';
 export class DocumentFormComponent {
   path?: string;
   file?: File;
+  documentName?: string;
+  faClose = faClose;
 
-  addDocumentForm = new FormGroup({
-    name: new FormControl('', [Validators.required]),
-    document: new FormControl('', [Validators.required]),
-  });
+  userDocName = new FormControl('', Validators.required);
 
-  constructor(private fireStorage: AngularFireStorage) {}
+  constructor(
+    private fireStorage: AngularFireStorage,
+    private docsService: DocsService
+  ) {}
 
-  async attachDocument(inputEl: HTMLInputElement) {
+  attachDocument(inputEl: HTMLInputElement) {
     const files = inputEl.files;
     if (!files || !files[0]) {
       return;
     }
 
     this.file = files[0];
-    this.path = `docs/${this.file.name}`;
+    this.documentName = this.file.name;
+    this.path = `docs/${this.documentName}`;
 
     inputEl.value = '';
   }
 
   async saveDocument() {
-    if (!this.path || !this.file) {
+    const docName = this.userDocName.value;
+    if (!this.path || !this.file || !docName) {
       return;
     }
 
     const uploadTask = await this.fireStorage.upload(this.path, this.file);
     const url = await uploadTask.ref.getDownloadURL();
-    this.addDocumentForm.controls.document.setValue(url);
+
+    this.docsService.updateDocs(new Doc(docName, url));
+    this.resetForm();
+  }
+
+  private resetForm() {
+    this.resetDocumentAttachment();
+    this.userDocName.reset();
+  }
+
+  resetDocumentAttachment() {
+    this.path = undefined;
+    this.documentName = undefined;
+    this.file = undefined;
   }
 }
