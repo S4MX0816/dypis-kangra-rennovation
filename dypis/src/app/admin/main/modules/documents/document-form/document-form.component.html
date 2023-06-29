@@ -22,7 +22,7 @@
   <button
     mat-flat-button
     type="button"
-    [disabled]="userDocName.invalid || !file"
+    [disabled]="userDocName.invalid || !file || isUploading"
     (click)="saveDocument()"
   >
     Save Document

@@ -21,6 +21,18 @@ export class DocsService {
     updatedDocs.push(doc);
     this.docs$.next(updatedDocs);
 
+    this._updateDocs();
+  }
+
+  deleteDoc(docIndex: number) {
+    const updatedDocs = this.docs$.value;
+    updatedDocs.splice(docIndex);
+    this.docs$.next(updatedDocs);
+
+    this._updateDocs();
+  }
+
+  private _updateDocs() {
     return this.http
       .put<Doc[]>(this._documentsUrl, this.docs$.value)
       .pipe(tap(this.patchDocs))

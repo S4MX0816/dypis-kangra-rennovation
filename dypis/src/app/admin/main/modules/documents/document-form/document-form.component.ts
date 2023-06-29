@@ -16,6 +16,7 @@ export class DocumentFormComponent {
   file?: File;
   documentName?: string;
   faClose = faClose;
+  isUploading = false;
 
   userDocName = new FormControl('', Validators.required);
 
@@ -43,8 +44,10 @@ export class DocumentFormComponent {
       return;
     }
 
+    this.isUploading = true;
     const uploadTask = await this.fireStorage.upload(this.path, this.file);
     const url = await uploadTask.ref.getDownloadURL();
+    this.isUploading = false;
 
     this.docsService.updateDocs(new Doc(docName, url));
     this.resetForm();
