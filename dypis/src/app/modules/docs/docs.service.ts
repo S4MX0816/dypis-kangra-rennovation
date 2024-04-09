@@ -34,7 +34,7 @@ export class DocsService {
 
   deleteDoc(docIndex: number) {
     const updatedDocs = this.docs$.value;
-    updatedDocs.splice(docIndex);
+    updatedDocs.splice(docIndex, 1);
     this.docs$.next(updatedDocs);
 
     this._updateDocs();
