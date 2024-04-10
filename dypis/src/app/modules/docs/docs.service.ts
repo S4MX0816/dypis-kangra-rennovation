@@ -50,6 +50,6 @@ export class DocsService {
   // Arrow function here because of this undefined issue as it is called internally by tap function
   // Alternatively an AutoBind this key decorator can be created
   private patchDocs = (docs: Doc[]) => {
-    this.docs$.next(docs);
+    this.docs$.next(docs || []);
   };
 }
