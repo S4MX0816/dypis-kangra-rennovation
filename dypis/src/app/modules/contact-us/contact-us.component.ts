@@ -28,10 +28,9 @@ export class ContactUsComponent implements AfterViewInit {
   faEnvelopeOpen = faEnvelopeOpen;
   faPhoneVolume = faPhoneVolume;
   faCalendarAlt = faCalendarAlt;
-  contactNoPrimary = '+91 1234567890';
-  contactNoSecondary = '+91 1234567890';
-  emailPrimary = 'schoolprimary1@gmail.com';
-  emailSecondary = 'schoolprimary1@gmail.com';
+  contactNoPrimary = '+91 7807080536';
+  contactNoSecondary = '+91 7807586358';
+  email = 'dypisk@gmail.com';
 
   constructor(private sanitizer: DomSanitizer) {
     this.mapsEmbedUrl = this.sanitizer.bypassSecurityTrustResourceUrl(
