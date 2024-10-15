@@ -48,9 +48,9 @@
         </ng-container>
       </tr>
       <ng-container
-        *ngFor="let faculty of filteredFaculty | async; let i = index"
+        *ngFor="let faculty of filteredFaculty | async; let odd = odd"
       >
-        <tr fxLayout="row">
+        <tr fxLayout="row" [ngClass]="{ 'faculty-table--row-gray': odd }">
           <ng-container *ngFor="let header of headers">
             <ng-container *ngIf="faculty[header.header]; else notFound">
               <td fxLayoutAlign="center center">
